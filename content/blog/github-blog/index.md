@@ -2,6 +2,7 @@
 title: Gatsby와 Netlify를 이용한 GitHub Blog 구축
 date: "2021-02-12T19:15:00.000Z"
 description: "Gatsby와 Netlify를 이용한 GitHub Blog 구축"
+tags: ["Blog"]
 ---
 
 세련된 기술 블로그를 운영하는 것은 나를 포함한 많은 개발자들의 목표일 것이다.
