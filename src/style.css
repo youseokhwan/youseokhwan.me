@@ -336,6 +336,8 @@ a:focus {
 }
 
 .menubar-header {
+  position: sticky;
+  top: 50px;
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 1.7;
@@ -344,10 +346,19 @@ a:focus {
   margin-bottom: 2rem;
 }
 
+.menubar-category {
+  position: sticky;
+  top: 100px;
+}
+
 .menubar-menu {
   margin: 10px 0px;
 }
 
+.menubar-footer {
+  position: fixed;
+  bottom: 15px;
+}
 
 .root-container {
   display: flex;
