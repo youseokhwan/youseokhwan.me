@@ -349,6 +349,9 @@ a:focus {
 .menubar-category {
   position: sticky;
   top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .menubar-menu {

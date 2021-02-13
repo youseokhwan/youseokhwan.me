@@ -1,26 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 
-const Menubar = ({ children }) => {
+const TagsListQuery = graphql`
+  query TagListQuery {
+    allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tag) {
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`;
+
+const Menubar = () => {
+  const tags = useStaticQuery(TagsListQuery).allMarkdownRemark.group;
+  console.log('tags', tags);
   return (
     <div className="menubar-container">
       <Link className="menubar-header" to="/">
         youseokhwan.me
       </Link>
-
+      
       <div className="menubar-category">
-        <div>
-          <Link className="menubar-menu" to="/Swift">Swift</Link>
-        </div>
-        <div>
-          <Link className="menubar-menu" to="/iOS">iOS</Link>
-        </div>
-        <div>
-          <Link className="menubar-menu" to="/GitHub">GitHub</Link>
-        </div>
-        <div>
-          <Link className="menubar-menu" to="/Blog">Blog</Link>
-        </div>
+        {tags.map(tag => {
+            return (
+              <Link className="menubar-menu" to={`/${tag.fieldValue}`} key={tag.fieldValue}> {tag.fieldValue} </Link>
+            )
+        })}
       </div>
 
       <footer className="menubar-footer">
@@ -32,3 +38,14 @@ const Menubar = ({ children }) => {
 }
 
 export default Menubar
+
+// export const pageQuery = graphql`
+//   query TagListQuery {
+//     tags: allMarkdownRemark(limit: 2000) {
+//       group(field: frontmatter___tag) {
+//         fieldValue
+//         totalCount
+//       }
+//     }
+//   }
+// `
