@@ -241,9 +241,10 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
+  /* margin: var(--spacing-0) auto; */
   padding: var(--spacing-10) var(--spacing-5);
+  max-width: 48rem;
+  margin: var(--spacing-0) auto;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -319,6 +320,39 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+/* Menubar */
+
+.menubar-container {
+  left: 0;
+  bottom: 0;
+  min-height: 100vh;
+  width: 13rem;
+  background-color: #fff;
+  border-right: 1px solid #222;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.menubar-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.7;
+  color: #363738;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.menubar-menu {
+  margin: 10px 0px;
+}
+
+
+.root-container {
+  display: flex;
+  height: 100%;
+}
 /* Media queries */
 
 @media (max-width: 42rem) {
