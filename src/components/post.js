@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby"
-const Post = ({ post, title}) => {
-    console.log(post, title)
-    // const _posts = data.allMarkdownRemark
-    // console.log(_posts)
+const Post = ({ post, title }) => {
 
     return (
         <li key={post.fields.slug}>

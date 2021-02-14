@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-
 const TagsListQuery = graphql`
   query TagListQuery {
     allMarkdownRemark(limit: 2000) {
@@ -14,7 +13,6 @@ const TagsListQuery = graphql`
 
 const Menubar = () => {
   const tags = useStaticQuery(TagsListQuery).allMarkdownRemark.group;
-  console.log('tags', tags);
   return (
     <div className="menubar-container">
       <Link className="menubar-header" to="/">

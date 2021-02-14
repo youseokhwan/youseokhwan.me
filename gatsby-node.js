@@ -6,12 +6,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPostList = path.resolve(`./src/templates/post-list.js`)
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        posts:allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
@@ -20,6 +21,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              description
+              tag
+            }
+          }
+        }
+        allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tag) {
+            fieldValue
           }
         }
       }
@@ -34,7 +46,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.posts.nodes
+  const tags = result.data.allMarkdownRemark.group
+
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -53,6 +67,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           previousPostId,
           nextPostId,
         },
+      })
+    })
+  }
+
+  if (tags.length > 0) {
+    tags.forEach((tag, index) => {
+      const filteredPost = posts.filter(post => post.frontmatter.tag == tag.fieldValue)
+      createPage({
+        path: tag.fieldValue,
+        component: blogPostList,
+        context: {
+          tag: tag.fieldValue,
+          posts: filteredPost
+        }
       })
     })
   }
