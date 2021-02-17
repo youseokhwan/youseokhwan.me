@@ -12,16 +12,14 @@ import Markdown from 'styles/markdown';
 const BlogPost = ({ data }) => {
   const {
     markdownRemark: {
-      frontmatter: { title, desc, thumbnail, date, category },
+      frontmatter: { title, desc, date, category },
       html,
     },
   } = data;
 
-  const ogImagePath = thumbnail && thumbnail.childImageSharp.fixed.src;
-
   return (
     <Layout>
-      <SEO title={title} description={desc} image={ogImagePath} />
+      <SEO title={title} description={desc} />
       <main>
         <article>
           <OuterWrapper>
@@ -137,13 +135,6 @@ export const query = graphql`
       frontmatter {
         title
         desc
-        thumbnail {
-          childImageSharp {
-            fixed {
-              src
-            }
-          }
-        }
         date(formatString: "YYYY-MM-DD")
         category
       }

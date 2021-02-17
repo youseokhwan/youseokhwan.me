@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Card from './card';
-import { ThumbnailWrapper } from './centeredImg';
 import useInfiniteScroll from 'hooks/useInfiniteScroll';
 
 const PostGrid = ({ posts }) => {
@@ -17,14 +16,12 @@ const PostGrid = ({ posts }) => {
   return (
     <Grid role="list">
       {currentList.map((data) => {
-        const { id, slug, title, desc, date, category, thumbnail, alt } = data;
+        const { id, slug, title, desc, date, category } = data;
         const ariaLabel = `${title} - ${category} - Posted on ${date}`;
         return (
           <List key={id} role="listitem">
             <Link to={slug} aria-label={ariaLabel}>
               <Card
-                thumbnail={thumbnail}
-                alt={alt}
                 category={category}
                 title={title}
                 desc={desc}
@@ -61,10 +58,6 @@ const List = styled.li`
   a {
     display: block;
     height: 100%;
-  }
-
-  a:hover ${ThumbnailWrapper}::after, a:focus ${ThumbnailWrapper}::after {
-    opacity: 1;
   }
 
   & .gatsby-image-wrapper {

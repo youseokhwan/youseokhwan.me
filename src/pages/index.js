@@ -28,8 +28,6 @@ const Home = ({ pageContext, data }) => {
           desc,
           date,
           category,
-          thumbnail: { childImageSharp },
-          alt,
         },
       } = node;
 
@@ -42,8 +40,6 @@ const Home = ({ pageContext, data }) => {
           desc,
           date,
           category,
-          thumbnail: childImageSharp.id,
-          alt,
         },
       ]);
     });
@@ -117,13 +113,6 @@ export const query = graphql`
             category
             date(formatString: "YYYY-MM-DD")
             desc
-            thumbnail {
-              childImageSharp {
-                id
-              }
-              base
-            }
-            alt
           }
           fields {
             slug
