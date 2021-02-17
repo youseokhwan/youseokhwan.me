@@ -33,7 +33,7 @@ const BlogPost = ({ data }) => {
                     <Time dateTime={date}>{date}</Time>
                   </Info>
                   <Title>{title}</Title>
-                  <Desc>{desc}</Desc>
+                  {/* <Desc>{desc}</Desc> */}
                 </header>
                 <Divider />
                 <Markdown

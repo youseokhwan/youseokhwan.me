@@ -41,7 +41,7 @@ const PostGrid = ({ posts }) => {
 
 const Grid = styled.ul`
   display: grid;
-  grid-gap: var(--grid-gap-xl);
+  grid-gap: var(--grid-gap-lg);
   grid-template-columns: repeat(1, 1fr);
   list-style: none;
 
@@ -50,7 +50,7 @@ const Grid = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
-    grid-gap: var(--grid-gap-lg);
+    grid-gap: var(--grid-gap-sm);
   }
 `;
 

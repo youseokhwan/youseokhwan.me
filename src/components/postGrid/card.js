@@ -12,7 +12,7 @@ const Card = ({ thumbnail, alt, category, title, desc, date }) => {
         <div>
           <Category>{category}</Category>
           <Title>{title}</Title>
-          <Desc>{desc}</Desc>
+          {/* <Desc>{desc}</Desc> */}
         </div>
         <DateTime dateTime={date}>{date}</DateTime>
       </Text>
