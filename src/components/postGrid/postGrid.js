@@ -71,10 +71,18 @@ const List = styled.li`
     transition: opacity 1s ease-out, transform 0.5s ease;
   }
 
+  & h3 {
+    transition: opacity 1s ease-out, transform 0.5s ease;
+  }
+
   a:hover,
   a:focus {
     .gatsby-image-wrapper {
       transform: scale(1.03);
+    }
+
+    h3 {
+      transform: translate(10px);
     }
   }
 
