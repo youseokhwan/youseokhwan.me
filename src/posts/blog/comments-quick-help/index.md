@@ -1,6 +1,6 @@
 ---
 title: "Swift 주석 및 퀵헬프"
-category: "Swift"
+category: "Swift Tutorial"
 date: "2021-02-19 02:30:00 +09:00"
 desc: "Swift 주석 및 퀵헬프"
 ---

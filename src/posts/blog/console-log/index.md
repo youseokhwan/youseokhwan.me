@@ -1,6 +1,6 @@
 ---
 title: "Swift 콘솔 로그 - print(), dump()"
-category: "Swift"
+category: "Swift Tutorial"
 date: "2021-02-15 11:50:00 +09:00"
 desc: "Swift 콘솔 로그 - print(), dump()"
 ---
