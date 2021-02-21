@@ -90,6 +90,7 @@ const CategoryButton = styled(Link)`
   border-radius: var(--border-radius-base);
   font-size: 0.875rem;
   font-weight: var(--font-weight-semi-bold);
+  white-space: nowrap;
 
   :focus {
     outline: none;
@@ -120,6 +121,10 @@ const CategoryUl = styled.ul`
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   li + li {
     margin-left: 6px;
