@@ -47,14 +47,26 @@ const Home = ({ pageContext, data }) => {
 
   const site = useSiteMetadata();
   const postTitle = currentCategory || site.siteMetadata.postTitle;
+  let postCount = -1;
 
+  if (currentCategory === undefined) {
+    postCount = data.allMarkdownRemark.totalCount;
+  } else {
+    data.allMarkdownRemark.group.some(e => {
+      if (currentCategory == e.fieldValue) {
+        postCount = e.totalCount;
+        return;
+      }
+    });
+  }
+  
   return (
     <Layout>
       <SEO title="Home" />
       <Main>
         <Content>
           <CategoryFilter categoryList={data.allMarkdownRemark.group} />
-          <PostTitle>{postTitle}</PostTitle>
+          <PostTitle>{postTitle}&nbsp;<count>({postCount})</count></PostTitle>
           <PostGrid posts={posts} />
         </Content>
       </Main>
@@ -87,6 +99,11 @@ const PostTitle = styled.h2`
   font-weight: var(--font-weight-extra-bold);
   margin-bottom: var(--sizing-md);
   line-height: 1.21875;
+
+  count {
+    font-size: 1.25rem;
+    color: gray;
+  }
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.75rem;
