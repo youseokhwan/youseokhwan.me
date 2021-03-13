@@ -37,12 +37,22 @@ var b = input[1]
 print(a, b) // 2 3
 ```
 
-이때, a와 b의 타입은 Substring임에 유의한다.
+여기서 a와 b의 타입은 Substring임에 유의한다.
 
 map을 이용해 캐스팅하면 더 편하게 사용할 수 있다.
 
 ```swift
+var input = readLine()!.split(separator: " ").map { Int($0)! }
+```
+
+이때, Substring을 Int로 바로 캐스팅하는 것보다 String을 거쳐서 캐스팅하는 것이 효율이 더 좋다.
+
+```swift
+// 표준 입력: 2 3
 var input = readLine()!.split(separator: " ").map { Int(String($0))! }
+var a = input[0]
+var b = input[1]
+print(a + b) // 5
 ```
 
 ### components(separatedBy:)
