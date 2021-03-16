@@ -1,6 +1,6 @@
 ---
 title: "Gatsby와 Netlify를 이용한 GitHub Blog 구축"
-category: "Others"
+category: "Blog"
 date: "2021-02-12 19:15:00 +09:00"
 desc: "Gatsby와 Netlify를 이용한 GitHub Blog 구축"
 ---
