@@ -1,15 +1,15 @@
 ---
-title: "Swift 상수와 변수"
+title: "상수와 변수"
 category: "Swift Tutorial"
 date: "2021-02-23 15:05:00 +09:00"
-desc: "Swift 상수와 변수"
+desc: "constants-variables"
 ---
 
 상수(constants)는 값이 설정되면 변경할 수 없고, 변수(variables)는 변경할 수 있다.
 
 ## 선언
 
-상수는 let 키워드, 변수는 var 키워드를 사용한다.
+상수는 `let` 키워드, 변수는 `var` 키워드를 사용한다.
 
 ```swift
 let birthday = "19970115"
@@ -40,16 +40,16 @@ type-safe 언어인 Swift는 선언 시 타입 추론과 초기화를 모두 하
 
 또한, 개발자의 의도대로 타입을 사용하려면 타입 주석을 사용해야 한다.
 
-Swift는 타입 주석이 없으면 정수는 Int 타입으로 추론한다. (실수는 Double로 추론)
+Swift는 타입 주석이 없으면 정수는 `Int` 타입으로 추론한다. (실수는 `Double`로 추론)
 
 ```swift
 var age = 25
 print(type(of: age)) // Int
 ```
 
-64비트 기준으로 Int의 최댓값은 약 922경인데, age 변수는 이렇게 큰 범위는 필요하지 않다.
+64비트 기준으로 `Int`의 최댓값은 약 922경인데, `age` 변수는 이렇게 큰 범위는 필요하지 않다.
 
-age를 Int8(최댓값 127)로 사용하고 싶다면 다음과 같이 타입 주석을 사용하면 된다.
+`age`를 `Int8`(최댓값 127)로 사용하고 싶다면 다음과 같이 타입 주석을 사용하면 된다.
 
 ```swift
 var age: Int8 = 25

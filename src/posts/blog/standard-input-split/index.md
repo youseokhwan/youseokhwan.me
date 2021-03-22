@@ -2,18 +2,18 @@
 title: "표준 입력 Split 하기"
 category: "Swift PS"
 date: "2021-03-11 23:40:00 +09:00"
-desc: "표준 입력 Split 하기"
+desc: "standard-input-split"
 ---
 
 백준의 경우 문제를 풀 때 표준 입출력을 사용한다.
 
-Swift에서 표준 입력은 보통 readLine()을 사용하는데, 개행(\n)을 만나면 입력이 종료된다.
+Swift에서 표준 입력은 보통 `readLine()`을 사용하는데, 개행(\n)을 만나면 입력이 종료된다.
 
 ## 한 줄에 한 개의 변수만 주어지는 경우
 
-한 줄에 한 개의 변수만 주어지는 경우는 입력받은 값을 Int로 캐스팅만 해주면 된다.
+한 줄에 한 개의 변수만 주어지는 경우는 입력받은 값을 `Int`로 캐스팅만 해주면 된다.
 
-problem solving에선 보통 입력값이 nil이 아님이 보장되므로 강제 언래핑(force-unwrap) 하였다.
+problem solving에선 보통 입력값이 `nil`이 아님이 보장되므로 강제 언래핑(force-unwrap) 하였다.
 
 ```swift
 var input = Int(readline()!)!
@@ -25,9 +25,9 @@ var input = Int(readline()!)!
 
 ### split(separator:)
 
-첫 번째는 split(separator:) 내장 함수를 사용하는 방법이다.
+첫 번째는 `split(separator:)` 내장 함수를 사용하는 방법이다.
 
-separator에는 split의 기준이 될 Character를 입력하면 된다.
+`separator`에는 `split`의 기준이 될 `Character`를 입력하면 된다.
 
 ```swift
 // 표준 입력: 2 3
@@ -37,15 +37,15 @@ var b = input[1]
 print(a, b) // 2 3
 ```
 
-여기서 a와 b의 타입은 Substring임에 유의한다.
+여기서 a와 b의 타입은 `Substring`임에 유의한다.
 
-map을 이용해 캐스팅하면 더 편하게 사용할 수 있다.
+`map`을 이용해 캐스팅하면 더 편하게 사용할 수 있다.
 
 ```swift
 var input = readLine()!.split(separator: " ").map { Int($0)! }
 ```
 
-이때, Substring을 Int로 바로 캐스팅하는 것보다 String을 거쳐서 캐스팅하는 것이 효율이 더 좋다.
+이때, `Substring`을 `Int`로 바로 캐스팅하는 것보다 `String`을 거쳐서 캐스팅하는 것이 효율이 더 좋다.
 
 ```swift
 // 표준 입력: 2 3
@@ -57,9 +57,9 @@ print(a + b) // 5
 
 ### components(separatedBy:)
 
-두 번째는 Foundation에 정의된 components(separatedBy:)를 사용하는 방법이다.
+두 번째는 `Foundation`에 정의된 `components(separatedBy:)`를 사용하는 방법이다.
 
-split(separator:)의 반환형은 [Substring]인 반면, 이 함수는 [String]으로 반환한다.
+`split(separator:)`의 반환형은 `[Substring]`인 반면, 이 함수는 `[String]`으로 반환한다.
 
 ```swift
 import Foundation

@@ -1,30 +1,30 @@
 ---
-title: "Swift 콘솔 로그 - print(), dump()"
+title: "Console Log"
 category: "Swift Tutorial"
 date: "2021-02-15 11:50:00 +09:00"
-desc: "Swift 콘솔 로그 - print(), dump()"
+desc: "console-log"
 ---
 
-Swift에서는 print()와 dump()를 이용해 콘솔 로그를 출력할 수 있다.
+Swift에서는 `print()`와 `dump()`를 이용해 콘솔 로그를 출력할 수 있다.
 
 ## print()
 
-print()는 Swift의 기본적인 출력 함수이다.
+`print()`는 Swift의 기본적인 출력 함수이다.
 
 ```swift
 print("Hello World!") // Hello World!
 ```
 
-print()는 여러 항목을 출력할 수 있다.
+`print()`는 여러 항목을 출력할 수 있다.
 
-separator는 각 항목 사이에 출력될 문자열이며, 기본값은 공백(" ")이다.
+`separator`는 각 항목 사이에 출력될 문자열이며, 기본값은 공백(" ")이다.
 
 ```swift
 print(3, 1.5, "hello") // 3 1.5 hello
 print("seoul", "incheon", "jeju", separator: "->") // seoul->incheon->jeju
 ```
 
-terminator는 모든 항목을 출력한 후 마지막에 출력되는 문자열이며, 기본값은 개행("\n")이다.
+`terminator`는 모든 항목을 출력한 후 마지막에 출력되는 문자열이며, 기본값은 개행("\n")이다.
 
 ```swift
 for i in 1...3 {
@@ -44,7 +44,7 @@ for i in 1...3 {
 
 ## dump()
 
-print()는 description 프로퍼티만 출력하는 반면, dump()는 좀 더 구체적인 내용을 출력한다.
+`print()`는 `description` 프로퍼티만 출력하는 반면, `dump()`는 좀 더 구체적인 내용을 출력한다.
 
 ```swift
 class Person {

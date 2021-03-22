@@ -1,11 +1,11 @@
 ---
-title: "Swift typealias"
+title: "typealias"
 category: "Swift Tutorial"
 date: "2021-03-16 19:10:00 +09:00"
-desc: "Swift typealias"
+desc: "typealias"
 ---
 
-typealias 키워드를 사용하면 타입의 별칭을 지정할 수 있다.
+`typealias`를 사용하면 타입의 별칭을 지정할 수 있다.
 
 별칭을 지정해놓으면 어디서든 별칭을 통해 원래 타입을 호출할 수 있다.
 

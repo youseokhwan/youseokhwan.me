@@ -1,8 +1,8 @@
 ---
-title: "Swift 기본 연산자"
+title: "기본 연산자"
 category: "Swift Tutorial"
 date: "2021-03-17 18:05:00 +09:00"
-desc: "Swift 기본 연산자"
+desc: "basic-operators"
 ---
 
 Swift 공식 문서에서는 연산자에 대한 내용을 'Basic Operators'와 'Advanced Operators'로 나누어 설명하고 있다.
@@ -13,13 +13,13 @@ Swift 공식 문서에서는 연산자에 대한 내용을 'Basic Operators'와 
 
 연산자는 단항 연산자(unary operators), 이항 연산자(binary operators), 삼항 연산자(ternary operators)로 구분할 수 있다.
 
-* 단항 연산자: 피연산자의 앞 혹은 뒤에 붙여 사용하는 연산자(-a, a!)
-* 이항 연산자: 두 개의 피연산자 사이에 사용하는 연산자(a + b)
-* 삼항 연산자: 세 개의 피연산자 사이에 사용하는 연산자(a ? b : c)
+* 단항 연산자: 피연산자의 앞 혹은 뒤에 붙여 사용하는 연산자(`-a`, `a!`)
+* 이항 연산자: 두 개의 피연산자 사이에 사용하는 연산자(`a + b`)
+* 삼항 연산자: 세 개의 피연산자 사이에 사용하는 연산자(`a ? b : c`)
 
 ## 대입 연산자(Assignment Operator)
 
-=을 사용하여 값을 초기화하거나 갱신할 수 있다.
+`=`을 사용하여 값을 초기화하거나 갱신할 수 있다.
 
 ```swift
 var a = 10
@@ -38,7 +38,7 @@ print(a - b) // 2
 print(a * b) // 15
 ```
 
-/ 연산자의 경우, 정수는 몫만 반환하므로 유의해야 한다.
+`/` 연산자의 경우, 정수는 몫만 반환하므로 유의해야 한다.
 
 ```swift
 print(3 / 2) // 1
@@ -47,14 +47,14 @@ print(3.0 / 2.0) // 1.5
 
 ### 나머지 연산(Remainder Operator)
 
-정수의 경우 % 연산자를 통해 나머지 연산을 할 수 있다.
+정수의 경우 `%` 연산자를 통해 나머지 연산을 할 수 있다.
 
 ```swift
 print(5 % 3) // 2
 print(-7 % 3) // -1
 ```
 
-부동소수점의 나머지 연산은 truncatingRemainder(dividingBy:) 메서드로 가능하다.
+부동소수점의 나머지 연산은 `truncatingRemainder(dividingBy:)` 메서드로 가능하다.
 
 ```swift
 print(5.0.truncatingRemainder(dividingBy: 1.5)) // 0.5
@@ -62,7 +62,7 @@ print(5.0.truncatingRemainder(dividingBy: 1.5)) // 0.5
 
 ### 단항 음수 연산(Unary Minus Operator)
 
--를 전위 연산자로 사용하여 부호를 변환할 수 있다.
+`-`를 전위 연산자로 사용하여 부호를 변환할 수 있다.
 
 ```swift
 var a = 2
@@ -79,7 +79,7 @@ a += 1
 print(a) // 6
 ```
 
-Swift는 ++, -- 연산자를 제공하지 않으니 주의한다.
+Swift는 `++`, `--` 연산자를 제공하지 않으니 주의한다.
 
 ```swift
 var a = 5
@@ -93,12 +93,12 @@ print(a) // 6
 
 Swift는 다음과 같은 비교 연산자들을 제공한다.
 
-* 같다(a == b)
-* 같지 않다(a != b)
-* 크다(a &gt; b)
-* 작다(a &lt; b)
-* 크거나 같다(a &gt;= b)
-* 작거나 같다(a &lt;= b)
+* 같다(`a == b`)
+* 같지 않다(`a != b`)
+* 크다(`a > b`)
+* 작다(`a < b`)
+* 크거나 같다(`a >= b`)
+* 작거나 같다(`a <= b`)
 
 ```swift
 print(5 == 5) // true
@@ -156,11 +156,11 @@ print(title ?? "Untitled") // Untitled
 
 Swift는 다음과 같은 범위 연산자를 제공한다.
 
-* a...b(a &lt;= x && x &lt;= b)
-* a..&lt;b(a &lt;= x && x &lt; b)
-* a...(a &lt;= x)
-* ...a(x &lt;= a)
-* ..&lt;a(x &lt; a)
+* `a...b`(`a <= x && x <= b`)
+* `a..<b`(`a <= x && x < b`)
+* `a...`(`a <= x`)
+* `...a`(`x <= a`)
+* `..<a`(`x < a`)
 
 ```swift
 for i in 1...5 {
@@ -181,9 +181,9 @@ print(range.contains(7)) // false
 
 Swift는 3가지 논리 연산자(불 연산자)를 지원한다.
 
-* NOT(!a)
-* AND(a && b)
-* OR(a || b)
+* NOT(`!a`)
+* AND(`a && b`)
+* OR(`a || b`)
 
 ```swift
 var condition = false

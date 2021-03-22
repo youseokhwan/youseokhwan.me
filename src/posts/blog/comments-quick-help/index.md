@@ -1,8 +1,8 @@
 ---
-title: "Swift 주석 및 퀵헬프"
+title: "주석 및 퀵헬프"
 category: "Swift Tutorial"
 date: "2021-02-19 02:30:00 +09:00"
-desc: "Swift 주석 및 퀵헬프"
+desc: "comments-quick-help"
 ---
 
 ## 주석
@@ -34,7 +34,7 @@ Swift의 주석(comments)은 C와 유사하다.
 
 퀵헬프(Quick Help)는 레퍼런스 문서의 요약된 내용을 보여주는 기능이다.
 
-원하는 항목을 option(⌥)과 함께 마우스로 클릭하거나,
+원하는 항목을 `option(⌥)`과 함께 마우스로 클릭하거나,
 
 ![quick-help-pop-up.png](/quick-help-pop-up.png)
 

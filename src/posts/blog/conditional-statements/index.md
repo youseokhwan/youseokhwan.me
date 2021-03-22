@@ -1,17 +1,17 @@
 ---
-title: "Swift 조건문"
+title: "조건문"
 category: "Swift Tutorial"
 date: "2021-03-21 12:40:00 +09:00"
-desc: "Swift 조건문"
+desc: "conditional-statements"
 ---
 
-Swift는 조건문으로 if와 switch를 제공한다.
+Swift는 조건문으로 `if`와 `switch`를 제공한다.
 
 ## if
 
-if는 조건식이 참일 때 코드 블록을 실행한다.
+`if`는 조건식이 참일 때 코드 블록을 실행한다.
 
-사용되는 키워드는 if, else if, else 3가지가 있으며 else if와 else는 생략할 수 있다.
+사용되는 키워드는 `if`, `else if`, `else` 3가지가 있으며 `else if`와 `else`는 생략할 수 있다.
 
 ```swift
 var age = 25
@@ -45,7 +45,7 @@ if age < 19 {
 
 ## switch
 
-switch는 여러 가지 패턴 중 처음으로 일치하는 패턴의 코드 블록을 실행한다.
+`switch`는 여러 가지 패턴 중 처음으로 일치하는 패턴의 코드 블록을 실행한다.
 
 ```swift
 var time = 12
@@ -62,13 +62,13 @@ default:
 }
 ```
 
-C나 Java의 경우 조건에 부합하는 case부터 break를 만날 때까지 이후 case를 계속 실행한다.
+C나 Java의 경우 조건에 부합하는 `case`부터 `break`를 만날 때까지 이후 `case`를 계속 실행한다.
 
-이와 다르게 Swift는 1개의 case 블록만 실행하고 switch를 종료한다.
+이와 다르게 Swift는 1개의 `case` 블록만 실행하고 `switch`를 종료한다.
 
-상위 반복문을 종료하고자 하는 것이 아니라면 break를 작성하지 않아야 한다.
+상위 반복문을 종료하고자 하는 것이 아니라면 `break`를 작성하지 않아야 한다.
 
-만약 여러 case를 동일한 코드 블록으로 처리하고 싶다면 case를 결합한다.
+만약 여러 `case`를 동일한 코드 블록으로 처리하고 싶다면 `case`를 결합한다.
 
 ```swift
 var alphabet = "o"
@@ -81,7 +81,7 @@ default:
 }
 ```
 
-C나 Java처럼 이후 case도 연속적으로 실행하고 싶다면 fallthrough 키워드를 사용한다.
+C나 Java처럼 이후 `case`도 연속적으로 실행하고 싶다면 `fallthrough` 키워드를 사용한다.
 
 ```swift
 var num = 3
@@ -98,7 +98,7 @@ default:
 print(output) // 3은 소수이면서 정수이다.
 ```
 
-또한, switch는 모든 경우의 수를 처리해야 한다.
+또한, `switch`는 모든 경우의 수를 처리해야 한다.
 
 예를 들어 다음의 코드는 모든 경우를 커버할 수 없으므로 컴파일 에러가 발생한다.
 
@@ -117,7 +117,7 @@ case .B:
 }
 ```
 
-default를 사용하여 예외를 처리하거나, 모든 경우의 case 구문을 작성해야 한다.
+`default` 구문을 사용하여 예외를 처리하거나, 모든 경우의 `case` 구문을 작성해야 한다.
 
 ## 참고
 
