@@ -18,6 +18,10 @@ const SEO = ({ description = '', meta = [], image = null, title }) => {
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
+          'http-equiv': 'Expires',
+          content: "Mon, 06 Jan 1990 00:00:01 GMT",
+        },
+        {
           name: 'description',
           content: metaDescription,
         },
