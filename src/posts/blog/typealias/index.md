@@ -1,5 +1,5 @@
 ---
-title: "typealias"
+title: "Typealias"
 category: "Swift Tutorial"
 date: "2021-03-16 19:10:00 +09:00"
 desc: "typealias"

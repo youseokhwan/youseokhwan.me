@@ -1,8 +1,8 @@
 ---
-title: "문자열(String)"
+title: "문자열(Strings)"
 category: "Swift Tutorial"
 date: "2021-03-15 17:20:00 +09:00"
-desc: "string"
+desc: "strings"
 ---
 
 ## 개요

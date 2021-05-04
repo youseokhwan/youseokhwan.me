@@ -1,8 +1,8 @@
 ---
-title: "배열(Array)"
+title: "배열(Arrays)"
 category: "Swift Tutorial"
 date: "2021-03-09 23:30:00 +09:00"
-desc: "collection-array"
+desc: "arrays"
 ---
 
 Swift의 컬렉션 타입 중 하나인 배열에 대해 알아보겠다.

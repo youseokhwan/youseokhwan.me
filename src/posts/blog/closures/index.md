@@ -1,11 +1,11 @@
 ---
-title: "클로저(closure)"
+title: "클로저(Closures)"
 category: "Swift Tutorial"
 date: "2021-04-06 12:30:00 +09:00"
-desc: "closure"
+desc: "closures"
 ---
 
-Swift의 클로저(closure)는 특정 기능을 하는 코드블록이며, 다른 언어의 람다와 유사하다.
+Swift의 클로저(closures)는 특정 기능을 하는 코드블록이며, 다른 언어의 람다와 유사하다.
 
 ## 클로저의 형태
 

@@ -1,8 +1,8 @@
 ---
-title: "딕셔너리(Dictionary)"
+title: "딕셔너리(Dictionaries)"
 category: "Swift Tutorial"
 date: "2021-03-13 23:05:00 +09:00"
-desc: "collection-dictionary"
+desc: "dictionaries"
 ---
 
 `Dictionary` 타입은 `key`와 `value`의 쌍으로 구성된 요소들을 저장하는 컬렉션 타입이다.

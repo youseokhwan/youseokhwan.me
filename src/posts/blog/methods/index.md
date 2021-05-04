@@ -1,17 +1,17 @@
 ---
-title: "메서드(method)"
+title: "메서드(Methods)"
 category: "Swift Tutorial"
 date: "2021-05-01 15:30:00 +09:00"
-desc: "method"
+desc: "methods"
 ---
 
-클래스나 구조체 내부에 있는 함수를 메서드(method)라고 한다.
+클래스나 구조체 내부에 있는 함수를 메서드(methods)라고 한다.
 
 Swift에서는 각 인스턴스에서 실행할 수 있는 인스턴스 메서드와 메모리를 공유하는 타입 메서드로 세분화한다.
 
 ## 인스턴스 메서드
 
-인스턴스 메서드(instance method)는 특정 클래스, 구조체의 인스턴스에 속한 메서드이다.
+인스턴스 메서드는 특정 클래스, 구조체의 인스턴스에 속한 메서드이다.
 
 ```swift
 class Counter {
@@ -62,7 +62,7 @@ counter.increment(count: 5) // count: 5
 
 ## 타입 메서드
 
-타입 메서드(type method)는 타입 자체에 속하는 메서드이다.
+타입 메서드는 타입 자체에 속하는 메서드이다.
 
 C의 `static` 개념과 유사하며, Swift에서는 `static`과 `class` 키워드를 사용한다.
 

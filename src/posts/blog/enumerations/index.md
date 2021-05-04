@@ -1,5 +1,5 @@
 ---
-title: "열거형(enum)"
+title: "열거형(Enumerations)"
 category: "Swift Tutorial"
 date: "2021-04-12 19:00:00 +09:00"
 desc: "enumerations"

@@ -1,8 +1,8 @@
 ---
-title: "세트(Set)"
+title: "세트(Sets)"
 category: "Swift Tutorial"
 date: "2021-03-10 14:30:00 +09:00"
-desc: "collection-set"
+desc: "sets"
 ---
 
 Swift의 컬렉션 타입 중 하나인 `Set`에 대해 알아보겠다.
