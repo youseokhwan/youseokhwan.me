@@ -5,7 +5,7 @@ date: "2021-02-23 15:05:00 +09:00"
 desc: "constants-variables"
 ---
 
-상수(constants)는 값이 설정되면 변경할 수 없고, 변수(variables)는 변경할 수 있다.
+상수<sup>Constants</sup>는 값이 설정되면 변경할 수 없고, 변수<sup>Variables</sup>는 변경할 수 있다.
 
 ## 선언
 
@@ -22,7 +22,7 @@ var age = 25
 
 ## Type Annotation
 
-Swift는 타입 주석(type annotation)을 통해 값의 타입을 명확히 할 수 있다.
+Swift는 타입 주석<sup>Type Annotation</sup>을 통해 값의 타입을 명확히 할 수 있다.
 
 ```swift
 let birthday: String = "19970115"

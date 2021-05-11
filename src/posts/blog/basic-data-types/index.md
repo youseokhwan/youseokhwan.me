@@ -9,9 +9,9 @@ desc: "basic-data-types"
 
 Swift도 `Int`, `Double`, `String` 등 익숙한 키워드를 사용하지만
 
-모두 구조체로 구현되어있기 때문에 primitive type은 아니며, 익스텐션을 사용할 수 있다.
+모두 구조체로 구현되어있기 때문에 원시 타입<sup>Primitive Types</sup>은 아니며, 익스텐션<sup>Extensions</sup>을 사용할 수 있다.
 
-모든 데이터 타입은 대문자 카멜케이스를 사용한다.
+모든 데이터 타입은 대문자 카멜 케이스<sup>Camel Case</sup>를 사용한다.
 
 ## Numbers
 
@@ -35,7 +35,7 @@ print(Int64.min, Int64.max)
 // -9223372036854775808 9223372036854775807
 ```
 
-`Int`의 크기는 현재 플랫폼의 word size에 맞게 조정된다.
+`Int`의 크기는 현재 플랫폼의 Word Size에 맞게 조정된다.
 
 예를 들어, 현재 이 글을 작성하고 있는 맥북은 64비트 플랫폼이므로 `Int`의 크기는 `Int64`와 같다.
 
@@ -49,7 +49,7 @@ print(Int64.min, Int64.max)
 
 꼭 필요한 경우가 아니라면 코드 일관성과 상호 운용성을 고려해 범용적인 `Int`를 사용하는 것이 좋다.
 
-또한 Swift는 unsigned type인 `UInt`, `UInt8`, `UInt16`, `UInt32`, `UInt64`도 지원한다.
+또한 Swift는 Unsigned 타입인 `UInt`, `UInt8`, `UInt16`, `UInt32`, `UInt64`도 지원한다.
 
 ### Floating-Point Numbers
 
@@ -59,7 +59,7 @@ print(Int64.min, Int64.max)
 
 `Float`은 32비트를 사용하며, 소수점 이하 6자리의 정밀도를 가진다.
 
-type annotation을 명시하지 않으면 부동소수점은 `Double`로 추론된다.
+Type Annotation을 명시하지 않으면 부동소수점은 `Double`로 추론된다.
 
 ```swift
 var floatPi: Float = 3.141592
@@ -82,7 +82,7 @@ var htmlIsProgrammingLanguage = false
 
 `Character`의 경우 큰따옴표로 감싸서 표현할 수 있으며, 유니코드를 지원한다.
 
-단, type annotation을 명시하지 않으면 `String`으로 추론되므로 주의해야 한다.
+단, Type Annotation을 명시하지 않으면 `String`으로 추론되므로 주의해야 한다.
 
 ```swift
 var smile: Character = "😊"
@@ -91,7 +91,7 @@ var sleep = "😪"
 print(type(of: sleep)) // String
 ```
 
-## String
+## Strings
 
 `String` 또한 큰따옴표로 감싸서 표현할 수 있다.
 
@@ -119,9 +119,9 @@ if str4 == str5 {
 
 `String` 타입은 양이 많고 중요한 내용이 있어 구체적인 내용은 [이 포스팅](https://youseokhwan.me/blog/string/)에서 다루도록 한다.
 
-## Tuple
+## Tuples
 
-튜플은 여러 데이터 타입을 결합한 데이터 타입이다.
+튜플<sup>Tuples</sup>은 여러 데이터 타입을 결합한 데이터 타입이다.
 
 모든 데이터 타입을 사용할 수 있고, 동일한 데이터 타입이 아니어도 된다.
 

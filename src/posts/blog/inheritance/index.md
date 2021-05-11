@@ -57,7 +57,7 @@ let s = Student("Alice", 25, "Computer Science")
 s.desc() // name: Alice, age: 25, major: Computer Science
 ```
 
-상속을 통해 기능을 재구현하는 것을 서브클래싱(subclassing)이라고도 한다.
+상속을 통해 기능을 재구현하는 것을 서브클래싱<sup>Subclassing</sup>이라고도 한다.
 
 ## 참고
 

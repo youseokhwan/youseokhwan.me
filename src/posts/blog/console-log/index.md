@@ -5,7 +5,7 @@ date: "2021-02-15 11:50:00 +09:00"
 desc: "console-log"
 ---
 
-Swift에서는 `print()`와 `dump()`를 이용해 콘솔 로그를 출력할 수 있다.
+Swift에서는 `print()`와 `dump()`를 이용해 콘솔 로그<sup>Console Log</sup>를 출력할 수 있다.
 
 ## print()
 

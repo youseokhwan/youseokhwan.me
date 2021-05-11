@@ -9,7 +9,7 @@ desc: "dictionaries"
 
 실제 사전에서 단어를 찾듯이, `key`를 통해 요소에 접근하여 `value`를 얻는 방식으로 사용한다.
 
-`Set`과 마찬가지로 순서가 없는 리스트(unordered list)이며, `key`는 중복될 수 없다.
+`Set`과 마찬가지로 순서가 없는 리스트<sup>Unordered List</sup>이며, `key`는 중복될 수 없다.
 
 ## 선언 및 초기화
 

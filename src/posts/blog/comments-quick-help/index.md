@@ -7,15 +7,15 @@ desc: "comments-quick-help"
 
 ## 주석
 
-Swift의 주석(comments)은 C와 유사하다.
+Swift의 주석<sup>Comments</sup>은 C와 유사하다.
 
-한 줄 주석(single-line comments)은 다음과 같이 사용한다.
+한 줄 주석<sup>Single-Line Comments</sup>은 다음과 같이 사용한다.
 
 ```swift
 // 이것은 한 줄 주석입니다.
 ```
 
-여러 줄 주석(multiline comments)은 다음과 같이 사용한다.
+여러 줄 주석<sup>Multiline Comments</sup>은 다음과 같이 사용한다.
 
 ```swift
 /* 이것은
@@ -32,7 +32,7 @@ Swift의 주석(comments)은 C와 유사하다.
 
 ## 퀵헬프
 
-퀵헬프(Quick Help)는 레퍼런스 문서의 요약된 내용을 보여주는 기능이다.
+퀵헬프<sup>Quick Help</sup>는 레퍼런스 문서의 요약된 내용을 보여주는 기능이다.
 
 원하는 항목을 `option(⌥)`과 함께 마우스로 클릭하거나,
 

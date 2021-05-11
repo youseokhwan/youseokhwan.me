@@ -35,7 +35,7 @@ for item in str {
 print(arr) // ["H", "e", "l", "l", "o"]
 ```
 
-인덱스를 사용하거나 일정 횟수를 반복하려면 범위(range)를 사용한다.
+인덱스를 사용하거나 일정 횟수를 반복하려면 범위<sup>Ranges</sup>를 사용한다.
 
 ```swift
 var arr = ["One", "Two", "Three", "Four", "Five"]
@@ -175,7 +175,7 @@ for i in 0..<10 {
 
 ## 레이블
 
-Swift는 제어문에 레이블을 붙여 구분할 수 있다.
+Swift는 제어문에 레이블<sup>Label</sup>을 붙여 구분할 수 있다.
 
 레이블을 사용하지 않고 중첩 loop를 중단하려면 [이러한 방법](https://m.blog.naver.com/PostView.nhn?blogId=upssuyo&logNo=80092174516&proxyReferer=https:%2F%2Fwww.google.com%2F)을 써야 한다.
 

@@ -5,7 +5,7 @@ date: "2021-04-20 19:50:00 +09:00"
 desc: "compare-structures-classes"
 ---
 
-구조체(structures)와 클래스(classes)는 둘 다 연관된 데이터를 그룹화하여 새로운 타입을 생성한다.
+구조체<sup>Structures</sup>와 클래스<sup>Classes</sup>는 둘 다 연관된 데이터를 그룹화하여 새로운 타입을 생성한다.
 
 또한 구성요소나 키워드 등 유사한 부분이 많은데, 2개의 공통점과 차이점을 알아보겠다.
 
@@ -14,17 +14,17 @@ desc: "compare-structures-classes"
 구조체와 클래스의 공통적인 기능은 다음과 같다.
 
 * 프로퍼티 및 메서드 정의
-* subscript 정의
-* 생성자(initializer) 정의
-* extension 사용 가능
-* protocol 사용 가능
+* 서브스크립트<sup>Subscripts</sup> 정의
+* 생성자<sup>Initializer</sup> 정의
+* 익스텐션<sup>Extensions</sup> 사용 가능
+* 프로토콜<sup>Protocols</sup> 사용 가능
 
 클래스만 할 수 있는 기능은 다음과 같다.
 
-* 상속
+* 상속<sup>Inheritance</sup>
 * 런타임에서 타입 캐스팅
-* 소멸자(deinitializer) 정의
-* reference counting: 한 인스턴스에 둘 이상의 참조 허용
+* 소멸자<sup>Deinitializer</sup> 정의
+* Reference Counting: 한 인스턴스에 둘 이상의 참조 허용
 
 ## 정의
 
@@ -68,7 +68,7 @@ pointClass.desc() // PointClass - w: 0, h: 0
 
 ## 값 타입과 참조 타입
 
-구조체는 값 타입(value types)이고, 클래스는 참조 타입(reference types)이다.
+구조체는 값 타입<sup>Value Types</sup>이고, 클래스는 참조 타입<sup>Reference Types</sup>이다.
 
 ### 구조체는 값 타입
 

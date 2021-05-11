@@ -5,7 +5,7 @@ date: "2021-03-26 16:20:00 +09:00"
 desc: "functions"
 ---
 
-함수(function)는 작업을 수행하는 단위이다.
+함수<sup>Functions</sup>는 작업을 수행하는 단위이다.
 
 다른 언어에 비해 Swift의 함수 표현 방법은 매우 다양하고, 함수 자체가 값으로 사용할 수 있는 일급 객체기 때문에 유의해야 한다.
 
@@ -69,7 +69,7 @@ printAdd(x: 2, y: 3) // 5
 
 ### 가변 매개변수를 가지는 함수
 
-매개변수의 타입 뒤에 `...`을 붙이면 가변 매개변수(variadic parameters)가 된다.
+매개변수의 타입 뒤에 `...`을 붙이면 가변 매개변수<sup>Variadic Parameters</sup>가 된다.
 
 ```swift
 func printSum(numbers: Int...) -> Int {
@@ -103,7 +103,7 @@ print(x) // 64.0
 
 ## Argument Label과 Parameter Name
 
-각 파라미터는 argument label과 parameter name을 가진다.
+각 파라미터는 Argument Label과 Parameter Name을 가진다.
 
 ```swift
 func hello(name str: String) -> String {
@@ -113,11 +113,11 @@ func hello(name str: String) -> String {
 print(hello(name: "Swift")) // Hello, Swift!
 ```
 
-위 함수의 경우 `name`은 `argument label`이고 `str`은 parameter name이다.
+위 함수의 경우 `name`은 Argument Label이고 `str`은 Parameter Name이다.
 
-argument label은 함수 호출 시 사용되는 이름이고, parameter name은 함수 안에서 사용되는 이름이다.
+Argument Label은 함수 호출 시 사용되는 이름이고, Parameter Name은 함수 안에서 사용되는 이름이다.
 
-함수의 이름과 argument label이 같으면 같은 함수로 분류하며, 함수를 지칭할 때도 argument label을 포함하여 지칭한다.
+함수의 이름과 Argument Label이 같으면 같은 함수로 분류하며, 함수를 지칭할 때도 Argument Label을 포함하여 지칭한다.
 
 예를 들어 `hello(name:)`과 `hello(word:)`는 다른 함수로 간주한다.
 
@@ -131,7 +131,7 @@ func hello(word str: String) -> String {
 }
 ```
 
-만약 argument label을 명시하고 싶지 않다면 `underscore(_)`를 이용해 와일드카드로 만들 수 있다.
+만약 Argument Label을 명시하고 싶지 않다면 `underscore(_)`를 이용해 와일드카드로 만들 수 있다.
 
 ```swift
 func hello(_ str: String) -> String {

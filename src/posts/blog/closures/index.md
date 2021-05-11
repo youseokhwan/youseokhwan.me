@@ -5,7 +5,7 @@ date: "2021-04-06 12:30:00 +09:00"
 desc: "closures"
 ---
 
-Swift의 클로저(closures)는 특정 기능을 하는 코드블록이며, 다른 언어의 람다와 유사하다.
+Swift의 클로저<sup>Closures</sup>는 특정 기능을 하는 코드블록이며, 다른 언어의 람다와 유사하다.
 
 ## 클로저의 형태
 
@@ -91,9 +91,9 @@ print(reversedNames) // ["Ewa", "Daniella", "Chris", "Barry", "Alex"]
 
 ### 후위 클로저
 
-마지막 파라미터가 클로저라면 후위 클로저(trailing closure) 형태로 작성할 수 있다.
+마지막 파라미터가 클로저라면 후위 클로저<sup>Trailing Closures</sup> 형태로 작성할 수 있다.
 
-argument label인 `by`를 생략하고, `{}`를 뒤로 보낸다.
+Argument Label인 `by`를 생략하고, `{}`를 뒤로 보낸다.
 
 ```swift
 let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
@@ -111,7 +111,7 @@ print(reversedNames) // ["Ewa", "Daniella", "Chris", "Barry", "Alex"]
 
 ## 값 캡처
 
-클로저는 주변 컨텍스트의 상수나 변수의 참조를 캡처할 수 있다.
+클로저는 주변 컨텍스트의 상수나 변수의 참조를 캡처<sup>Capture</sup>할 수 있다.
 
 이는 원본 값이 더이상 존재하지 않더라도 값을 얻거나 수정할 수 있음을 의미한다.
 

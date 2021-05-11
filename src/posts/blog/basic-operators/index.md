@@ -11,7 +11,7 @@ Swift 공식 문서에서는 연산자에 대한 내용을 'Basic Operators'와 
 
 ## 용어(Terminology)
 
-연산자는 단항 연산자(unary operators), 이항 연산자(binary operators), 삼항 연산자(ternary operators)로 구분할 수 있다.
+연산자는 단항 연산자<sup>Unary Operators</sup>, 이항 연산자<sup>Binary Operators</sup>, 삼항 연산자<sup>Ternary Operators</sup>로 구분할 수 있다.
 
 * 단항 연산자: 피연산자의 앞 혹은 뒤에 붙여 사용하는 연산자(`-a`, `a!`)
 * 이항 연산자: 두 개의 피연산자 사이에 사용하는 연산자(`a + b`)

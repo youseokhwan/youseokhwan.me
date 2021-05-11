@@ -5,7 +5,7 @@ date: "2021-04-12 19:00:00 +09:00"
 desc: "enumerations"
 ---
 
-열거형(enumerated type)은 관련된 값을 그룹으로 묶어 안정성을 보장해주는 타입이다.
+열거형<sup>Enumerated Types</sup>은 관련된 값을 그룹으로 묶어 안정성을 보장해주는 타입이다.
 
 ## 문법
 
@@ -64,7 +64,7 @@ case .Sat, .Sun:
 
 ## Associated Values
 
-associated value를 이용하여 한 열거형 안에 다른 타입의 `case`를 정의할 수 있다.
+연관 값<sup>Associated Values</sup>를 이용하여 한 열거형 안에 다른 타입의 `case`를 정의할 수 있다.
 
 ```swift
 enum MyEnum {

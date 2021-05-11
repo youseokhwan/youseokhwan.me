@@ -7,9 +7,9 @@ desc: "permutation-combination"
 
 ## 개념
 
-순열(Permutation)은 서로 다른 `n`개의 원소에서 `r`개를 순서에 상관있게 나열한 것이며,
+순열<sup>Permutation</sup>은 서로 다른 `n`개의 원소에서 `r`개를 순서에 상관있게 나열한 것이며,
 
-조합(Combination)은 서로 다른 `n`개의 원소에서 `r`개를 순서에 상관없이 나열한 것이다.
+조합<sup>Combination</sup>은 서로 다른 `n`개의 원소에서 `r`개를 순서에 상관없이 나열한 것이다.
 
 각각 머리글자를 따서 `nPr`, `nCr`로 표현한다.
 
