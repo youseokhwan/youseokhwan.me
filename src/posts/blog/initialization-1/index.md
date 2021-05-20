@@ -125,6 +125,8 @@ var p2 = Person(name: "", age: 25)
 print(p2?.name ?? "nil") // nil
 ```
 
+[초기화(Initialization) ②](https://youseokhwan.me/blog/initialization-2/)
+
 ## 참고
 
 1. [https://docs.swift.org/swift-book/LanguageGuide/Initialization.html](https://docs.swift.org/swift-book/LanguageGuide/Initialization.html)
