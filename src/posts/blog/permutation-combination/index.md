@@ -71,32 +71,35 @@ print(combination) // [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]
 재귀로 구현하면 위의 단점을 보완할 수 있다.
 
 ```swift
-func getPermutation(_ _arr: [Int], _ r: Int, _ depth: Int = 0) {
-    var arr = _arr
-    
-    if depth == r {
-        permutation.append(Array(arr[0..<r]))
+import Foundation
+
+func getPermutation<T>(_ arr: [T], _ n: Int, _ depth: Int, _ res: inout [[T]]) {
+    if depth == n {
+        res.append(Array(arr[0..<depth]))
         return
     }
     
+    var arr = arr
+    
     for i in depth..<arr.count {
-        arr.swapAt(i, depth)
-        getPermutation(arr, r, depth + 1)
-        arr.swapAt(i, depth)
+        arr.swapAt(depth, i)
+        getPermutation(arr, n, depth + 1, &res)
+        arr.swapAt(depth, i)
     }
 }
 
-let arr = [1, 2, 3, 4]
-var permutation = [[Int]]()
-getPermutation(arr, 3)
+let arr = ["A", "B", "C", "D"]
+let n = 2
 
-print("count: \(permutation.count)") // count: 24
-print(permutation)
+var res = [[String]]()
+getPermutation(arr, n, 0, &res)
+
+print(res.count) // 12
+print(res)
 /*
- [[1, 2, 3], [1, 2, 4], [1, 3, 2], [1, 3, 4], [1, 4, 3], [1, 4, 2],
- [2, 1, 3], [2, 1, 4], [2, 3, 1], [2, 3, 4], [2, 4, 3], [2, 4, 1],
- [3, 2, 1], [3, 2, 4], [3, 1, 2], [3, 1, 4], [3, 4, 1], [3, 4, 2],
- [4, 2, 3], [4, 2, 1], [4, 3, 2], [4, 3, 1], [4, 1, 3], [4, 1, 2]]
+ [["A", "B"], ["A", "C"], ["A", "D"], ["B", "A"],
+ ["B", "C"], ["B", "D"], ["C", "B"], ["C", "A"],
+ ["C", "D"], ["D", "B"], ["D", "C"], ["D", "A"]]
  */
 ```
 
