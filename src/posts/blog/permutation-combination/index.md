@@ -73,26 +73,26 @@ print(combination) // [[1, 2, 3], [1, 2, 4], [1, 3, 4], [2, 3, 4]]
 ```swift
 import Foundation
 
-func getPermutation<T>(_ arr: [T], _ n: Int, _ depth: Int, _ res: inout [[T]]) {
-    if depth == n {
-        res.append(Array(arr[0..<depth]))
+func getPermutation<T>(_ arr: [T], _ r: Int, _ res: inout [[T]], _ idx: Int = 0) {
+    if idx == r {
+        res.append(Array(arr[0..<idx]))
         return
     }
     
     var arr = arr
     
-    for i in depth..<arr.count {
-        arr.swapAt(depth, i)
-        getPermutation(arr, n, depth + 1, &res)
-        arr.swapAt(depth, i)
+    for i in idx..<arr.count {
+        arr.swapAt(idx, i)
+        getPermutation(arr, r, &res, idx + 1)
+        arr.swapAt(idx, i)
     }
 }
 
 let arr = ["A", "B", "C", "D"]
-let n = 2
+let r = 2
 
 var res = [[String]]()
-getPermutation(arr, n, 0, &res)
+getPermutation(arr, r, &res)
 
 print(res.count) // 12
 print(res)
@@ -103,31 +103,55 @@ print(res)
  */
 ```
 
+1. `[A, B, C, D]`를 입력받고 탐색을 시작한다.
+2. 첫 번째 원소인 `A`를 다른 원소들과 스왑하고 재귀 호출한다.<br>
+`[A, B, C, D]`, `[B, A, C, D]`, `[C, B, A, D]`, `[D, B, C, A]`<br>
+첫 번째 위치한 원소는 확정된 것이므로 나머지에서 `r - 1`개 만큼 선택하면 된다.
+3. 호출된 4개 함수 중 `[C, B, A, D]`를 기준으로 살펴보면,<br>
+두 번째 원소까지 확정하여 `[C, B]`가 확정된 상태이다.<br>
+`r`개 만큼 확정을 지었으므로 `res`에 추가한 뒤 함수를 종료한다.
+4. 각 재귀 함수들은 DFS와 비슷한 느낌으로 요소를 확정지으며 순열을 구할 수 있다.
+
 ```swift
-func getCombination(_ _arr: [Int], _ tempR: Int, _ index: Int = 0, _ target: Int = 0) {
-    var arr = _arr
+import Foundation
+
+func getCombination<T>(_ arr: [T], _ r: Int, _ res: inout [[T]], _ now: [T] = [T]()) {
+    let n = arr.count
+
+    guard n > 0 else { return }
     
-    if tempR == 0 {
-        combination.append(Array(arr[0..<r]))
-    } else if target == arr.count {
-        return
+    if r == 0 {
+        res.append(now)
+    } else if n == r {
+        res.append(now + arr)
     } else {
-        arr[index] = target
-        getCombination(arr, tempR - 1, index + 1, target + 1)
-        getCombination(arr, tempR, index, target + 1)
+        getCombination(Array(arr[1...]), r - 1, &res, now + [arr.first!])
+        getCombination(Array(arr[1...]), r, &res, now)
     }
 }
 
-let arr = [1, 2, 3, 4]
-let r = 3
-var combination = [[Int]]()
-getCombination(arr, r)
+let arr = ["A", "B", "C", "D"]
+let r = 2
+var res = [[String]]()
 
-print("count: \(combination.count)") // count: 4
-print(combination) // [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]]
+getCombination(arr, r, &res)
+
+print(res.count) // 6
+print(res)
+/*
+ [["A", "B"], ["A", "C"], ["A", "D"],
+ ["B", "C"], ["B", "D"], ["C", "D"]]
+ */
 ```
+
+1. `[A, B, C, D]`를 입력받고 탐색을 시작한다.
+2. 첫 번째 원소인 `A`를 확정한 경우와 그렇지 않은 경우 2가지로 나누어 재귀 호출한다.<br>
+전자는 나머지 `[B, C, D]`에서 `r - 1`개를 선택하면 되고, 후자는 `[B, C, D]`에서 `r`개를 선택하면 된다.
+3. `r`이 0이 되는 경우는 더이상 선택할 필요가 없으므로 `now`를 추가하고 함수를 종료한다.
+4. `n`과 `r`이 같은 경우는 모든 요소를 선택하면 되므로 `now`와 입력받은 `arr`을 더하여 추가학고 함수를 종료한다.
+5. 재귀 함수들이 종료되면 최종적으로 조합을 구할 수 있다.
 
 ## 참고
 
-1. [https://aerocode.net/376](https://aerocode.net/376)
-2. [https://gorakgarak.tistory.com/522](https://gorakgarak.tistory.com/522)
+1. [https://github.com/raywenderlich/swift-algorithm-club/tree/master/Combinatorics](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Combinatorics)
+2. [https://minusi.tistory.com/entry/%EC%88%9C%EC%97%B4-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Permutation-Algorithm](https://minusi.tistory.com/entry/%EC%88%9C%EC%97%B4-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Permutation-Algorithm)
