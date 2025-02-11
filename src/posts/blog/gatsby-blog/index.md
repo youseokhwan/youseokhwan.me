@@ -2,9 +2,8 @@
 title: "Gatsby 블로그 구축"
 category: "Blog"
 date: "2025-02-11 17:00:00 +09:00"
-desc: "Gatsby 블로그 구축"
+desc: "gatsby-blog"
 thumbnail: "../images/default.jpg"
-alt: "apple big sur gradient"
 ---
 
 Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스텀해보고싶은 부분들이 있어서 GitHub Blog를 구축해보기로 했다.
@@ -17,9 +16,9 @@ GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Ga
 
 테마는 디자인이 가장 마음에 드는 [gatsby-starter-apple](https://github.com/sungik-choi/gatsby-starter-apple)로 결정했다.
 
-## Gatsby 프로젝트 클론 및 로컬에서 실행하기
+## Gatsby Repository 클론 및 로컬에서 실행하기
 
-먼저 기반이 되는 demo repository를 `clone`한다.<br>
+먼저 기반이 되는 Repository를 `clone`한다.<br>
 `gatsby-cli` 패키지를 설치하면 `gatsby` 명령어를 사용할 수 있다.
 
 ```bash
