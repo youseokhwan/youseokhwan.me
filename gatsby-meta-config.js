@@ -24,7 +24,7 @@ const metaConfig = {
   lang: "en",
   utterances: "sungik-choi/gatsby-starter-apple-comment",
   links: {
-    github: "https://github.com/youseokhwan/youseokhwan.github.io",
+    github: "https://github.com/youseokhwan",
   },
   favicon: "src/images/icon.png",
 }
