@@ -35,7 +35,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                     <Time dateTime={date!}>{date}</Time>
                   </Info>
                   <Title>{title}</Title>
-                  <Desc>{desc}</Desc>
+                  {/* <Desc>{desc}</Desc> */}
                 </header>
                 <Divider />
                 <Markdown
