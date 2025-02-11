@@ -22,7 +22,7 @@ GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Ga
 먼저 기반이 되는 demo repository를 `clone`한다.<br>
 `gatsby-cli` 패키지를 설치하면 `gatsby` 명령어를 사용할 수 있다.
 
-```zsh
+```bash
 npm install -g gatsby-cli
 gatsby new my-blog https://github.com/sungik-choi/gatsby-starter-apple
 ```
@@ -33,7 +33,7 @@ gatsby new my-blog https://github.com/sungik-choi/gatsby-starter-apple
 
 이후 필요한 모듈을 설치하면, 로컬에서 실행해볼 수 있다.
 
-```zsh
+```bash
 npm install
 gatsby develop
 ```
@@ -43,10 +43,10 @@ UI를 변경하거나, 포스트를 작성하면서 중간중간 결과물을 �
 
 ## Repository 생성 및 remote 연결
 
-`GitHub Pages`와의 연동을 위해 이름이 `youseokhwan.github.io`인 Repository를 생성한다.<br>
-로컬 디렉토리인 `my-blog`와 이 repository를 연결해준다.
+`GitHub Pages` 연동을 위해 이름이 `youseokhwan.github.io`인 Repository를 생성한다.<br>
+로컬 디렉토리인 `my-blog`와 이 Repository를 연결한다.
 
-```zsh
+```bash
 rm -rf .git
 git init
 git add .
@@ -69,7 +69,7 @@ git push -u origin main
 
 빌드된 파일들을 관리하기 위한 `deploy` 브랜치를 만들어준다.
 
-```zsh
+```bash
 git switch -c deploy
 git push -u origin deploy
 ```
@@ -82,7 +82,7 @@ Repository의 `Settings` > `Pages`에서 publish의 대상이 될 브랜치를 `
 
 `GitHub Pages` 배포를 도와주는 `gh-pages` 패키지를 설치한다.
 
-```zsh
+```bash
 npm install -g gh-pages
 ```
 
@@ -99,7 +99,7 @@ npm install -g gh-pages
 
 `deploy` 명령어를 실행해주면, 자동으로 push된 것을 확인할 수 있다.
 
-```zsh
+```bash
 npm run deploy
 ```
 
@@ -108,6 +108,8 @@ npm run deploy
 잠시 기다리면 [https://youseokhwan.github.io](https://youseokhwan.github.io)에 정상적으로 배포된 것을 확인할 수 있다.
 
 ![06.png](06.png)
+
+---
 
 ### 참고
 
