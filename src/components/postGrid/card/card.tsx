@@ -18,7 +18,6 @@ const Card: React.FC<CardProperties> = ({
   alt,
   category,
   title,
-  desc,
   date,
 }) => {
   return (
@@ -28,7 +27,6 @@ const Card: React.FC<CardProperties> = ({
         <div>
           <Category>{category}</Category>
           <Title>{title}</Title>
-          <Desc>{desc}</Desc>
         </div>
         <DateTime dateTime={date!}>{date}</DateTime>
       </Text>
