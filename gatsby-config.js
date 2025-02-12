@@ -167,21 +167,13 @@ const pwaPlugins = [
       short_name: meta.title,
       description: meta.description,
       lang: meta.lang,
-      start_url: "/",
+      start_url: `/?v=${new Date().getTime()}`,
       background_color: "#ffffff",
       theme_color: "#ffffff",
       display: "standalone",
       icon: meta.favicon,
       icon_options: {
         purpose: "any maskable",
-      },
-    },
-  },
-  {
-    resolve: "gatsby-plugin-offline",
-    options: {
-      workboxConfig: {
-        skipWaiting: true,
       },
     },
   },
