@@ -177,7 +177,14 @@ const pwaPlugins = [
       },
     },
   },
-  // "gatsby-plugin-offline",
+  {
+    resolve: "gatsby-plugin-offline",
+    options: {
+      workboxConfig: {
+        skipWaiting: true,
+      },
+    },
+  },
 ]
 
 module.exports = {
