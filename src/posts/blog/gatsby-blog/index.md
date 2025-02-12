@@ -108,10 +108,32 @@ npm run deploy
 
 ![06.png](06.png)
 
+## 커스텀 도메인 연결
+
+가지고 있는 도메인이 있다면 연결할 수 있다.<br>
+가비아에서 구매한 `youseokhwan.me`라는 도메인을 이 블로그와 연결하였다.
+
+먼저, 가비아에서 DNS를 다음과 같이 설정한다.
+
+![07.png](07.png)
+
+4개의 IP주소는 GitHub Pages에서 제공하는 공식 A 레코드 IP주소이다.<br>
+CNAME 설정은 `www.youseokhwan.me`를 `youseokhwan.github.io`로 리다이렉트하는 역할을 한다.
+
+이후, Repository의 `Settings` > `Pages`에서 Custom Domain에 `youseokhwan.me`를 입력하고 save 버튼을 눌러준다.<br>
+그 밑에 `Enforce HTTPS`도 체크하여 HTTPS도 설정해준다.
+
+![08.png](08.png)
+
+잠시 기다리면 [youseokhwan.me](https://youseokhwan.me)로도 잘 접속되는 것을 확인할 수 있다.
+
+![09.png](09.png)
+
 ---
 
 ### 참고
 
+* https://github.com/sungik-choi/gatsby-starter-apple
 * https://velog.io/@gparkkii/build-gatsby-blog
 * https://devfoxstar.github.io/web/github-pages-gatsby/
-* https://github.com/sungik-choi/gatsby-starter-apple
+* https://velog.io/@developer_khj/Portfolio-GitHub-Pages-Custom-Domain-with-Gabia
