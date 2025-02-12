@@ -125,9 +125,19 @@ CNAME 설정은 `www.youseokhwan.me`를 `youseokhwan.github.io`로 리다이렉�
 
 ![08.png](08.png)
 
-잠시 기다리면 [youseokhwan.me](https://youseokhwan.me)로도 잘 접속되는 것을 확인할 수 있다.
+잠시 기다리면 [youseokhwan.me](https://youseokhwan.me)로 잘 접속되는 것을 확인할 수 있다.
 
 ![09.png](09.png)
+
+GitHub Actions로 자동 배포하고 있다면 설정한 커스텀 도메인이 풀리는 현상이 있을 수 있다.<br>
+[이 글](https://velog.io/@developer_khj/Portfolio-GitHub-Pages-Custom-Domain-with-Gabia)의 도움을 받아 `deploy` script를 수정하여 해결했다. 🙏
+
+```json
+"scripts": {
+    "deploy": "gatsby build && echo 'youseokhwan.me' > ./public/CNAME && gh-pages -d public -b deploy",
+    // ...
+}
+```
 
 ---
 
