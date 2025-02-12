@@ -2,7 +2,7 @@
 title: "Gatsby 블로그 구축"
 category: "Blog"
 date: "2025-02-11 17:00:00 +09:00"
-desc: "gatsby-blog"
+desc: "Gatsby와 GitHub Pages로 블로그 배포하기"
 thumbnail: "../../../../src/images/gatsby.png"
 ---
 
