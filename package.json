@@ -7,7 +7,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "deploy": "gatsby build && gh-pages -d public -b deploy",
+    "deploy": "gatsby build && echo 'youseokhwan.me' > ./public/CNAME && gh-pages -d public -b deploy",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
