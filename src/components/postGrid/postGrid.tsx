@@ -34,7 +34,7 @@ const PostGrid: React.FC<PostGridProperties> = ({ posts }) => {
                 thumbnail={thumbnail}
                 category={category}
                 title={title}
-                // desc={desc}
+                desc={desc}
                 date={date}
               />
             </Link>
