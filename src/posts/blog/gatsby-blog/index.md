@@ -8,6 +8,8 @@ thumbnail: "../../../../src/images/gatsby.png"
 
 Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스텀해보고싶은 부분들이 있어서 GitHub Blog를 구축해보기로 했다.
 
+---
+
 ## Gatsby란?
 
 `Gatsby`는 정적 사이트 생성기이다.<br>
@@ -15,6 +17,8 @@ GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Ga
 ~~그나마~~ React가 좀 더 친숙했기에 `Gatsby`를 선택했다.
 
 테마는 디자인이 가장 마음에 드는 [gatsby-starter-apple](https://github.com/sungik-choi/gatsby-starter-apple)로 결정했다.
+
+---
 
 ## Gatsby Repository 클론 및 로컬에서 실행하기
 
@@ -40,6 +44,8 @@ gatsby develop
 브라우저에 [http://localhost:8000/](http://localhost:8000/)을 입력하여 접속할 수 있고,<br>
 UI를 변경하거나, 포스트를 작성하면서 중간중간 결과물을 확인할 수 있다.
 
+---
+
 ## Repository 생성 및 remote 연결
 
 `GitHub Pages` 연동을 위해 이름이 `youseokhwan.github.io`인 Repository를 생성한다.<br>
@@ -54,6 +60,8 @@ git remote add origin https://github.com/youseokhwan/youseokhwan.github.io
 git push -u origin main
 ```
 
+---
+
 ## 포스트 작성
 
 포스트는 `src/posts/blog/` 경로에 마크다운 파일을 추가하는 방식으로 작성할 수 있다.
@@ -63,6 +71,8 @@ git push -u origin main
 ![02.png](02.png)
 
 ![03.png](03.png)
+
+---
 
 ## 배포 전용 브랜치 설정
 
@@ -76,6 +86,8 @@ git push -u origin deploy
 Repository의 `Settings` > `Pages`에서 publish의 대상이 될 브랜치를 `deploy`로 설정하고 save 버튼을 눌러준다.
 
 ![04.png](04.png)
+
+---
 
 ## gh-pages 패키지 설치 및 배포 스크립트 작성
 
@@ -107,6 +119,8 @@ npm run deploy
 잠시 기다리면 [https://youseokhwan.github.io](https://youseokhwan.github.io)에 정상적으로 배포된 것을 확인할 수 있다.
 
 ![06.png](06.png)
+
+---
 
 ## 커스텀 도메인 연결
 
