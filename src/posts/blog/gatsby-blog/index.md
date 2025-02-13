@@ -66,11 +66,11 @@ git push -u origin main
 
 포스트는 `src/posts/blog/` 경로에 마크다운 파일을 추가하는 방식으로 작성할 수 있다.
 
-![01.png](01.png)
+![new_post_01.png](new_post_01.png)
 
-![02.png](02.png)
+![new_post_02.png](new_post_02.png)
 
-![03.png](03.png)
+![new_post_03.png](new_post_03.png)
 
 ---
 
@@ -85,7 +85,7 @@ git push -u origin deploy
 
 Repository의 `Settings` > `Pages`에서 publish의 대상이 될 브랜치를 `deploy`로 설정하고 save 버튼을 눌러준다.
 
-![04.png](04.png)
+![deploy_branch.png](deploy_branch.png)
 
 ---
 
@@ -114,11 +114,11 @@ npm install -g gh-pages
 npm run deploy
 ```
 
-![05.png](05.png)
+![gh_pages_01.png](gh_pages_01.png)
 
 잠시 기다리면 [https://youseokhwan.github.io](https://youseokhwan.github.io)에 정상적으로 배포된 것을 확인할 수 있다.
 
-![06.png](06.png)
+![gh_pages_02.png](gh_pages_02.png)
 
 ---
 
@@ -129,7 +129,7 @@ npm run deploy
 
 먼저, 가비아에서 DNS를 다음과 같이 설정한다.
 
-![07.png](07.png)
+![custom_domain_01.png](custom_domain_01.png)
 
 4개의 IP주소는 GitHub Pages에서 제공하는 공식 A 레코드 IP주소이다.<br>
 CNAME 설정은 `www.youseokhwan.me`를 `youseokhwan.github.io`로 리다이렉트하는 역할을 한다.
@@ -137,11 +137,11 @@ CNAME 설정은 `www.youseokhwan.me`를 `youseokhwan.github.io`로 리다이렉�
 이후, Repository의 `Settings` > `Pages`에서 Custom Domain에 `youseokhwan.me`를 입력하고 save 버튼을 눌러준다.<br>
 그 밑에 `Enforce HTTPS`도 체크하여 HTTPS도 설정해준다.
 
-![08.png](08.png)
+![custom_domain_02.png](custom_domain_02.png)
 
 잠시 기다리면 [youseokhwan.me](https://youseokhwan.me)로 잘 접속되는 것을 확인할 수 있다.
 
-![09.png](09.png)
+![custom_domain_03.png](custom_domain_03.png)
 
 GitHub Actions로 자동 배포하고 있다면 설정한 커스텀 도메인이 풀리는 현상이 있을 수 있다.<br>
 [이 글](https://velog.io/@developer_khj/Portfolio-GitHub-Pages-Custom-Domain-with-Gabia)의 도움을 받아 `deploy` script를 수정하여 해결했다. 🙏

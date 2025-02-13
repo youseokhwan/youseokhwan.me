@@ -68,7 +68,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 `시스템 설정` > `손쉬운 사용` > `포인터 제어` > `트랙패드 옵션...` > `드래그 스타일`을 `세 손가락으로 드래그하기`로 설정한다.<br>
 드래그할 때 피로도를 상당히 줄여주기 때문에 꼭 추천하는 설정이다.
 
-![drag-style.png](drag-style.png)
+![drag_style.png](drag_style.png)
 
 주의할 점은, 기존에 세 손가락으로 제스처하는 기능들은 네 손가락으로 해야한다.<br>
 적응하는 데 큰 불편함은 없었다. (Mission Control, Launchpad, 데스크톱 전환 등)
@@ -78,7 +78,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 우하단으로 마우스를 가져가면 빠른 메모 기능을 쓸 수 있지만,<br>
 원치 않게 실행되는 경우가 많아서 `시스템 설정` > `데스크탑 및 Dock` > `핫 코너...`에서 `빠른 메모`를 `-`로 바꾸어 해제했다.
 
-![hot-corner.png](hot-corner.png)
+![hot_corner.png](hot_corner.png)
 
 ### Diacritics 선택 팝업 비활성화
 
@@ -112,7 +112,7 @@ Alfred 5를 사용하면 스포트라이트가 거의 필요없기 때문에 스
 `Features` > `Default Results`에서 `Search all file types`를 체크하면 모든 파일에 대한 결과를 보여주기 때문에 검색이 매우 편해진다.<br>
 성능 저하에 대한 경고 문구가 있지만, 인텔 맥을 사용할 때에도 버벅거림을 느껴본 적은 거의 없어서 그냥 사용하고 있다.
 
-![alfred5-features.png](alfred5-features.png)
+![alfred5_features.png](alfred5_features.png)
 
 이 외에도 웹이나 사전 검색을 커스텀할 수 있고, 유료 기능을 이용하면 workflows 자동화, 클립보드 관리 등 강력한 기능을 이용할 수 있다.
 
