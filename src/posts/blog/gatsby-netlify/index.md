@@ -1,6 +1,6 @@
 ---
 title: "GitHub 블로그 구축하기"
-category: "blog"
+category: "Blog"
 date: "2025-02-11 17:00:00 +09:00"
 desc: "Gatsby와 Netlify로 블로그 구축하기"
 thumbnail: "../../../../src/images/gatsby.png"
@@ -141,4 +141,3 @@ DNS가 올바르게 설정되었다면 자동으로 `Let's Encrypt SSL` 인증�
 
 - https://www.gatsbyjs.com/docs/quick-start/
 - https://github.com/sungik-choi/gatsby-starter-apple
-- https://www.netlify.com/
