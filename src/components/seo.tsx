@@ -77,18 +77,6 @@ const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
             property: "twitter:image",
             content: ogImageUrl,
           },
-          {
-            "http-equiv": "Expires",
-            content: "-1",
-          },
-          {
-            "http-equiv": "Cache-Control",
-            content: "no-cache",
-          },
-          {
-            "http-equiv": "Pragma",
-            content: "no-cache",
-          },
         ] as Meta
       }
     />

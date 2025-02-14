@@ -167,7 +167,7 @@ const pwaPlugins = [
       short_name: meta.title,
       description: meta.description,
       lang: meta.lang,
-      start_url: `/?v=${new Date().getTime()}`,
+      start_url: "/",
       background_color: "#ffffff",
       theme_color: "#ffffff",
       display: "standalone",
@@ -176,6 +176,7 @@ const pwaPlugins = [
         purpose: "any maskable",
       },
     },
+    "gatsby-plugin-offline",
   },
 ]
 
