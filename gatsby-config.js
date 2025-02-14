@@ -176,8 +176,8 @@ const pwaPlugins = [
         purpose: "any maskable",
       },
     },
-    "gatsby-plugin-offline",
   },
+  "gatsby-plugin-offline",
 ]
 
 module.exports = {
