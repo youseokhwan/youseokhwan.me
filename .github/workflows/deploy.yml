@@ -1,0 +1,40 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 푸시될 때마다 실행
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-modules-
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build with Gatsby
+      run: npm run build
+
+    - name: Create deploy branch
+      run: |
+        git checkout -b deploy  # deploy 브랜치를 생성하고 체크아웃
+        git add public           # public 폴더를 추가
+        git commit -m "Deploy build files"
+        git push --force origin deploy  # deploy 브랜치에 푸시
