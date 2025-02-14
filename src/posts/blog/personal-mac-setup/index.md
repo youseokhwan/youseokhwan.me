@@ -130,8 +130,8 @@ Alfred 5를 사용하면 스포트라이트가 거의 필요없기 때문에 스
 
 ### 참고
 
-* https://brew.sh/
-* https://git-scm.com/
-* https://discussions.apple.com/thread/253709417
-* https://support.apple.com/ko-kr/guide/mac-help/mh27474/mac
-* https://www.alfredapp.com/
+- https://brew.sh/
+- https://git-scm.com/
+- https://discussions.apple.com/thread/253709417
+- https://support.apple.com/ko-kr/guide/mac-help/mh27474/mac
+- https://www.alfredapp.com/

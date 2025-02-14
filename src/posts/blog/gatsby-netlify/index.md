@@ -18,7 +18,7 @@ GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Ga
 
 `Gatsby`의 [Quick Start](https://www.gatsbyjs.com/docs/quick-start/)를 따라하면 기초적인 블로그를 쉽게 만들 수 있다.<br>
 이 상태에서 UI/UX를 직접 설계하며 블로그를 개발하면 많은 것을 배울 수 있겠지만,<br>
-빠르게 블로그를 구축하고 싶고, 개발 및 학습 시간을 이 곳에 많이 투자하기 부담스럽다면 템플릿을 기반으로 구축하는 것도 좋다.<br>
+빠르게 블로그를 구축하고 싶고, 개발 및 학습 시간을 많이 투자하기 부담스럽다면 템플릿을 기반으로 구축하는 것도 좋다.<br>
 템플릿은 구글링하거나 GitHub에 검색하여 찾아볼 수 있다.
 
 필자는 디자인이 가장 마음에 드는 [gatsby-starter-apple](https://github.com/sungik-choi/gatsby-starter-apple)로 결정했다.<br>
@@ -94,8 +94,8 @@ Build settings은 다음과 같이 입력했다.
 
 ![netlify_02.png](netlify_02.png)
 
-브랜치는 우선 main으로 설정했다.<br>
-main을 배포 브랜치로 바로 사용하는 것에 대한 거부감이 있지만, CI/CD 개선은 추후에 진행하기로 하고 우선 진행했다.
+브랜치는 우선 `main`으로 설정했다.<br>
+`main`을 배포 브랜치로 바로 사용하는 것에 대한 거부감이 있지만, CI/CD 개선은 추후에 하기로 하고 우선 진행했다.
 
 ![netlify_03.png](netlify_03.png)
 
@@ -131,7 +131,7 @@ DNS가 올바르게 설정되었다면 자동으로 `Let's Encrypt SSL` 인증�
 
 ![custom_domain_03.png](custom_domain_03.png)
 
-잠시 기다리면 [youseokhwan.me](https://youseokhwan.me)로도 잘 접속되는 것을 확인할 수 있다.
+잠시 기다려주면 [https://youseokhwan.me](https://youseokhwan.me)로 잘 접속되는 것을 확인할 수 있다.
 
 ![custom_domain_04.png](custom_domain_04.png)
 
