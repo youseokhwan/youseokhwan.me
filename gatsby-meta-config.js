@@ -20,7 +20,7 @@ const metaConfig = {
   title: "youseokhwan.me",
   description: `youseokhwan's tech blog`,
   author: "youseokhwan",
-  siteUrl: "https://youseokhwan.github.io",
+  siteUrl: "https://youseokhwan.me",
   lang: "en",
   utterances: "sungik-choi/gatsby-starter-apple-comment",
   links: {
