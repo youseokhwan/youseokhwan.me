@@ -37,7 +37,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g ApplePressAndHoldEnabled -bool true
 ```
 
-가끔 한두글자를 입력해야하는 상황이라면, 이모지(`cmd` + `ctrl` + `space`)의 라틴 문자 탭을 이용해서 입력하는 것을 추천한다.
+가끔 한두글자를 입력해야하는 상황이라면, 이모지(`cmd + ctrl + space`)의 라틴 문자 탭을 이용해서 입력하는 것을 추천한다.
 
 ![emoji.png](emoji.png)
 

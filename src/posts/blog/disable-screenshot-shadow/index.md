@@ -8,12 +8,12 @@ thumbnail: "../../../../src/images/macos.png"
 
 mac에서 스크린샷 단축키는 다음과 같다.
 
-- `cmd` + `shift` + `3`: 전체화면 캡처하여 파일로 저장
-- `cmd` + `ctrl` + `shift` + `3`: 전체화면 캡처하여 클립보드에 저장
-- `cmd` + `shift` + `4`: 드래그한 영역 캡처하여 파일로 저장
-- `cmd` + `ctrl` + `shift` + `4`: 드래그한 영역 캡처하여 클립보드에 저장
+- `cmd + ctrl + 3`: 전체화면 캡처하여 파일로 저장
+- `cmd + ctrl + shift + 3`: 전체화면 캡처하여 클립보드에 저장
+- `cmd + shift + 4`: 드래그한 영역 캡처하여 파일로 저장
+- `cmd + ctrl + shift + 4`: 드래그한 영역 캡처하여 클립보드에 저장
 
-`cmd` + `shift` + `4`와 `cmd` + `ctrl` + `shift` + `4`의 경우, 드래그하지 않고 `space`를 눌러주면 원하는 윈도우를 편하게 캡처할 수 있다.
+`cmd + shift + 4`와 `cmd + ctrl + shift + 4`의 경우, 드래그하지 않고 `space`를 눌러주면 원하는 윈도우를 편하게 캡처할 수 있다.
 
 ![screenshot_shadow_01.png](screenshot_shadow_01.png)
 
