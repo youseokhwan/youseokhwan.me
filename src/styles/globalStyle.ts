@@ -90,6 +90,7 @@ const GlobalStyle = createGlobalStyle`
       --color-floating-button-shadow: rgba(0, 0, 0, 0.2);
       --color-floating-button-shadow-hover: rgba(0, 0, 0, 0.4);
       --color-blue: #0066cc;
+      --color-green: #78B856;
       --color-icon: #2c2c2c;
     }
 
@@ -125,6 +126,7 @@ const GlobalStyle = createGlobalStyle`
       --color-floating-button-shadow: rgba(0, 0, 0, 0.4);
       --color-floating-button-shadow-hover: rgba(0, 0, 0, 0.4);
       --color-blue: #0a84ff;
+      --color-green: #2E7D57;
       --color-icon: #d1d1d1;
     }
   }

@@ -62,7 +62,7 @@ const Copyright = styled.span`
 `
 
 const RepoLink = styled.a`
-  color: var(--color-blue);
+  color: var(--color-green);
   &:hover {
     text-decoration: underline;
   }

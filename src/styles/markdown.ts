@@ -35,9 +35,9 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
 
   a {
     text-decoration: none;
-    color: var(--color-blue) !important;
+    color: var(--color-green) !important;
     * {
-      color: var(--color-blue) !important;
+      color: var(--color-green) !important;
     }
     &:hover,
     &:active {

@@ -124,7 +124,7 @@ const LinkUl = styled.ul<Toggleable>`
 
   a:hover,
   a:focus {
-    color: var(--color-blue);
+    color: var(--color-green);
   }
 
   li {
