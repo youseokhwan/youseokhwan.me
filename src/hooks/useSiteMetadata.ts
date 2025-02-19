@@ -17,6 +17,9 @@ const useSiteMetadata = () => {
           siteUrl
           lang
           giscus {
+            src
+            light_theme
+            dark_theme
             data_repo
             data_repo_id
             data_category

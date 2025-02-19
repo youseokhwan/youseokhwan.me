@@ -4,20 +4,16 @@ import { DARK } from "~/src/constants/theme"
 import useSiteMetadata from "~/src/hooks/useSiteMetadata"
 import ThemeContext from "~/src/stores/themeContext"
 
-const GISCUS_URL = "https://giscus.app/client.js"
-const LIGHT_THEME = "noborder_light"
-const DARK_THEME = "noborder_dark"
-
 const Comment = () => {
   const giscus = useSiteMetadata().giscus
-  const theme = useContext(ThemeContext) === DARK ? DARK_THEME : LIGHT_THEME
+  const theme = useContext(ThemeContext) === DARK ? giscus?.dark_theme : giscus?.light_theme
   const containerReference = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (!giscus || !containerReference.current) return
 
     const script = document.createElement("script")
-    script.src = GISCUS_URL
+    script.src = giscus.src ?? ""
     script.setAttribute("data-repo", giscus.data_repo ?? "")
     script.setAttribute("data-repo-id", giscus.data_repo_id ?? "")
     script.setAttribute("data-category", giscus.data_category ?? "")
@@ -27,7 +23,7 @@ const Comment = () => {
     script.setAttribute("data-reactions-enabled", "0")
     script.setAttribute("data-emit-metadata", "0")
     script.setAttribute("data-input-position", "bottom")
-    script.setAttribute("data-theme", theme)
+    script.setAttribute("data-theme", theme ?? "")
     script.setAttribute("data-lang", "ko")
     script.setAttribute("crossorigin", "anonymous")
     script.async = true

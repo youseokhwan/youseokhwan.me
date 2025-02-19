@@ -7,6 +7,9 @@ const siteMetadata = {
   siteUrl: meta.siteUrl,
   lang: meta.lang,
   giscus: {
+    src: "https://giscus.app/client.js",
+    light_theme: "noborder_light",
+    dark_theme: "noborder_dark",
     data_repo: "youseokhwan/youseokhwan.me",
     data_repo_id: "R_kgDON3pfpA",
     data_category: "Comments",
