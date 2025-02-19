@@ -4,64 +4,32 @@ import { DARK } from "~/src/constants/theme"
 import useSiteMetadata from "~/src/hooks/useSiteMetadata"
 import ThemeContext from "~/src/stores/themeContext"
 
-const source = "https://utteranc.es"
-const utterancesSelector = "iframe.utterances-frame"
-const LIGHT_THEME = "github-light"
-const DARK_THEME = "github-dark"
-
-type ThemeMode = typeof LIGHT_THEME | typeof DARK_THEME
-
 const Comment = () => {
-  const site = useSiteMetadata()
-  const { repo } = site.utterances ?? { repo: undefined }
-  const theme = useContext(ThemeContext)
+  const giscus = useSiteMetadata().giscus
+  const theme = useContext(ThemeContext) === DARK ? giscus?.dark_theme : giscus?.light_theme
   const containerReference = useRef<HTMLDivElement>(null)
-  const isUtterancesCreated = useRef(false)
 
   useEffect(() => {
-    if (!repo) return
-    let themeMode: ThemeMode
+    if (!giscus || !containerReference.current) return
 
-    if (isUtterancesCreated.current) {
-      themeMode = theme === DARK ? DARK_THEME : LIGHT_THEME
-    } else {
-      themeMode =
-        document.body.dataset.theme === DARK ? DARK_THEME : LIGHT_THEME
-    }
+    const script = document.createElement("script")
+    script.src = giscus.src ?? ""
+    script.setAttribute("data-repo", giscus.data_repo ?? "")
+    script.setAttribute("data-repo-id", giscus.data_repo_id ?? "")
+    script.setAttribute("data-category", giscus.data_category ?? "")
+    script.setAttribute("data-category-id", giscus.data_category_id ?? "")
+    script.setAttribute("data-mapping", "pathname")
+    script.setAttribute("data-strict", "0")
+    script.setAttribute("data-reactions-enabled", "0")
+    script.setAttribute("data-emit-metadata", "0")
+    script.setAttribute("data-input-position", "bottom")
+    script.setAttribute("data-theme", theme ?? "")
+    script.setAttribute("data-lang", "ko")
+    script.setAttribute("crossorigin", "anonymous")
+    script.async = true
 
-    const createUtterancesElement = () => {
-      const comment = document.createElement("script")
-      const attributes = {
-        src: `${source}/client.js`,
-        repo,
-        "issue-term": "title",
-        label: "comment",
-        theme: themeMode,
-        crossOrigin: "anonymous",
-        async: "true",
-      }
-      for (const [key, value] of Object.entries(attributes)) {
-        comment.setAttribute(key, value)
-      }
-      containerReference.current?.append(comment)
-      isUtterancesCreated.current = true
-    }
-
-    const utterancesElement = containerReference.current?.querySelector(
-      utterancesSelector,
-    ) as HTMLIFrameElement
-
-    const postThemeMessage = () => {
-      if (!utterancesElement) return
-      const message = {
-        type: "set-theme",
-        theme: themeMode,
-      }
-      utterancesElement?.contentWindow?.postMessage(message, source)
-    }
-
-    isUtterancesCreated.current ? postThemeMessage() : createUtterancesElement()
-  }, [repo, theme])
+    containerReference.current.appendChild(script)
+  }, [theme])
 
   return <div ref={containerReference} />
 }
