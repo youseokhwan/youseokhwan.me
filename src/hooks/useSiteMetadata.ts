@@ -16,6 +16,12 @@ const useSiteMetadata = () => {
           author
           siteUrl
           lang
+          giscus {
+            data_repo
+            data_repo_id
+            data_category
+            data_category_id
+          }
           utterances {
             repo
           }

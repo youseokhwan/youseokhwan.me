@@ -6,6 +6,12 @@ const siteMetadata = {
   author: meta.author,
   siteUrl: meta.siteUrl,
   lang: meta.lang,
+  giscus: {
+    data_repo: "youseokhwan/youseokhwan.me",
+    data_repo_id: "R_kgDON3pfpA",
+    data_category: "Comments",
+    data_category_id: "DIC_kwDON3pfpM4CnF_P",
+  },
   utterances: {
     repo: meta.utterances,
   },

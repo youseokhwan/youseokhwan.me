@@ -4,21 +4,20 @@ import { DARK } from "~/src/constants/theme"
 import useSiteMetadata from "~/src/hooks/useSiteMetadata"
 import ThemeContext from "~/src/stores/themeContext"
 
+const GISCUS_URL = "https://giscus.app/client.js"
 const LIGHT_THEME = "noborder_light"
 const DARK_THEME = "noborder_dark"
 
 type ThemeMode = typeof LIGHT_THEME | typeof DARK_THEME
 
 const Comment = () => {
-  const site = useSiteMetadata()
+  const giscus = useSiteMetadata().giscus
   const theme = useContext(ThemeContext)
   const containerReference = useRef<HTMLDivElement>(null)
   const isGiscusCreated = useRef(false)
 
   useEffect(() => {
-    if (!containerReference.current) return
-
-    containerReference.current.innerHTML = ""
+    if (!giscus || !containerReference.current) return
 
     let themeMode: ThemeMode
 
@@ -29,11 +28,11 @@ const Comment = () => {
     }
 
     const script = document.createElement("script")
-    script.src = "https://giscus.app/client.js"
-    script.setAttribute("data-repo", "youseokhwan/youseokhwan.me")
-    script.setAttribute("data-repo-id", "R_kgDON3pfpA")
-    script.setAttribute("data-category", "Comments")
-    script.setAttribute("data-category-id", "DIC_kwDON3pfpM4CnF_P")
+    script.src = GISCUS_URL
+    script.setAttribute("data-repo", giscus.data_repo ?? "")
+    script.setAttribute("data-repo-id", giscus.data_repo_id ?? "")
+    script.setAttribute("data-category", giscus.data_category ?? "")
+    script.setAttribute("data-category-id", giscus.data_category_id ?? "")
     script.setAttribute("data-mapping", "pathname")
     script.setAttribute("data-strict", "0")
     script.setAttribute("data-reactions-enabled", "0")
