@@ -46,9 +46,9 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
             </InnerWrapper>
           </OuterWrapper>
         </article>
-        {/* <CommentWrap>
+        <CommentWrap>
           <Comment />
-        </CommentWrap> */}
+        </CommentWrap>
       </main>
     </Layout>
   )
