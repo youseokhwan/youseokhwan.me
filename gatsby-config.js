@@ -15,9 +15,6 @@ const siteMetadata = {
     data_category: "Comments",
     data_category_id: "DIC_kwDON3pfpM4CnF_P",
   },
-  utterances: {
-    repo: meta.utterances,
-  },
   postTitle: "All",
   menuLinks: [
     // {

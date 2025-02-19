@@ -10,7 +10,6 @@
  * @prop {string} author Maybe your name
  * @prop {string} siteUrl Your website URL
  * @prop {string} lang Your website Language
- * @prop {string} utterances Github repository to store comments
  * @prop {Links} links
  * @prop {string} favicon Favicon Path
  */
@@ -22,7 +21,6 @@ const metaConfig = {
   author: "youseokhwan",
   siteUrl: "https://youseokhwan.me",
   lang: "en",
-  utterances: "sungik-choi/gatsby-starter-apple-comment",
   links: {
     github: "https://github.com/youseokhwan",
   },

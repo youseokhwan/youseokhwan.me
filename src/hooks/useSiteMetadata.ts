@@ -25,9 +25,6 @@ const useSiteMetadata = () => {
             data_category
             data_category_id
           }
-          utterances {
-            repo
-          }
           postTitle
           menuLinks {
             name
