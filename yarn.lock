@@ -10155,7 +10155,6 @@ __metadata:
     gatsby-transformer-remark: "npm:^6.12.3"
     gatsby-transformer-sharp: "npm:^5.12.3"
     graphql: "npm:^16.8.1"
-    husky: "npm:^8.0.3"
     lint-staged: "npm:^15.2.0"
     lodash: "npm:^4.17.21"
     prettier: "npm:^3.1.0"
@@ -11321,15 +11320,6 @@ __metadata:
   version: 5.0.0
   resolution: "human-signals@npm:5.0.0"
   checksum: 30f8870d831cdcd2d6ec0486a7d35d49384996742052cee792854273fa9dd9e7d5db06bb7985d4953e337e10714e994e0302e90dc6848069171b05ec836d65b0
-  languageName: node
-  linkType: hard
-
-"husky@npm:^8.0.3":
-  version: 8.0.3
-  resolution: "husky@npm:8.0.3"
-  bin:
-    husky: lib/bin.js
-  checksum: b754cf70fdc97c3b60fec5b80056b9c11436464953b1691bf2b5dcf0081fb6685d2c5f47abb8b2b1c49f504aabea5321fdd6496f8b755d9f6e7525a493406abb
   languageName: node
   linkType: hard
 
