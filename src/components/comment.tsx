@@ -8,24 +8,13 @@ const GISCUS_URL = "https://giscus.app/client.js"
 const LIGHT_THEME = "noborder_light"
 const DARK_THEME = "noborder_dark"
 
-type ThemeMode = typeof LIGHT_THEME | typeof DARK_THEME
-
 const Comment = () => {
   const giscus = useSiteMetadata().giscus
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext) === DARK ? DARK_THEME : LIGHT_THEME
   const containerReference = useRef<HTMLDivElement>(null)
-  const isGiscusCreated = useRef(false)
 
   useEffect(() => {
     if (!giscus || !containerReference.current) return
-
-    let themeMode: ThemeMode
-
-    if (isGiscusCreated.current) {
-      themeMode = theme === DARK ? DARK_THEME : LIGHT_THEME
-    } else {
-      themeMode = document.body.dataset.theme === DARK ? DARK_THEME : LIGHT_THEME
-    }
 
     const script = document.createElement("script")
     script.src = GISCUS_URL
@@ -38,7 +27,7 @@ const Comment = () => {
     script.setAttribute("data-reactions-enabled", "0")
     script.setAttribute("data-emit-metadata", "0")
     script.setAttribute("data-input-position", "bottom")
-    script.setAttribute("data-theme", themeMode)
+    script.setAttribute("data-theme", theme)
     script.setAttribute("data-lang", "ko")
     script.setAttribute("crossorigin", "anonymous")
     script.async = true
