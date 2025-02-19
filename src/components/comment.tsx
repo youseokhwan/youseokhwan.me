@@ -6,8 +6,10 @@ import ThemeContext from "~/src/stores/themeContext"
 
 // const source = "https://utteranc.es"
 // const utterancesSelector = "iframe.utterances-frame"
-const LIGHT_THEME = "github-light"
-const DARK_THEME = "github-dark"
+// const LIGHT_THEME = "github-light"
+// const DARK_THEME = "github-dark"
+const LIGHT_THEME = "noborder_light"
+const DARK_THEME = "noborder_dark"
 
 type ThemeMode = typeof LIGHT_THEME | typeof DARK_THEME
 
@@ -31,8 +33,7 @@ const Comment = () => {
     if (isGiscusCreated.current) {
       themeMode = theme === DARK ? DARK_THEME : LIGHT_THEME
     } else {
-      themeMode =
-        document.body.dataset.theme === DARK ? DARK_THEME : LIGHT_THEME
+      themeMode = document.body.dataset.theme === DARK ? DARK_THEME : LIGHT_THEME
     }
 
     const script = document.createElement("script")
@@ -46,7 +47,7 @@ const Comment = () => {
     script.setAttribute("data-reactions-enabled", "0")
     script.setAttribute("data-emit-metadata", "0")
     script.setAttribute("data-input-position", "bottom")
-    script.setAttribute("data-theme", "noborder_dark")
+    script.setAttribute("data-theme", themeMode)
     script.setAttribute("data-lang", "ko")
     script.setAttribute("crossorigin", "anonymous")
     script.async = true
