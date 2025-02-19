@@ -35,7 +35,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                     <Time dateTime={date!}>{date}</Time>
                   </Info>
                   <Title>{title}</Title>
-                  {/* <Desc>{desc}</Desc> */}
+                  <Desc>{desc}</Desc>
                 </header>
                 <Divider />
                 <Markdown
@@ -98,9 +98,10 @@ const Time = styled(DateTime)`
 `
 
 const Desc = styled.p`
-  margin-top: var(--sizing-lg);
+  margin-top: var(--sizing-md);
   line-height: 1.5;
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
+  color: var(--color-text-3);
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     line-height: 1.31579;
