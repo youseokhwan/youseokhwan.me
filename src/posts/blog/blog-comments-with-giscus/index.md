@@ -11,12 +11,13 @@ thumbnail: "../../../../src/images/giscus.png"
 최근 기술 블로그에서는 GitHub 계정을 기반으로 한 서비스를 많이 사용하는 것으로 보인다.
 
 GitHub 계정 기반 서비스는 [utterances](https://utteranc.es/)가 대표적이고, 최근에는 [giscus](https://giscus.app/)도 쓰인다.<br>
-utterances는 repository의 issue를, giscus는 repository의 discussion을 기반으로 작동한다.<br>
-utterances의 경우 기존 목적의 issue들(bug report 등)과 섞이면 혼잡해지기 때문에 보통 댓글 전용 repository를 따로 생성하여 연결하는 식으로 구성한다.<br>
-utterances에 영감을 받은 giscus는 discussion을 이용하여 이 점을 보완하였다.<br>
-기존에 discussion 기능을 쓰던 repository여도 카테고리를 분리할 수 있기 때문에 깔끔하게 관리할 수 있다.<br>
-또한 상대적으로 최근까지 활발하게 기능 개발과 유지보수가 진행되고 있는 점도 마음에 들어서 giscus를 써보기로 결정했다.<br>
-[이 글](https://jojoldu.tistory.com/704)에서 정보를 얻어 진행했다. 🙏
+필자는 giscus를 쓰기로 결정했는데, 그 이유는 다음과 같다.
+
+- utterances는 repository의 issue를, giscus는 discussion을 기반으로 작동한다.<br>utterances의 경우, 기존 issue들(bug report)과 섞이면 혼잡해지기 때문에 댓글 전용 repository를 따로 둔다.<br>반면 discussion은 카테고리를 나눌 수 있기 때문에 repository를 나눌 필요가 없다.
+- 상대적으로 theme가 다양하고, 원할 경우 직접 CSS를 작성해서 적용할 수 있다.
+- 상대적으로 최근까지 활발하게 기능 개발과 유지보수를 진행하고 있다.
+
+이제 giscus를 적용해보자. [이 글](https://jojoldu.tistory.com/704)에서 정보를 얻어 진행했다. 🙏
 
 ---
 
@@ -61,7 +62,7 @@ repository에 giscus 앱을 설치한다.<br>
 
 ### script 태그 작성
 
-html에 넣을 script 태그를 직접 작성해도 되지만, 공식 가이드의 도움을 받았다.
+html에 넣을 `script` 태그를 직접 작성해도 되지만, 공식 가이드의 도움을 받았다.
 [https://giscus.app/ko](https://giscus.app/ko)로 접속해 스크롤을 조금 내려서 `설정` 섹션으로 이동한다.
 
 ![script_01.png](script_01.png)
@@ -72,17 +73,50 @@ html에 넣을 script 태그를 직접 작성해도 되지만, 공식 가이드�
 
 ![script_03.png](script_03.png)
 
-하단에 생성된 script 태그를 복사하여 댓글 기능을 넣을 곳에 붙여넣기하면 된다.
+하단에 설정 값에 따른 `script` 태그가 자동으로 생성된다.
 
 ![script_04.png](script_04.png)
 
 ### script 태그 넣기
 
-(작성중)
+자동 생성된 `script` 태그를 원하는 곳에 붙여넣기하면 된다.<br>
+다만, 프로젝트 구성에 따라 방법이 다를 수 있다.<br>
+필자는 React 기반 템플릿을 사용중이기 때문에, utterances가 있었던 코드를 걷어내고 그 자리에 giscus를 적용했다.<br>
+다음은 `comment.tsx` 파일의 일부분이다.
 
-### 구현 완료
+```ts
+useEffect(() => {
+  if (!giscus || !containerReference.current) return
 
-(작성중)
+  const script = document.createElement("script")
+  script.src = giscus.src ?? ""
+  script.setAttribute("data-repo", giscus.data_repo ?? "")
+  script.setAttribute("data-repo-id", giscus.data_repo_id ?? "")
+  script.setAttribute("data-category", giscus.data_category ?? "")
+  script.setAttribute("data-category-id", giscus.data_category_id ?? "")
+  script.setAttribute("data-mapping", "pathname")
+  script.setAttribute("data-strict", "0")
+  script.setAttribute("data-reactions-enabled", "0")
+  script.setAttribute("data-emit-metadata", "0")
+  script.setAttribute("data-input-position", "bottom")
+  script.setAttribute("data-theme", theme ?? "")
+  script.setAttribute("data-lang", "ko")
+  script.setAttribute("crossorigin", "anonymous")
+  script.async = true
+
+  containerReference.current.appendChild(script)
+}, [theme])
+```
+
+### 구현 결과
+
+잘 적용된 것을 확인할 수 있다.
+
+![result_01.png](result_01.png)
+
+코멘트를 작성하면, `Discussions` 탭에 자동으로 추가된다.
+
+![result_02.png](result_02.png)
 
 ---
 
