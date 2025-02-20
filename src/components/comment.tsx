@@ -6,11 +6,21 @@ import ThemeContext from "~/src/stores/themeContext"
 
 const Comment = () => {
   const giscus = useSiteMetadata().giscus
-  const theme = useContext(ThemeContext) === DARK ? giscus?.dark_theme : giscus?.light_theme
+  const theme = useContext(ThemeContext)
   const containerReference = useRef<HTMLDivElement>(null)
+  const isGiscusCreated = useRef(false)
+  const failedLoadThemeName = "fro"
 
   useEffect(() => {
     if (!giscus || !containerReference.current) return
+
+    let themeMode: string
+
+    if (isGiscusCreated.current) {
+      themeMode = (theme === DARK ? giscus.dark_theme : giscus.light_theme) ?? failedLoadThemeName
+    } else {
+      themeMode = (document.body.dataset.theme === DARK ? giscus.dark_theme : giscus.light_theme) ?? failedLoadThemeName
+    }
 
     const script = document.createElement("script")
     script.src = giscus.src ?? ""
@@ -23,12 +33,13 @@ const Comment = () => {
     script.setAttribute("data-reactions-enabled", "0")
     script.setAttribute("data-emit-metadata", "0")
     script.setAttribute("data-input-position", "bottom")
-    script.setAttribute("data-theme", theme ?? "")
+    script.setAttribute("data-theme", themeMode)
     script.setAttribute("data-lang", "ko")
     script.setAttribute("crossorigin", "anonymous")
     script.async = true
 
     containerReference.current.appendChild(script)
+    isGiscusCreated.current = true
   }, [theme])
 
   return <div ref={containerReference} />
