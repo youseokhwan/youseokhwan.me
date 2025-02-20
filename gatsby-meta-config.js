@@ -20,7 +20,7 @@ const metaConfig = {
   description: `youseokhwan's tech blog`,
   author: "youseokhwan",
   siteUrl: "https://youseokhwan.me",
-  lang: "en",
+  lang: "ko",
   links: {
     github: "https://github.com/youseokhwan",
   },
