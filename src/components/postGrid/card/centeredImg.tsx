@@ -6,13 +6,13 @@ import styled from "styled-components"
 
 import type Post from "~/src/types/Post"
 
-interface CenteredImgProperties extends Pick<Post, "alt"> {
+interface CenteredImgProperties {
   src: Post["thumbnail"]
 }
 
 const DEFAULT_ALT = "Thumbnail Image"
 
-const CenteredImg: React.FC<CenteredImgProperties> = ({ src, alt }) => {
+const CenteredImg: React.FC<CenteredImgProperties> = ({ src }) => {
   const data = useStaticQuery<Queries.Query>(graphql`
     query CenteredImg {
       allImageSharp {
@@ -40,7 +40,7 @@ const CenteredImg: React.FC<CenteredImgProperties> = ({ src, alt }) => {
   return (
     <ThumbnailWrapper>
       <InnerWrapper>
-        <GatsbyImage image={image} loading="eager" alt={alt ?? DEFAULT_ALT} />
+        <GatsbyImage image={image} loading="eager" alt="" />
       </InnerWrapper>
     </ThumbnailWrapper>
   )

@@ -8,14 +8,10 @@ import type Post from "~/src/types/Post"
 
 import CenteredImg from "./centeredImg"
 
-type CardProperties = Pick<
-  Post,
-  "thumbnail" | "alt" | "category" | "title" | "desc" | "date"
->
+type CardProperties = Pick<Post, "thumbnail" | "category" | "title" | "desc" | "date">
 
 const Card: React.FC<CardProperties> = ({
   thumbnail,
-  alt,
   category,
   title,
   desc,
@@ -23,7 +19,7 @@ const Card: React.FC<CardProperties> = ({
 }) => {
   return (
     <Wrapper>
-      <CenteredImg src={thumbnail} alt={alt} />
+      <CenteredImg src={thumbnail} />
       <Text>
         <div>
           <Category>{category}</Category>
