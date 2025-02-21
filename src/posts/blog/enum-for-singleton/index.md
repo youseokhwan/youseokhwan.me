@@ -29,7 +29,7 @@ Concurrency, 의존성 주입 등 개선 방법은 있지만, 단점이 뚜렷�
 ## class로 Singleton 구현
 
 class로 Singleton을 구현해보자.<br>
-GET 요청으로 JSON 데이터(Post)를 가져오는 `NetworkManager`이다.
+GET 요청으로 JSON 데이터(`Post`)를 가져오는 `NetworkManager`이다.
 
 ```swift
 struct Post: Codable {
