@@ -24,8 +24,8 @@ const useCodeBlockHeader = () => {
 
         .code-header .btn {
           border-radius: 50%;
-          width: 15px;
-          height: 15px;
+          width: 12px;
+          height: 12px;
           margin-right: 5px;
         }
 
