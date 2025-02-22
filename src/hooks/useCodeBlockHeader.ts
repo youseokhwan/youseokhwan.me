@@ -7,16 +7,14 @@ const useCodeBlockHeader = () => {
       style.id = "code-header-style"
       style.innerHTML = `
         .code-header {
-          position: relative;
-          top: 0;
-          left: 0;
-          right: 0;
+          position: sticky;
+          left: 0px;
+          width: 100%;
           display: flex;
           align-items: center;
           padding: 10px 14px;
           background-color: #434041;
           border-radius: 8px 8px 0 0;
-          z-index: 10;
         }
 
         .code-header .btn {
@@ -42,7 +40,7 @@ const useCodeBlockHeader = () => {
     }
 
     document.querySelectorAll("pre.grvsc-container").forEach((pre) => {
-      if (pre.previousElementSibling?.classList.contains("code-header")) return
+      if (pre.querySelector(".code-header")) return
 
       const header = document.createElement("div")
       header.className = "code-header"
@@ -52,7 +50,7 @@ const useCodeBlockHeader = () => {
         <span class="green btn"></span>
       `
 
-      pre.parentNode?.insertBefore(header, pre)
+      pre.insertBefore(header, pre.firstChild)
     })
   }, [])
 }

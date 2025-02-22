@@ -188,35 +188,10 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
   /* mac 스타일 코드블럭 적용 */
   pre {
     position: relative;
-    padding-top: 3rem;
+    padding-top: 0;
     background-color: var(--color-code-block);
     border-radius: 8px;
   }
-
-  // pre::before {
-  //   content: "";
-  //   display: flex;
-  //   align-items: center;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   height: 2rem;
-  //   background-color: #434041;
-  //   border-bottom: 1px solid #3c3c3c;
-  // }
-
-  // pre::after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0.6rem;
-  //   left: 1.0rem;
-  //   width: 0.75rem;
-  //   height: 0.75rem;
-  //   border-radius: 50%;
-  //   background-color: #f5655b;
-  //   box-shadow: 1.1rem 0 0 #f6bd3b, 2.2rem 0 0 #43c645;
-  // }
 
   pre {
     counter-reset: line-number;
@@ -224,6 +199,7 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
 
   pre code {
     position: relative;
+    padding-top: 1rem;
     padding-left: 0.7rem;
   }
 
