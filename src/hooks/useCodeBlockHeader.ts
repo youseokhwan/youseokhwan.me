@@ -42,8 +42,9 @@ const useCodeBlockHeader = () => {
         }
 
         .code-header .lang {
-          flex-group: 1;
-          text-align: center;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
           font-size: 14px;
           font-weight: bold;
         }
