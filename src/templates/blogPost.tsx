@@ -10,7 +10,7 @@ import Category from "~/src/styles/category"
 import DateTime from "~/src/styles/dateTime"
 import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
-import useCodeBlockHeader from "../hooks/useCodeblockHeader"
+import useCodeBlockHeader from "../hooks/useCodeBlockHeader"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
