@@ -60,7 +60,16 @@ const useCodeBlockHeader = () => {
         }
 
         .code-header .copy-btn:hover {
-          opacity: 0.7;
+          opacity: 0.5;
+        }
+
+        .code-header .copied-btn {
+          background: none;
+          border: none;
+          color: white;
+          font-size: 14px;
+          font-weight: bold;
+          transition: opacity 0.2s ease-in-out;
         }
       `
       document.head.appendChild(style)
@@ -84,11 +93,27 @@ const useCodeBlockHeader = () => {
       `
 
       const copyButton = header.querySelector(".copy-btn") as HTMLButtonElement
+      let isThrottled = false
+
       copyButton.addEventListener("click", () => {
+        if (isThrottled) return
+        isThrottled = true
+
         const codeElement = pre.querySelector("code")
         if (codeElement) {
-            const codeText = codeElement.innerText
-            navigator.clipboard.writeText(codeText)
+          const codeText = codeElement.innerText
+          navigator.clipboard.writeText(codeText).then(() => {
+            copyButton.textContent = "Copied!"
+            copyButton.classList.add("copied-btn")
+            copyButton.classList.remove("copy-btn")
+
+            setTimeout(() => {
+              copyButton.textContent = "Copy"
+              copyButton.classList.add("copy-btn")
+              copyButton.classList.remove("copie-btn")
+              isThrottled = false
+            }, 1500)
+          })
         }
       })
 
