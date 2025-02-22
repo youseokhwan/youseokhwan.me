@@ -10,6 +10,7 @@ import Category from "~/src/styles/category"
 import DateTime from "~/src/styles/dateTime"
 import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
+import useCodeBlockHeader from "../hooks/useCodeblockHeader"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
@@ -20,6 +21,8 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     thumbnail &&
     thumbnail?.childImageSharp?.gatsbyImageData!.images!.fallback!.src
+
+  useCodeBlockHeader()
 
   return (
     <Layout>

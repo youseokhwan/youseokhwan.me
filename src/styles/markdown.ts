@@ -184,6 +184,44 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
     font-size: 85%;
     border-radius: 3px;
   }
+
+  /* mac 스타일 코드블럭 적용 */
+  pre {
+    position: relative;
+    padding-top: 0;
+    background-color: var(--color-code-block);
+    border-radius: 8px;
+  }
+
+  pre {
+    counter-reset: line-number;
+  }
+
+  pre code {
+    position: relative;
+    padding-top: 1rem;
+    padding-left: 0.7rem;
+  }
+
+  pre code > * {
+    display: block;
+    line-height: 1.5;
+    counter-increment: line-number;
+  }
+
+  pre code > *::before {
+    content: counter(line-number);
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    text-align: right;
+    padding-right: 0.5rem;
+    color: #757575;
+  }
+
+  .grvsc-source {
+    padding-left: 2.5rem;
+  }
 `
 
 export default Markdown
