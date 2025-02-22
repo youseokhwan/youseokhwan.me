@@ -14,7 +14,7 @@ const useCodeBlockHeader = () => {
           align-items: center;
           justify-content: space-between;
           padding: 10px 14px;
-          background-color: #434041;
+          background-color: var(--color-code-header);
           border-radius: 8px 8px 0 0;
         }
 
@@ -45,6 +45,7 @@ const useCodeBlockHeader = () => {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
+          color: var(--color-text);
           font-size: 14px;
           font-weight: bold;
         }
@@ -52,7 +53,7 @@ const useCodeBlockHeader = () => {
         .code-header .copy-btn {
           background: none;
           border: none;
-          color: white;
+          color: var(--color-text);
           cursor: pointer;
           font-size: 14px;
           font-weight: bold;
@@ -66,7 +67,7 @@ const useCodeBlockHeader = () => {
         .code-header .copied-btn {
           background: none;
           border: none;
-          color: white;
+          color: var(--color-text);
           font-size: 14px;
           font-weight: bold;
           transition: opacity 0.2s ease-in-out;

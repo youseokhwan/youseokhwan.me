@@ -70,6 +70,7 @@ const GlobalStyle = createGlobalStyle`
       --color-post-background: #ffffff;
       --color-card: #ffffff;
       --color-code: #f2f2f2;
+      --color-code-header: #e4e4e4;
       --color-code-block: #fafafa;
       --color-code-highlight: rgba(0, 0, 0, 0.05);
       --color-code-highlight-border: rgba(0, 0, 0, 0.2);
@@ -106,6 +107,7 @@ const GlobalStyle = createGlobalStyle`
       --color-post-background: #1c1c1c;
       --color-card: #2c2c2c;
       --color-code: #3a3a3a;
+      --color-code-header: #434041;
       --color-code-block: #242424;
       --color-code-highlight: rgba(255, 255, 255, 0.05);
       --color-code-highlight-border: rgba(255, 255, 255, 0.2);
