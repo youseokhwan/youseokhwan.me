@@ -60,7 +60,15 @@ empty branch가 만들어진 것을 확인할 수 있다.
 
 ### deploy branch로 빌드하기
 
+현재, public/이 .gitignore에 추가돼있어 추적되지 않는 상태이다.
+public/을 추적할 수 있도록 임시로 remote에 push한다.
 
+```bash
+gatsby build
+git add public/ -f
+git commit -m "public/ 임시 추가"
+git push origin main
+```
 
 ### Netlify 설정 변경
 
