@@ -116,7 +116,7 @@ Git Hook은 Git과 관련된 이벤트가 발생했을 경우, 특정 shell scri
 ### husky 패키지 설치
 
 git hook은 기본적으로 `.git/hooks`에 저장되는데, `.git/`은 버전 관리 대상이 아니여서 remote에 올라가지 않는다.<br>
-husky를 이용하면 버전 관리를 비롯해 추가, 삭제 등 hook들을 편하게 관리할 수 있다.
+husky를 이용하면 버전 관리를 비롯해 hook들을 편하게 관리할 수 있다.
 
 husky 패키지를 설치하고 활성화한다.<br>
 `init` 명령어는 repository의 루트 디렉토리에서 실행해야 한다.
@@ -126,14 +126,38 @@ yarn add husky
 yarn husky init
 ```
 
-`.husky/`에 자동 생성된 `pre-commit`과 example 파일들은 사용하지 않으므로 삭제했다.
-
 ### pre-push 추가
 
-push할 때 배포를 같이 진행하도록 `pre-push` hook을 등록한다.
+push할 때 배포를 같이 진행하도록 `pre-push` 파일을 추가한다.<br>
+repository의 루트 디렉토리에서 명령어를 실행한다.
 
 ```bash
 echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push
+```
+
+`git push` 명령어를 입력할 경우, 배포가 먼저 진행된 후 push가 진행되는 것을 확인할 수 있다.
+
+![pre-push.png](pre-push.png)
+
+### 백그라운드에서 실행
+
+배포 과정에서 콘솔에 로그가 너무 많이 찍혀서, 백그라운드에서 진행하도록 `pre-push`를 수정했다.<br>
+`nohup`은 터미널이 종료되더라도 실행 중인 프로세스를 유지하는 명령어고, `&`는 백그라운드에서 프로세스를 실행하는 명령어이다.
+
+```text
+# .husky/pre-push
+
+nohup sh -c 'gatsby build && netlify deploy --dir=public --prod &
+```
+
+이제 `git push`는 평소처럼 작동하고, 배포는 백그라운드에서 동작한다.<br>
+혹시 배포 로그를 확인하고 싶다면 `nohup.out` 파일을 확인하면 된다.<br>
+`nohup.out`은 `.gitignore`에 추가하여 버전 관리 대상에서 제외시켰다.
+
+```text
+# .gitignore
+
+nohup.out
 ```
 
 ---
@@ -141,4 +165,5 @@ echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push
 ### 참고
 
 - https://git-scm.com/book/ko/v2/Git%EB%A7%9E%EC%B6%A4-Git-Hooks
+- https://typicode.github.io/husky/
 - https://velog.io/@rookieand/Git-Hook%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-Husky%EB%8A%94-%EC%99%9C-%EC%93%B0%EB%8A%94%EA%B1%B8%EA%B9%8C
