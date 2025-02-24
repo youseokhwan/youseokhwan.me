@@ -106,35 +106,35 @@ netlify deploy --dir=public --prod
 
 ## Git Hooks을 이용하여 자동화
 
-배포할 때마다 위 명령어를 입력하는 것은 귀찮으니, Git Hooks를 이용해 자동화해보자.
+배포할 때마다 위 명령어를 입력하는 것은 번거로우니, Git Hooks를 이용해 자동화해보자.
 
 ### Git Hooks란?
 
 Git Hook은 Git과 관련된 이벤트가 발생했을 경우, 특정 shell script를 실행해주는 기능이다.
-지금은 pre-push라는 클라이언트 hook을 만들어, push 할 때마다 배포가 자동으로 진행되도록 설정할 것이다.
+지금은 `pre-push`라는 클라이언트 hook을 만들어, push할 때마다 배포가 자동으로 진행되도록 설정할 것이다.
 
 ### husky 패키지 설치
 
-git hook은 기본적으로 .git/hooks에 저장되는데, .git은 버전 관리 대상이 아니여서 remote에 올라가지 않는다.
+git hook은 기본적으로 `.git/hooks`에 저장되는데, `.git/`은 버전 관리 대상이 아니여서 remote에 올라가지 않는다.
 husky를 이용하면 버전 관리를 비롯해 추가, 삭제 등 hook들을 편하게 관리할 수 있다.
 
 husky 패키지를 설치하고 활성화한다.
-init 명령어는 repository의 루트 디렉토리에서 실행한다.
+`init` 명령어는 repository의 루트 디렉토리에서 실행해야 한다.
 
 ```bash
 yarn add husky
 yarn husky init
 ```
 
-.husky/에 자동 생성된 pre-commit과 example 파일들은 사용하지 않으므로 삭제했다.
-push 할 때 배포를 같이 진행하도록 pre-push hook을 등록한다.
+`.husky/`에 자동 생성된 `pre-commit`과 example 파일들은 사용하지 않으므로 삭제했다.
+
+### pre-push 추가
+
+push할 때 배포를 같이 진행하도록 `pre-push` hook을 등록한다.
 
 ```bash
-echo "nohup sh -c 'gatsby build && netlify deploy --dir=public --prod' &" > .husky/pre-push
+echo "sh -c 'gatsby build && netlify deploy --dir=public --prod'" > .husky/pre-push
 ```
-
-* nohup: 터미널을 종료해도 실행 유지
-* &: 백그라운드에서 실행
 
 ---
 
