@@ -32,7 +32,7 @@ node_modules/
 
 # Gatsby files
 .cache/
-public
+# public
 src/gatsby-types.d.ts
 
 # Mac files
