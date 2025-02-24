@@ -1,1 +1,1 @@
-nohup sh -c 'gatsby build && netlify deploy --dir=public --prod | tee deploy.log' &
+nohup sh -c 'gatsby build && netlify deploy --dir=public --prod &
