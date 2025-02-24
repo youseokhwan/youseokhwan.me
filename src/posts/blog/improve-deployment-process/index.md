@@ -10,7 +10,7 @@ thumbnail: "../../../../src/images/gatsby.png"
 
 1. 포스트를 작성 및 수정하거나, React 파일 변경(UI 업데이트 등) 후 push
 2. Netlify에서 변경을 감지하면, 서버에서 gatsby build 명령어 실행
-3. 서버에서 진행한 빌드의 결과물인 public/을 호스팅
+3. 서버에서 진행한 빌드의 결과물인 public 디렉토리를 호스팅
 
 배포 프로세스에 문제는 없으나, 반영되는 속도가 아쉬웠다.
 로컬에서 gatsby build를 실행하면 약 10초 정도 걸리는데, Netlify에선 2분 넘게 소요된다.
@@ -21,85 +21,49 @@ UI 업데이트같은 큰 변경은 간헐적으로 배포하니 괜찮지만,
 
 ---
 
-## Git Subtree를 이용하여 deploy branch 분리
+## 배포 전용 branch 만들기
 
-git subtree를 이용하면 여러 repository를 한 repository에서 관리할 수 있다.
-여기서는 public/을 하위 repository로 두고, 별도의 branch로 관리하는 목적으로 사용했다.
+배포 전용으로 release라는 이름의 branch를 사용할 예정이다.
+git subtree 등으로 직접 setup해도 좋지만, gh-pages 패키지를 사용하면 편하게 관리할 수 있다.
+gh-pages는 GitHub Pages를 구성하는데 쓰이지만, 지금처럼 그냥 branch를 컨트롤 하기에도 아주 유용했다.
 
-### empty branch 만들기
+### gh-pages 패키지 설치
 
---orphan 명령어를 이용해 기존 커밋 내역을 계승하지 않는 deploy라는 empty branch를 만든다.
-~~orphan 단어 뜻이 너무 직접적이여서 당황스러웠다.~~
-
-```bash
-git checkout --orphan deploy
-```
-
-자동으로 stage된 파일들을 해제하고, commit, push하여 remote에 반영한다.
---allow-empty는 변경 사항이 없더라도 commit 할 수 있게 해준다.
+gh-pages 명령어를 사용하기 위해 패키지를 설치한다.
 
 ```bash
-git reset
-git commit --allow-empty -m "initial commit"
-git push origin deploy
+yarn install gh-pages
 ```
 
-empty branch가 만들어진 것을 확인할 수 있다.
+### release 브랜치로 public 디렉토리 push
 
-![empty-branch.png](empty-branch.png)
-
----
-
-## 로컬 빌드 방식으로 변경하기
-
-### deploy branch로 빌드하기
-
-현재, public/이 .gitignore에 추가돼있어 추적되지 않는 상태이다.
-public/을 추적할 수 있도록 임시로 .gitignore에서 해제하고, remote에 push한다.
-
-```text
-# .gitignore 수정
-
-# public
-```
+빌드한 후, 생성된 public 디렉토리를 release branch로 push한다.
+remote에 release branch가 없다면 자동으로 생성해준다.
 
 ```bash
 gatsby build
-git add .gitignore public/
-git commit -m "public/ 임시 추가"
-git push origin main
+gh-pages -d public -b release
 ```
 
-subtree 명령어로 deploy branch에 public/을 push한다.
-비어있는 branch에 처음 push할 때는 force 옵션이 필요했다.
+public 디렉토리에 포함된 파일들만 release branch에 push된 것을 확인할 수 있다.
 
-```bash
-git push origin `git subtree split --prefix public main`:deploy --force
-```
-
-이후, public/을 다시 .gitignore에 추가하고 main branch에선 삭제한다.
-
-```text
-# .gitignore 수정
-
-public
-```
-
-```bash
-git rm -r --cached public
-git add .
-git commit -m "public/ 제거"
-git push origin main
-```
-
-이후, gatsby build를 통해 public에 변경 사항이 발생하면 아래 명령어로 deploy branch에 배포한다.
-
-```bash
-gatsby build
-git subtree push --prefix public origin deploy
-```
+![gh-pages.png](gh-pages.png)
 
 ### Netlify 설정 변경
+
+Netlify의 배포 설정을 변경해야 한다.
+Site configuration > Build & deploy > Build settings를 다음과 같이 설정한다.
+
+![build-command.png](build-command.png)
+
+Build command와 Publish directory를 비워두고 Save하면 Not set 상태가 된다.
+Netlify가 직접 빌드하지 않도록 Build command를 비워둔다.
+
+또한, Site configuration > Build & deploy > Branches and deploy contexts에서 Production branch를 release로 설정한다.
+
+![production-branch.png](production-branch.png)
+
+이제 release branch가 변경되면 사이트에 반영한다.
 
 ---
 
