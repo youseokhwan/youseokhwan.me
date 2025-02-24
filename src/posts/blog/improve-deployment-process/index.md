@@ -55,13 +55,44 @@ empty branch가 만들어진 것을 확인할 수 있다.
 ### deploy branch로 빌드하기
 
 현재, public/이 .gitignore에 추가돼있어 추적되지 않는 상태이다.
-public/을 추적할 수 있도록 임시로 remote에 push한다.
+public/을 추적할 수 있도록 임시로 .gitignore에서 해제하고, remote에 push한다.
+
+```.gitignore
+# public
+```
 
 ```bash
 gatsby build
-git add public/ -f
+git add .gitignore public/
 git commit -m "public/ 임시 추가"
 git push origin main
+```
+
+subtree 명령어로 deploy branch에 public/을 push한다.
+비어있는 branch에 처음 push할 때는 force 옵션이 필요했다.
+
+```bash
+git push origin `git subtree split --prefix public main`:deploy --force
+```
+
+이후, public/을 다시 .gitignore에 추가하고 main branch에선 삭제한다.
+
+```.gitignore
+public
+```
+
+```bash
+git rm -r --cached public
+git add .
+git commit -m "public/ 제거"
+git push origin main
+```
+
+이후, gatsby build를 통해 public에 변경 사항이 발생하면 아래 명령어로 deploy branch에 배포한다.
+
+```bash
+gatsby build
+git subtree push --prefix public origin deploy
 ```
 
 ### Netlify 설정 변경
