@@ -18,7 +18,8 @@
     "typecheck": "tsc --noEmit",
     "semantic-release": "semantic-release",
     "lint-staged": "lint-staged",
-    "pre-commit": "yarn lint-staged"
+    "pre-commit": "yarn lint-staged",
+    "prepare": "husky"
   },
   "dependencies": {
     "dark-github-theme": "https://github.com/remorses/dark-github-theme.git#commit=3dde125a391f5557fcc42e0d95899750df4370bf",
@@ -38,6 +39,7 @@
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-remark": "^6.12.3",
     "gatsby-transformer-sharp": "^5.12.3",
+    "husky": "^9.1.7",
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.23",
     "styled-components": "^6.1.1",
