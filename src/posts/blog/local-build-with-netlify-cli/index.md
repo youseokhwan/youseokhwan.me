@@ -147,10 +147,13 @@ echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push
 ```text
 # .husky/pre-push
 
-nohup sh -c 'gatsby build && netlify deploy --dir=public --prod &
+nohup sh -c 'gatsby build && netlify deploy --dir=public --prod' &
 ```
 
-이제 `git push`는 평소처럼 작동하고, 배포는 백그라운드에서 동작한다.<br>
+이제 `git push`는 평소처럼 작동하고, 배포는 백그라운드에서 동작한다.
+
+![background_01.png](background_01.png)
+
 혹시 배포 로그를 확인하고 싶다면 `nohup.out` 파일을 확인하면 된다.<br>
 `nohup.out`은 `.gitignore`에 추가하여 버전 관리 대상에서 제외시켰다.
 
@@ -159,6 +162,8 @@ nohup sh -c 'gatsby build && netlify deploy --dir=public --prod &
 
 nohup.out
 ```
+
+![background_02.png](background_02.png)
 
 ---
 
