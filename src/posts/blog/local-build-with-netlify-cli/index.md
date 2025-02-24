@@ -133,7 +133,7 @@ yarn husky init
 push할 때 배포를 같이 진행하도록 `pre-push` hook을 등록한다.
 
 ```bash
-echo "sh -c 'gatsby build && netlify deploy --dir=public --prod > husky.log 2>&1'" > .husky/pre-push
+echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push
 ```
 
 ---
