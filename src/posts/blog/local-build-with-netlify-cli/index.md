@@ -1,7 +1,7 @@
 ---
 title: "Netlify 로컬에서 빌드하기"
 category: "Blog"
-date: "2025-02-23 17:00:00 +09:00"
+date: "2025-02-24 17:00:00 +09:00"
 desc: "netlify-cli로 로컬에서 빌드하여 블로그 배포 시간 단축하기"
 thumbnail: "../../../../src/images/gatsby.png"
 ---
@@ -37,7 +37,7 @@ Repository의 변경 사항을 감지하여 자동으로 빌드하는 것이 아
 
 ## netlify-cli 설정
 
-### 패키지 설치
+### netlify-cli 패키지 설치
 
 netlify 명령어를 CLI 환경에서 사용할 수 있도록 `netlify-cli` 패키지를 설치한다.
 
@@ -106,10 +106,39 @@ netlify deploy --dir=public --prod
 
 ## Git Hooks을 이용하여 자동화
 
-(작성중)
+배포할 때마다 위 명령어를 입력하는 것은 귀찮으니, Git Hooks를 이용해 자동화해보자.
+
+### Git Hooks란?
+
+Git Hook은 Git과 관련된 이벤트가 발생했을 경우, 특정 shell script를 실행해주는 기능이다.
+지금은 pre-push라는 클라이언트 hook을 만들어, push 할 때마다 배포가 자동으로 진행되도록 설정할 것이다.
+
+### husky 패키지 설치
+
+git hook은 기본적으로 .git/hooks에 저장되는데, .git은 버전 관리 대상이 아니여서 remote에 올라가지 않는다.
+husky를 이용하면 버전 관리를 비롯해 추가, 삭제 등 hook들을 편하게 관리할 수 있다.
+
+husky 패키지를 설치하고 활성화한다.
+init 명령어는 repository의 루트 디렉토리에서 실행한다.
+
+```bash
+yarn add husky
+yarn husky init
+```
+
+.husky/에 자동 생성된 pre-commit과 example 파일들은 사용하지 않으므로 삭제했다.
+push 할 때 배포를 같이 진행하도록 pre-push hook을 등록한다.
+
+```bash
+echo "nohup sh -c 'gatsby build && netlify deploy --dir=public --prod' &" > .husky/pre-push
+```
+
+* nohup: 터미널을 종료해도 실행 유지
+* &: 백그라운드에서 실행
 
 ---
 
 ### 참고
 
-- 
+- https://git-scm.com/book/ko/v2/Git%EB%A7%9E%EC%B6%A4-Git-Hooks
+- https://velog.io/@rookieand/Git-Hook%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-Husky%EB%8A%94-%EC%99%9C-%EC%93%B0%EB%8A%94%EA%B1%B8%EA%B9%8C
