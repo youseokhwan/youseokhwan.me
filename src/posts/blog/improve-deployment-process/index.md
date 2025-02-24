@@ -57,7 +57,9 @@ empty branch가 만들어진 것을 확인할 수 있다.
 현재, public/이 .gitignore에 추가돼있어 추적되지 않는 상태이다.
 public/을 추적할 수 있도록 임시로 .gitignore에서 해제하고, remote에 push한다.
 
-```.gitignore
+```text
+# .gitignore 수정
+
 # public
 ```
 
@@ -77,7 +79,9 @@ git push origin `git subtree split --prefix public main`:deploy --force
 
 이후, public/을 다시 .gitignore에 추가하고 main branch에선 삭제한다.
 
-```.gitignore
+```text
+# .gitignore 수정
+
 public
 ```
 

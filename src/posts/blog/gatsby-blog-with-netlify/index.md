@@ -31,7 +31,7 @@ GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Ga
 먼저, 기반이 되는 Repository를 `clone`한다.<br>
 `gatsby-cli` 패키지를 설치하면 `gatsby` 명령어를 사용할 수 있다.
 
-```shell
+```bash
 npm install -g gatsby-cli
 gatsby new youseokhwan.me https://github.com/sungik-choi/gatsby-starter-apple
 ```
@@ -41,7 +41,7 @@ gatsby new youseokhwan.me https://github.com/sungik-choi/gatsby-starter-apple
 
 필요한 모듈을 설치하면, 로컬에서 실행해볼 수 있다.
 
-```shell
+```bash
 cd youseokhwan.me
 yarn install
 gatsby develop
@@ -57,7 +57,7 @@ UI를 변경하거나, 포스트를 작성하면서 중간중간 결과물을 �
 GitHub에서 `youseokhwan.me` Repository를 생성한다.<br>
 이후, 로컬 디렉토리 `youseokhwan.me`와 이 Repository를 연결한다.
 
-```shell
+```bash
 rm -rf .git
 git init
 git add .
