@@ -35,18 +35,12 @@ git subtree를 이용하면 여러 repository를 한 repository에서 관리할 
 git checkout --orphan deploy
 ```
 
-deploy의 내용을 모두 지워준다.
-추적되던 파일이 모두 삭제되나, main branch로 돌아오면 복구된다.
-
-```bash
-git rm -rf .
-```
-
-commit, push하여 remote에 반영한다.
+자동으로 stage된 파일들을 해제하고, commit, push하여 remote에 반영한다.
 --allow-empty는 변경 사항이 없더라도 commit 할 수 있게 해준다.
 
 ```bash
-git commit --empty-allow -m "init deploy branch"
+git reset
+git commit --allow-empty -m "initial commit"
 git push origin deploy
 ```
 
