@@ -222,6 +222,11 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
   .grvsc-source {
     padding-left: 2.5rem;
   }
+
+  /* 각주 font-size 설정 */
+  sup {
+    font-size: 0.8rem;
+  }
 `
 
 export default Markdown
