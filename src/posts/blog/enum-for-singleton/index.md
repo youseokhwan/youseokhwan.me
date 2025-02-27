@@ -9,7 +9,7 @@ thumbnail: "../../../../src/images/swift.png"
 ## Singleton
 
 Singleton은 클래스의 인스턴스 개수를 1개로 제한하는 디자인 패턴이다.<br>
-iOS의 대표적인 예시로는 `UserDefaults`, `URLSession` 등이 있다.
+iOS의 대표적인 예시로는 `URLSession`, `UIApplication` 등이 있다.
 
 ### 장점
 
