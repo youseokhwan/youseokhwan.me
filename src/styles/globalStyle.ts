@@ -135,6 +135,7 @@ const GlobalStyle = createGlobalStyle`
 
   html, body, #___gatsby, #gatsby-focus-wrapper {
     min-height: 100%;
+    scroll-behavior: smooth;
   }
 
   body {
