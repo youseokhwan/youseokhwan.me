@@ -2,6 +2,7 @@ import React from "react"
 
 import { type PageProps, graphql } from "gatsby"
 import styled from "styled-components"
+import { Tooltip } from "react-tooltip"
 
 import Comment from "~/src/components/comment"
 import SEO from "~/src/components/seo"
@@ -10,7 +11,8 @@ import Category from "~/src/styles/category"
 import DateTime from "~/src/styles/dateTime"
 import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
-import useCodeBlockHeader from "../hooks/useCodeBlockHeader"
+import useCodeBlockHeader from "~/src/hooks/useCodeBlockHeader"
+import useFootnote from "~/src/hooks/useFootnote"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
@@ -23,6 +25,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
     thumbnail?.childImageSharp?.gatsbyImageData!.images!.fallback!.src
 
   useCodeBlockHeader()
+  useFootnote()
 
   return (
     <Layout>
@@ -44,6 +47,17 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                 <Markdown
                   dangerouslySetInnerHTML={{ __html: html ?? "" }}
                   rhythm={rhythm}
+                />
+                <Tooltip
+                  id="footnote-tooltip"
+                  place="top"
+                  style={{ 
+                    maxWidth: "300px",
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                    lineHeight: "1.4",
+                    padding: "12px"
+                  }}
                 />
               </div>
             </InnerWrapper>
@@ -77,6 +91,7 @@ const InnerWrapper = styled.div`
 
 const CommentWrap = styled.section`
   width: var(--post-width);
+  min-height: var(--comment-min-height);
   margin: 0 auto;
   margin-bottom: var(--sizing-xl);
 
