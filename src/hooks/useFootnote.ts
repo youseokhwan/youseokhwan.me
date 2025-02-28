@@ -9,7 +9,6 @@ const useFootnote = () => {
   
     const handleClick = (e: Event) => {
       e.preventDefault()
-      e.stopPropagation()
       
       const targetId = (e.target as HTMLAnchorElement).getAttribute("href")?.slice(1)
 
@@ -23,7 +22,6 @@ const useFootnote = () => {
 
     const handleMouseEnter = (e: Event) => {
       e.preventDefault()
-      e.stopPropagation()
 
       const target = e.target as HTMLElement
       const rect = target.getBoundingClientRect()
