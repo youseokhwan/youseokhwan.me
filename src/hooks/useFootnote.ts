@@ -36,11 +36,22 @@ const useFootnote = () => {
       const targetId = (target as HTMLAnchorElement).getAttribute("href")?.slice(1)
       const tooltipText = document.querySelector(`.footnotes li[id="${targetId}"] p`)?.textContent
       const rect = target.getBoundingClientRect()
-      
+      const tooltipWidth = 350
+
+      const dummyDiv = document.createElement("div")
+      dummyDiv.style.visibility = "hidden"
+      dummyDiv.style.position = "absolute"
+      dummyDiv.style.width = `${tooltipWidth}px`
+      dummyDiv.style.whiteSpace = "normal"
+      dummyDiv.textContent = tooltipText ?? ""
+      document.body.appendChild(dummyDiv)
+      const tooltipHeight = dummyDiv.offsetHeight
+      document.body.removeChild(dummyDiv)
+
       setTooltip({
         text: tooltipText ?? "",
-        x: rect.left + window.scrollX,
-        y: rect.top + window.scrollY + rect.height
+        x: rect.left + window.scrollX - tooltipWidth / 2 + rect.width / 2,
+        y: rect.top + window.scrollY - tooltipHeight - 10
       })
     }
 
