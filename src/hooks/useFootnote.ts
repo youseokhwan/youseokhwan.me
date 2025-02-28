@@ -24,10 +24,12 @@ const useFootnote = () => {
       e.preventDefault()
 
       const target = e.target as HTMLElement
+      const targetId = (target as HTMLAnchorElement).getAttribute("href")?.slice(1)
+      const tooltipText = document.querySelector(`.footnotes li[id="${targetId}"] p`)?.textContent
       const rect = target.getBoundingClientRect()
       
       setTooltip({
-        text: "안녕하세요!",
+        text: tooltipText ?? "",
         x: rect.left + window.scrollX,
         y: rect.top + window.scrollY + rect.height
       })
