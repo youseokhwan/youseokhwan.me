@@ -77,6 +77,7 @@ const InnerWrapper = styled.div`
 
 const CommentWrap = styled.section`
   width: var(--post-width);
+  min-height: var(--comment-min-height);
   margin: 0 auto;
   margin-bottom: var(--sizing-xl);
 
