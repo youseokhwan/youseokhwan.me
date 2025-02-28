@@ -10,7 +10,8 @@ import Category from "~/src/styles/category"
 import DateTime from "~/src/styles/dateTime"
 import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
-import useCodeBlockHeader from "../hooks/useCodeBlockHeader"
+import useCodeBlockHeader from "~/src/hooks/useCodeBlockHeader"
+import useFootnote from "~/src/hooks/useFootnote"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
@@ -23,6 +24,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
     thumbnail?.childImageSharp?.gatsbyImageData!.images!.fallback!.src
 
   useCodeBlockHeader()
+  useFootnote()
 
   return (
     <Layout>
