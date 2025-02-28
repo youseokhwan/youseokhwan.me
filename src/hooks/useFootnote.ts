@@ -7,6 +7,14 @@ const useFootnote = () => {
     const refs = document.querySelectorAll("sup .footnote-ref")
     const backRefs = document.querySelectorAll(".footnotes .footnote-backref")
   
+    refs.forEach((footnote) => {
+      const content = footnote.textContent ?? ""
+      
+      if (!/^\[.*\]$/.test(content)) {
+        footnote.textContent = `[${content}]`
+      }
+    })
+
     const handleClick = (e: Event) => {
       e.preventDefault()
       
