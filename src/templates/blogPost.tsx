@@ -55,8 +55,10 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                     maxWidth: "300px",
                     whiteSpace: "pre-wrap",
                     wordBreak: "break-word",
-                    lineHeight: "1.4",
-                    padding: "12px"
+                    lineHeight: 1.4,
+                    padding: "12px",
+                    color: "var(--color-background)",
+                    backgroundColor: "var(--color-text)"
                   }}
                 />
               </div>
