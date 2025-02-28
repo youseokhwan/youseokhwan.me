@@ -225,7 +225,7 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
 
   /* 각주 font-size 설정 */
   sup {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 `
 
