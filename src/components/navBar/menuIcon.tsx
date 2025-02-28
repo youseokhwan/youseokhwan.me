@@ -29,7 +29,7 @@ const MenuIconBreadBottom = styled.div`
 `
 
 const MenuIconButton = styled.button<Pick<UseMenuReturnType, "toggle">>`
-  z-index: 9999;
+  z-index: 300;
   display: none;
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {

@@ -99,7 +99,7 @@ const Content = styled.div`
 `
 
 const Title = styled.h1`
-  z-index: 9999;
+  z-index: 300;
   padding: 0;
   border: none;
   font-size: var(--text-title);

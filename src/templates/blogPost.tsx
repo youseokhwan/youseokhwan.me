@@ -58,7 +58,9 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                     lineHeight: 1.4,
                     padding: "12px",
                     color: "var(--color-background)",
-                    backgroundColor: "var(--color-text)"
+                    backgroundColor: "var(--color-text)",
+                    zIndex: 400,
+                    position: "absolute"
                   }}
                 />
               </div>
