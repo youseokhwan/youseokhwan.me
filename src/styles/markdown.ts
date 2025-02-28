@@ -185,7 +185,7 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
     border-radius: 3px;
   }
 
-  /* mac 스타일 코드블럭 적용 */
+  /* CodeBlock CSS */
   pre {
     position: relative;
     padding-top: 0;
@@ -223,9 +223,10 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
     padding-left: 2.5rem;
   }
 
-  /* 각주 font-size 설정 */
+  /* Footnote CSS */
   sup {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    scroll-margin-top: calc(var(--nav-height) + 5px);
   }
 `
 

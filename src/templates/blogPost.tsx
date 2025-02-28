@@ -10,7 +10,9 @@ import Category from "~/src/styles/category"
 import DateTime from "~/src/styles/dateTime"
 import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
-import useCodeBlockHeader from "../hooks/useCodeBlockHeader"
+import useCodeBlockHeader from "~/src/hooks/useCodeBlockHeader"
+import useFootnote from "~/src/hooks/useFootnote"
+import FootnoteTooltip from "~/src/components/footnoteTooltip"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
@@ -23,6 +25,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
     thumbnail?.childImageSharp?.gatsbyImageData!.images!.fallback!.src
 
   useCodeBlockHeader()
+  useFootnote()
 
   return (
     <Layout>
@@ -45,6 +48,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                   dangerouslySetInnerHTML={{ __html: html ?? "" }}
                   rhythm={rhythm}
                 />
+                <FootnoteTooltip />
               </div>
             </InnerWrapper>
           </OuterWrapper>
@@ -77,6 +81,7 @@ const InnerWrapper = styled.div`
 
 const CommentWrap = styled.section`
   width: var(--post-width);
+  min-height: var(--comment-min-height);
   margin: 0 auto;
   margin-bottom: var(--sizing-xl);
 

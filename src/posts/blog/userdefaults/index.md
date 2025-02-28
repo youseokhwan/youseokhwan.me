@@ -7,14 +7,14 @@ thumbnail: "../../../../src/images/swift.webp"
 ---
 
 `UserDefaults`는 `Foundation`에서 제공하는 사용자 기본값 데이터베이스에 대한 인터페이스이다.<br>
-앱을 실행할 때마다 key-value 쌍을 persistent하게<small><sup><a name="fn1" href="#rfn1">[1]</a></sup></small> 저장한다.<br>
+앱을 실행할 때마다 key-value 쌍을 persistent[^1]하게 저장한다.<br>
 측정 단위, 다크모드 사용 여부 등 사용자의 간단한 설정 값을 저장하는 데 적합하다.
 
 ---
 
 ## 기본적인 사용법
 
-`UserDefaults`는 `standard` 프로퍼티를 통해 별도의 인스턴스 생성 없이 Singleton처럼<small><sup><a name="fn2" href="#rfn2">[2]</a></sup></small> 사용할 수 있다.
+`UserDefaults`는 `standard` 프로퍼티를 통해 별도의 인스턴스 생성 없이 Singleton처럼[^2] 사용할 수 있다.
 
 ### 읽기, 쓰기
 
@@ -100,5 +100,5 @@ API Key, 토큰, 비밀번호 등 보안이 필요한 경우 `Keychain`에 위�
 
 - https://developer.apple.com/documentation/foundation/userdefaults
 
-<a name="rfn1" href="#fn1">[1]</a> persistently: 지속적으로, 영속적으로 / 여기서는 상태나 데이터가 앱이 종료, 재시작되더라도 유지되는 것을 말한다.<br>
-<a name="rfn2" href="#fn2">[2]</a> init()이 public하기 때문에 완전한 Singleton으로 보기 어렵다. App Group을 사용하거나 특정 설정을 분리할 때 인스턴스를 만들어서 사용하기도 한다.
+[^1]: persistently: 지속적으로, 영속적으로 / 여기서는 상태나 데이터가 앱이 종료, 재시작되더라도 유지되는 것을 말한다.<br>
+[^2]: init()이 public하기 때문에 완전한 Singleton으로 보기 어렵다. App Group을 사용하거나 특정 설정을 분리할 때 인스턴스를 만들어서 사용하기도 한다.

@@ -101,6 +101,16 @@ const markdownPlugins = [
             linkImagesToOriginal: false,
           },
         },
+        {
+          resolve: "gatsby-remark-footnotes",
+          options: {
+            footnoteBackRefPreviousElementDisplay: "inline",
+            footnoteBackRefDisplay: "inline",
+            footnoteBackRefInnerText: "↩︎",
+            footnoteBackRefAnchorStyle: `text-decoration: none;`,
+            useCustomDivider: ""
+          },
+        },
       ],
     },
   },
