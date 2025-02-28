@@ -3,7 +3,7 @@ title: "GitHub 블로그 구축하기"
 category: "Blog"
 date: "2025-02-11 17:00:00 +09:00"
 desc: "Gatsby와 Netlify로 블로그 구축하기"
-thumbnail: "../../../../src/images/gatsby.png"
+thumbnail: "../../../../src/images/gatsby.webp"
 ---
 
 Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스텀해보고싶은 부분들이 있어서 GitHub Blog를 구축해보기로 했다.

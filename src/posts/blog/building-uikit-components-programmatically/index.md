@@ -3,7 +3,7 @@ title: "UIKit의 UI 컴포넌트를 코드 베이스로 구현하기"
 category: "iOS"
 date: "2025-02-17 17:00:00 +09:00"
 desc: "lazy var를 이용하여 UI 컴포넌트 구현하기"
-thumbnail: "../../../../src/images/ios.png"
+thumbnail: "../../../../src/images/ios.webp"
 ---
 
 UIKit에서 UI 컴포넌트(label, button 등)를 코드 베이스(programmatically)로 작성하는 기본적인 방법은 다음과 같다.<br>

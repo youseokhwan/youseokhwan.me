@@ -3,7 +3,7 @@ title: "UserDefaults"
 category: "Swift"
 date: "2025-02-27 09:00:00 +09:00"
 desc: "UserDefaults 사용법 및 주의사항 정리"
-thumbnail: "../../../../src/images/swift.png"
+thumbnail: "../../../../src/images/swift.webp"
 ---
 
 `UserDefaults`는 `Foundation`에서 제공하는 사용자 기본값 데이터베이스에 대한 인터페이스이다.<br>

@@ -3,7 +3,7 @@ title: "mac 스크린샷 그림자 없애기"
 category: "macOS"
 date: "2025-02-13 15:00:00 +09:00"
 desc: "mac 스크린샷 그림자 없애기"
-thumbnail: "../../../../src/images/macos.png"
+thumbnail: "../../../../src/images/macos.webp"
 ---
 
 mac에서 스크린샷 단축키는 다음과 같다.

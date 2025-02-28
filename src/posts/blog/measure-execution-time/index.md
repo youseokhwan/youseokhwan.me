@@ -3,7 +3,7 @@ title: "Swift 코드 실행시간 측정하기"
 category: "Swift"
 date: "2025-02-15 23:00:00 +09:00"
 desc: "CFAbsoluteTimeGetCurrent()로 코드 실행시간 측정하기"
-thumbnail: "../../../../src/images/swift.png"
+thumbnail: "../../../../src/images/swift.webp"
 ---
 
 알고리즘 문제를 해결하다보면 작성한 코드가 실제로 얼마나 걸리는지 측정해보고 싶을 때가 있다.<br>

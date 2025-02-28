@@ -3,7 +3,7 @@ title: "블로그 댓글 기능 구현하기"
 category: "Blog"
 date: "2025-02-19 11:00:00 +09:00"
 desc: "giscus를 이용하여 블로그 댓글 기능 구현하기"
-thumbnail: "../../../../src/images/giscus.png"
+thumbnail: "../../../../src/images/giscus.webp"
 ---
 
 블로그에 댓글 기능을 추가하기 위해 구글링을 해보았다.<br>
