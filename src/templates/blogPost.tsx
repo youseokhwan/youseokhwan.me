@@ -12,7 +12,6 @@ import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
 import useCodeBlockHeader from "~/src/hooks/useCodeBlockHeader"
 import useFootnote from "~/src/hooks/useFootnote"
-import FootnoteTooltip from "~/src/components/footnoteTooltip"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
@@ -48,7 +47,6 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                   dangerouslySetInnerHTML={{ __html: html ?? "" }}
                   rhythm={rhythm}
                 />
-                <FootnoteTooltip />
               </div>
             </InnerWrapper>
           </OuterWrapper>
