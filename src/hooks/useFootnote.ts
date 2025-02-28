@@ -11,6 +11,12 @@ const useFootnote = () => {
       if (!/^\[.*\]$/.test(content)) {
         footnote.textContent = `[${content}]`
       }
+
+      const targetId = footnote.getAttribute("href")?.slice(1)
+      const tooltipText = document.querySelector(`.footnotes li[id="${targetId}"] p`)?.textContent
+
+      footnote.setAttribute("data-tooltip-id", "footnote-tooltip")
+      footnote.setAttribute("data-tooltip-content", tooltipText ?? "")
     })
 
     const handleClick = (e: Event) => {

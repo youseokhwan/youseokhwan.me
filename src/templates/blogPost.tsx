@@ -2,6 +2,7 @@ import React from "react"
 
 import { type PageProps, graphql } from "gatsby"
 import styled from "styled-components"
+import { Tooltip } from "react-tooltip"
 
 import Comment from "~/src/components/comment"
 import SEO from "~/src/components/seo"
@@ -46,6 +47,17 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                 <Markdown
                   dangerouslySetInnerHTML={{ __html: html ?? "" }}
                   rhythm={rhythm}
+                />
+                <Tooltip
+                  id="footnote-tooltip"
+                  place="top"
+                  style={{ 
+                    maxWidth: "300px",
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                    lineHeight: "1.4",
+                    padding: "12px"
+                  }}
                 />
               </div>
             </InnerWrapper>
