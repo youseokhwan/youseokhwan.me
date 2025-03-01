@@ -79,7 +79,7 @@ const useCodeBlockHeader = () => {
     document.querySelectorAll("pre.grvsc-container").forEach((pre) => {
       if (pre.querySelector(".code-header")) return
 
-      const language = pre.getAttribute("data-language") || "text"
+      const language = pre.getAttribute("data-language") || ""
 
       const header = document.createElement("div")
       header.className = "code-header"
