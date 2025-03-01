@@ -100,7 +100,7 @@ const CommentWrap = styled.section`
   margin-bottom: var(--sizing-xl);
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
-    width: auto;
+    width: 87.5%;
   }
 `
 
