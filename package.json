@@ -19,7 +19,7 @@
     "semantic-release": "semantic-release",
     "lint-staged": "lint-staged",
     "pre-commit": "yarn lint-staged",
-    "prepare": "husky"
+    "postinstall": "husky init"
   },
   "dependencies": {
     "dark-github-theme": "https://github.com/remorses/dark-github-theme.git#commit=3dde125a391f5557fcc42e0d95899750df4370bf",
