@@ -46,11 +46,19 @@ const TitleWrap = styled.div`
 const Title = styled.h1`
   color: var(--text-color);
   font-size: 8rem;
+
+  @media (max-width: ${({ theme }) => theme.device.sm}) {
+    font-size: 3rem;
+  }
 `
 
 const Desc = styled.h2`
   color: var(--text-color);
   font-size: 2.5rem;
+
+  @media (max-width: ${({ theme }) => theme.device.sm}) {
+    font-size: 1.0rem;
+  }
 `
 
 export default NotFound
