@@ -128,7 +128,7 @@ yarn husky init
 
 ### pre-push 추가
 
-push할 때 배포를 같이 진행하도록 `pre-push` 파일을 추가한다.<br>
+push할 때 배포를 같이 진행하도록 `pre-push` 파일[^1]을 추가한다.<br>
 repository의 루트 디렉토리에서 명령어를 실행한다.
 
 ```bash
@@ -144,7 +144,7 @@ echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push
 `pre-push`의 내용을 수정하고 싶은 경우, `.husky/pre-push`를 텍스트 편집기로 수정하면 된다.<br>
 `main` branch가 아니라면 배포하지 않도록 다음과 같이 내용을 추가했다.
 
-```text
+```
 # .husky/pre-push 파일
 
 #!/bin/sh
@@ -169,3 +169,5 @@ fi
 - https://git-scm.com/book/ko/v2/Git%EB%A7%9E%EC%B6%A4-Git-Hooks
 - https://typicode.github.io/husky/
 - https://velog.io/@rookieand/Git-Hook%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EA%B3%A0-Husky%EB%8A%94-%EC%99%9C-%EC%93%B0%EB%8A%94%EA%B1%B8%EA%B9%8C
+
+[^1]: 확장자가 없는 파일이다.
