@@ -26,7 +26,7 @@ const Home = ({
       : postData
 
     for (const { node } of filteredPostData) {
-      const { id, fields, frontmatter } = node
+      const { id, fields, frontmatter, timeToRead } = node
       const { slug } = fields!
       const { title, desc, date, category, thumbnail } = frontmatter!
       const { childImageSharp } = thumbnail!
@@ -41,6 +41,7 @@ const Home = ({
           date,
           category,
           thumbnail: childImageSharp?.id,
+          timeToRead: timeToRead ?? 0
         },
       ])
     }
@@ -124,6 +125,7 @@ export const query = graphql`
           fields {
             slug
           }
+          timeToRead
         }
       }
     }

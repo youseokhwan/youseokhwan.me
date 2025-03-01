@@ -16,7 +16,7 @@ import useFootnote from "~/src/hooks/useFootnote"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark!
+  const { frontmatter, html, timeToRead } = markdownRemark!
   const { title, desc, thumbnail, date, category } = frontmatter!
 
   const ogImagePath =
@@ -38,7 +38,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                 <header>
                   <Info>
                     <PostCategory>{category}</PostCategory>
-                    <Time dateTime={date!}>{date}</Time>
+                    <Time dateTime={date!}>{timeToRead} min read • {date}</Time>
                   </Info>
                   <Title>{title}</Title>
                   <Desc>{desc}</Desc>
@@ -169,6 +169,7 @@ export const query = graphql`
         date(formatString: "YYYY-MM-DD")
         category
       }
+      timeToRead
     }
   }
 `
