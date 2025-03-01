@@ -139,31 +139,28 @@ echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push
 
 ![pre-push.png](pre-push.png)
 
-### 백그라운드에서 실행
+### main branch가 아니면 배포하지 않도록 설정
 
-배포 과정에서 콘솔에 로그가 너무 많이 찍혀서, 백그라운드에서 진행하도록 `pre-push`를 수정했다.<br>
-`nohup`은 터미널이 종료되더라도 실행 중인 프로세스를 유지하는 명령어고, `&`는 백그라운드에서 프로세스를 실행하는 명령어이다.
-
-```text
-# .husky/pre-push
-
-nohup sh -c 'gatsby build && netlify deploy --dir=public --prod' &
-```
-
-이제 `git push`는 평소처럼 작동하고, 배포는 백그라운드에서 동작한다.
-
-![background_01.png](background_01.png)
-
-혹시 배포 로그를 확인하고 싶다면 `nohup.out` 파일을 확인하면 된다.<br>
-`nohup.out`은 `.gitignore`에 추가하여 버전 관리 대상에서 제외시켰다.
+`pre-push`의 내용을 수정하고 싶은 경우, `.husky/pre-push`를 텍스트 편집기로 수정하면 된다.<br>
+`main` branch가 아니라면 배포하지 않도록 다음과 같이 내용을 추가했다.
 
 ```text
-# .gitignore
+# .husky/pre-push 파일
 
-nohup.out
+#!/bin/sh
+BRANCH_NAME=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null | awk -F'/' '{print $2}')
+
+if [ "$BRANCH_NAME" = "main" ]; then
+  sh -c 'gatsby build && netlify deploy --dir=public --prod'
+fi
 ```
 
-![background_02.png](background_02.png)
+* `#!/bin/sh`: 넣지 않아도 문제는 없었으나, 안정적인 실행을 보장하기 위하여 인터프리터 지정
+* `git rev-parse ~` 구문: 현재 작업중인 branch의 이름을 가져옴
+
+`test` branch에서 push는 정상적으로 진행하지만, 배포는 진행되지 않는 것을 확인할 수 있다.
+
+![test-branch.png](test-branch.png)
 
 ---
 
