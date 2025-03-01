@@ -1,1 +1,6 @@
-nohup sh -c 'gatsby build && netlify deploy --dir=public --prod' &
+#!/bin/sh
+BRANCH_NAME=$(git rev-parse --abbrev-ref @{upstream} 2>/dev/null | awk -F'/' '{print $2}')
+
+if [ "$BRANCH_NAME" = "main" ]; then
+  sh -c 'gatsby build && netlify deploy --dir=public --prod'
+fi
