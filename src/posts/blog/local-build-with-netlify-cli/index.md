@@ -10,7 +10,7 @@ thumbnail: "../../../../src/images/netlify.webp"
 
 1. 포스트를 작성 및 수정하거나, React 파일 변경(UI 업데이트 등) 후 push
 2. Netlify에서 변경을 감지하면, 서버에서 `gatsby build` 명령어 실행
-3. 빌드 결과물인 `public` 디렉토리를 기준으로 서버에서 `netlify deploy` 명령어 실행
+3. 빌드 결과물인 `public` 디렉터리를 기준으로 서버에서 `netlify deploy` 명령어 실행
 4. 최종 결과물 호스팅
 
 배포 프로세스에 문제는 없으나, 변경 사항이 반영되는 속도가 아쉬웠다.<br>
@@ -58,7 +58,7 @@ netlify login
 
 ### Repository와 Netlify Site 연결
 
-Repository의 루트 디렉토리로 이동한 후 `netlify init`을 입력한다.
+Repository의 루트 디렉터리로 이동한 후 `netlify init`을 입력한다.
 
 ```bash
 cd ~/Github/youseokhwan.me # 개인 설정에 따라 다름
@@ -73,8 +73,8 @@ netlify init
 
 ![netlify-init_02.png](netlify-init_02.png)
 
-`.netlify` 디렉토리가 생기면서 설정이 완료된다.<br>
-만약 Netlify 연결을 해제하고 싶으면 `.netlify` 디렉토리를 지우면 된다.
+`.netlify` 디렉터리가 생기면서 설정이 완료된다.<br>
+만약 Netlify 연결을 해제하고 싶으면 `.netlify` 디렉터리를 지우면 된다.
 
 ### 로컬 빌드
 
@@ -85,7 +85,7 @@ netlify init
 gatsby build
 ```
 
-`public` 디렉토리에서 결과물을 확인할 수 있다.
+`public` 디렉터리에서 결과물을 확인할 수 있다.
 
 ![gatsby-build](gatsby-build.png)
 
@@ -119,7 +119,7 @@ git hook은 기본적으로 `.git/hooks`에 저장되는데, `.git/`은 버전 �
 husky를 이용하면 버전 관리를 비롯해 hook들을 편하게 관리할 수 있다.
 
 husky 패키지를 설치하고 활성화한다.<br>
-`init` 명령어는 repository의 루트 디렉토리에서 실행해야 한다.
+`init` 명령어는 repository의 루트 디렉터리에서 실행해야 한다.
 
 ```bash
 yarn add husky
@@ -129,7 +129,7 @@ yarn husky init
 ### pre-push 추가
 
 push할 때 배포를 같이 진행하도록 `pre-push` 파일[^1]을 추가한다.<br>
-repository의 루트 디렉토리에서 명령어를 실행한다.
+repository의 루트 디렉터리에서 명령어를 실행한다.
 
 ```bash
 echo "gatsby build && netlify deploy --dir=public --prod" > .husky/pre-push

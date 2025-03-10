@@ -41,7 +41,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 테마는 개인 취향이므로 다양한 글을 참고하여 원하는 테마를 설정하면 된다.
 
-홈 디렉토리(`~`)에 `.zshrc` 파일을 수정하여 zsh 설정을 변경할 수 있다.<br>
+홈 디렉터리(`~`)에 `.zshrc` 파일을 수정하여 zsh 설정을 변경할 수 있다.<br>
 zshrc(zsh run commands)는 zsh가 실행될 때 자동으로 실행되는 파일이다.<br>
 테마 외에도 alias, PATH 설정 등에도 사용된다.
 

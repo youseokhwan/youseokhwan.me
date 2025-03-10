@@ -36,8 +36,8 @@ npm install -g gatsby-cli
 gatsby new youseokhwan.me https://github.com/sungik-choi/gatsby-starter-apple
 ```
 
-`youseokhwan.me`는 로컬 디렉토리 이름, Github 주소는 `clone`할 Repository의 주소이다.<br>
-로컬 디렉토리 이름은 자유롭게 지어도 된다.<br>
+`youseokhwan.me`는 로컬 디렉터리 이름, Github 주소는 `clone`할 Repository의 주소이다.<br>
+로컬 디렉터리 이름은 자유롭게 지어도 된다.<br>
 
 필요한 모듈을 설치하면, 로컬에서 실행해볼 수 있다.
 
@@ -55,7 +55,7 @@ UI를 변경하거나, 포스트를 작성하면서 중간중간 결과물을 �
 ## GitHub Repository 생성 및 remote 연결
 
 GitHub에서 `youseokhwan.me` Repository를 생성한다.<br>
-이후, 로컬 디렉토리 `youseokhwan.me`와 이 Repository를 연결한다.
+이후, 로컬 디렉터리 `youseokhwan.me`와 이 Repository를 연결한다.
 
 ```bash
 rm -rf .git
