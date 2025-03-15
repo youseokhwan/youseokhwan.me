@@ -9,8 +9,6 @@ thumbnail: "../../../../src/images/algorithm.webp"
 알고리즘 문제를 해결하다보면 작성한 코드가 실제로 얼마나 걸리는지 측정해보고 싶을 때가 있다.<br>
 이때, `CFAbsoluteTimeGetCurrent()`를 이용하여 확인할 수 있다.
 
----
-
 ## CFAbsoluteTimeGetCurrent()
 
 `CFAbsoluteTimeGetCurrent()`는 `Foundation`에 내장된 함수이다.<br>
@@ -22,8 +20,6 @@ import Foundation
 let currentTime = CFAbsoluteTimeGetCurrent()
 print(currentTime) // 761337286.360585
 ```
-
----
 
 ## 실행 시간 측정
 

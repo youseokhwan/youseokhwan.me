@@ -29,8 +29,6 @@ class ViewController: UIViewController {
 storyboard(xml)에 있는 속성들을 코드로 옮겨와서 불가피하게 코드가 길어졌다.<br>
 코드 자체를 줄이진 못하더라도 최대한 우아하게 개선해보자.
 
----
-
 ## 클로저를 이용한 초기화
 
 클로저를 이용해 속성을 부여하면서 컴포넌트를 선언할 수 있다.
@@ -92,8 +90,6 @@ class ViewController: UIViewController {
 클로저가 실행되는 순간에 `self`의 초기화가 완료됐는지를 보장할 수 없기 때문에 컴파일 에러가 발생한다.<br>
 `self`가 포함된 코드는 다시 `viewDidLoad()`로 내려야될까?
 
----
-
 ## lazy var를 이용한 지연 초기화
 
 다행히 `lazy var`라는 선택지가 있다.<br>
@@ -136,8 +132,6 @@ class ViewController: UIViewController {
 
 UIKit에서는 UI 업데이트를 반드시 메인 스레드에서 해야하기에 큰 문제는 없다.<br>
 (메인 스레드가 아닌 곳에서 UI 업데이트를 하면 런타임 에러가 발생하는데, 이건 `lazy`나 클로저 여부에 관계없이 발생한다.)
-
----
 
 ## 라이브러리 사용
 

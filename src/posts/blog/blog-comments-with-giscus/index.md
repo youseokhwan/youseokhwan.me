@@ -19,8 +19,6 @@ GitHub 계정 기반 서비스는 [utterances](https://utteranc.es/)가 대표�
 
 이제 giscus를 적용해보자. [이 글](https://jojoldu.tistory.com/704)에서 정보를 얻어 진행했다. 🙏
 
----
-
 ## 블로그에 giscus 적용하기
 
 ### GitHub Discussions 활성화

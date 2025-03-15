@@ -15,8 +15,6 @@ thumbnail: "../../../../src/images/markdown.webp"
 각주는 독자가 본문을 읽는 흐름을 방해하지 않으면서, 필요한 정보를 제공하는 역할을 한다.<br>
 마크다운에서도 각주를 잘 활용하면 가독성이 좋은 문서를 작성할 수 있다.
 
----
-
 ## GitHub 기반
 
 GFM(GitHub Flavored Markdown)은 GitHub에서 확장한 Markdown 문법이다.<br>
@@ -37,8 +35,6 @@ Contrary to popular belief, Lorem Ipsum is not simply random text.[^2]
 ```
 
 ![gfm-footnotes.png](gfm-footnotes.png)
-
----
 
 ## HTML 태그가 지원되는 경우
 

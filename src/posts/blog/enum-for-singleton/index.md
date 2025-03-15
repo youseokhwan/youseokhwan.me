@@ -24,8 +24,6 @@ iOS의 대표적인 예시로는 `URLSession`, `UIApplication` 등이 있다.
 
 Concurrency, 의존성 주입 등 개선 방법은 있지만, 단점이 뚜렷하여 Singleton을 안티 패턴으로 취급하기도 한다.
 
----
-
 ## class로 Singleton 구현
 
 class로 Singleton을 구현해보자.<br>
@@ -65,8 +63,6 @@ Task {
 단일 인스턴스인 `shared`를 통해 전역에서 편하게 접근할 수 있다.<br>
 또한, `init()`을 `private`으로 선언했기 때문에 외부에서 새로운 인스턴스를 생성할 수 없다.
 
----
-
 ## enum으로 Singleton 구현
 
 enum은 enumerations이라는 이름 그대로 열거형 타입을 정의할 때 사용하지만,<br>
@@ -96,8 +92,6 @@ Task {
 enum을 이용해 인스턴스 자체를 만들지 않고, 타입 프로퍼티로 접근하여 같은 기능을 구현했다.<br>
 (아예 인스턴스가 없는데 Singleton이라고 명명해도 될까?)
 
----
-
 ## class Singleton vs enum Singleton
 
 enum Singleton은 class Singleton과 비교해 다음과 같은 장점이 있다.
@@ -112,7 +106,7 @@ enum Singleton은 class Singleton과 비교해 다음과 같은 장점이 있다
 * 테스트할 때 mocking이 어렵다.
 * 프로토콜을 채택할 때 제약이 있을 수 있다.
 
----
+## 결론
 
 단순 Utility나 Helper의 목적으로 state 없이 class Singleton을 사용하고 있다면, enum Singleton으로 migration을 고려해볼 수 있다.<br>
 enum을 채택하지 않더라도, namespace로 사용하는 방식은 종종 볼 수 있기에 인지하고 있으면 좋을 것 같다.

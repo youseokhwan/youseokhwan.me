@@ -61,6 +61,8 @@ print(words.joined(separator: "\n"))
 
 I/O 횟수를 줄여서 실행 속도 개선을 기대해 볼 수 있지만, 긴 문자열을 사용하게 되므로 메모리 효율을 고려해야 한다.
 
+---
+
 ### 참고
 
 - [https://developer.apple.com/documentation/swift/readline(strippingnewline:)](https://developer.apple.com/documentation/swift/readline(strippingnewline:))

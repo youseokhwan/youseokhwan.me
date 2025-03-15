@@ -14,8 +14,6 @@ mac은 보조키(`cmd`, `opt` 등)에 대한 키 매핑을 기본적으로 지�
 그러나 좌우 보조키를 따로 설정하거나, 외장 키보드의 부가적인 키를 매핑하진 못한다.<br>
 그래서 외부 프로그램인 Karabiner를 통해 매핑하는 방법을 소개한다.
 
----
-
 ## Karabiner 설치
 
 Karabiner는 [공식 홈페이지](https://karabiner-elements.pqrs.org/)에서 설치할 수 있다.
@@ -31,8 +29,6 @@ Elements에서는 키를 매핑할 수 있고, EventViewer에서는 입력한 �
 
 ![permission_02.png](permission_02.png)
 
----
-
 ## Karabiner-EventViewer
 
 Karabiner-EventViewer에서는 입력한 키가 무엇인지 확인할 수 있다.<br>
@@ -42,8 +38,6 @@ Karabiner-EventViewer에서는 입력한 키가 무엇인지 확인할 수 있�
 
 예를 들면 필자가 쓰는 외장 키보드의 'Super'라는 키는 Windows 11에서는 `context menu`로 쓰이고, macOS에서는 `Application`키로 쓰인다.<br>
 또한 외장 키보드의 'Fn'키는 LED를 설정하거나 연결된 블루투스 기기를 바꾸는 조합키로 사용되는데, 이건 macOS에서는 아예 인식되지 않는걸 확인할 수 있었다.
-
----
 
 ## Karabiner-Elements
 

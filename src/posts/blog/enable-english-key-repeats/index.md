@@ -14,8 +14,6 @@ macOS에서는 영어 자판을 길게 누르면 다이어크리틱을 선택할
 
 ![diacritics.png](diacritics.png)
 
----
-
 ## Diacritics 팝업 비활성화
 
 한국어, 영어를 주로 사용하는 개발환경에서는 이 다이어크리틱을 입력할 일이 별로 없다.
@@ -26,8 +24,6 @@ macOS에서는 영어 자판을 길게 누르면 다이어크리틱을 선택할
 ```bash
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
-
----
 
 ## 설정 되돌리기
 

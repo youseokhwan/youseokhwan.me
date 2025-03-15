@@ -117,6 +117,8 @@ cd spm-practice
 open Package.swift # 혹은 swift run
 ```
 
+---
+
 ### 참고
 
 - https://kotlinworld.com/269

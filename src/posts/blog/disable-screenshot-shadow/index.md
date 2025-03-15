@@ -17,8 +17,6 @@ mac에서 스크린샷 단축키는 다음과 같다.
 
 ![screenshot_shadow_01.png](screenshot_shadow_01.png)
 
----
-
 ## 그림자 없애기
 
 이때, macOS는 윈도우를 살짝 들어올려 그림자를 배치한다.<br>

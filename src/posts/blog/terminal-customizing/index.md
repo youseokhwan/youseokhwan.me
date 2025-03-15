@@ -9,8 +9,6 @@ thumbnail: "../../../../src/images/macos.webp"
 mac에서 터미널을 사용할 때, 내장 터미널보다는 iTerm2를 주로 사용한다.<br>
 이 iTerm2 세팅 과정을 기록해보았다.
 
----
-
 ## iTerm2
 
 iTerm2는 macOS의 무료 오픈소스 터미널 앱이다.<br>
@@ -19,8 +17,6 @@ iTerm2는 macOS의 무료 오픈소스 터미널 앱이다.<br>
 [공식 홈페이지](https://iterm2.com/index.html)에서 다운받을 수 있다.
 
 ![iterm2.png](iterm2.png)
-
----
 
 ## oh-my-zsh
 
@@ -34,8 +30,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ![ohmyzsh.png](ohmyzsh.png)
-
----
 
 ## 터미널 꾸미기
 
@@ -106,8 +100,6 @@ Blinking cursor 옵션도 체크했다.
 ![cursor_01.png](cursor_01.png)
 
 ![cursor_02.png](cursor_02.png)
-
----
 
 ## 플러그인
 

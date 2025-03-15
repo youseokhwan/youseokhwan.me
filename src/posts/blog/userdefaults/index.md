@@ -10,8 +10,6 @@ thumbnail: "../../../../src/images/swift.webp"
 앱을 실행할 때마다 key-value 쌍을 persistent[^1]하게 저장한다.<br>
 측정 단위, 다크모드 사용 여부 등 사용자의 간단한 설정 값을 저장하는 데 적합하다.
 
----
-
 ## 기본적인 사용법
 
 `UserDefaults`는 `standard` 프로퍼티를 통해 별도의 인스턴스 생성 없이 Singleton처럼[^2] 사용할 수 있다.
@@ -40,8 +38,6 @@ import Foundation
 UserDefaults.standard.set("DarkMode", forKey: "themeMode")
 let theme = UserDefaults.standard.string(forKey: "themeMode") ?? "LightMode"
 ```
-
----
 
 ## 사용 가능한 타입
 
@@ -73,21 +69,15 @@ if let savedColorData = UserDefaults.standard.data(forKey: "savedColor"),
 }
 ```
 
----
-
 ## Thread-Safe
 
 [공식 문서](https://developer.apple.com/documentation/foundation/userdefaults)에 따르면 `UserDefaults`는 Thread-Safe하게 작동한다.
-
----
 
 ## 큰 데이터를 저장하는 것은 비추천
 
 `UserDefaults`는 앱이 실행될 때, plist의 값을 읽어온 후 캐싱한다.<br>
 캐싱된 데이터에서 값을 바로 반환해주기 때문에 속도가 빠르지만, 그만큼 메모리에 부담이 있다.<br>
 큰 데이터를 저장할 때는 `FileManager`, `Core Data` 등 다른 방법을 고려해야 한다.
-
----
 
 ## 보안이 필요한 데이터의 경우 주의
 

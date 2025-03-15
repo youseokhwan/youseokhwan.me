@@ -93,6 +93,8 @@ Settings(`⌘ + ,`) > `Locations` 탭에 `Command Line Tools` 항목이 있다.
 
 ![alt text](image-9.png)
 
+---
+
 ### 참고
 
 - https://whitehyun.vercel.app/xcodebuild-1

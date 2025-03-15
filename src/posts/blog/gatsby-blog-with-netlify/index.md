@@ -8,8 +8,6 @@ thumbnail: "../../../../src/images/gatsby.webp"
 
 Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스텀해보고싶은 부분들이 있어서 GitHub Blog를 구축해보기로 했다.
 
----
-
 ## Gatsby
 
 `Gatsby`는 정적 사이트 생성기이다.<br>
@@ -23,8 +21,6 @@ GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Ga
 
 필자는 디자인이 가장 마음에 드는 [gatsby-starter-apple](https://github.com/sungik-choi/gatsby-starter-apple)로 결정했다.<br>
 템플릿마다 구현이나 표현 방식에 차이가 있을 수 있음에 유의한다.
-
----
 
 ## Gatsby Repository 클론 및 로컬에서 실행하기
 
@@ -50,8 +46,6 @@ gatsby develop
 브라우저에 [http://localhost:8000/](http://localhost:8000/)을 입력하여 접속할 수 있고,<br>
 UI를 변경하거나, 포스트를 작성하면서 중간중간 결과물을 확인할 수 있다.
 
----
-
 ## GitHub Repository 생성 및 remote 연결
 
 GitHub에서 `youseokhwan.me` Repository를 생성한다.<br>
@@ -66,15 +60,11 @@ git remote add origin https://github.com/youseokhwan/youseokhwan.me
 git push -u origin main
 ```
 
----
-
 ## 포스트 작성
 
 포스트는 `src/posts/blog/` 경로에 마크다운 파일을 추가하는 방식으로 작성할 수 있다.
 
 ![new_post.png](new_post.png)
-
----
 
 ## Netlify로 블로그 배포하기
 
@@ -107,8 +97,6 @@ Build settings은 다음과 같이 입력했다.
 
 이제 Repository의 변경 사항이 감지되면 Netlify가 자동으로 배포한다.<br>
 배포 과정이나 로그는 `Deploys` 탭에서 확인할 수 있다.
-
----
 
 ## 커스텀 도메인 연결
 
