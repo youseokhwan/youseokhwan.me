@@ -3,7 +3,7 @@ title: "mac 터미널 커스터마이징"
 category: "macOS"
 date: "2025-02-14 15:00:00 +09:00"
 desc: "iTerm2와 oh-my-zsh를 활용한 개인 터미널 셋업"
-thumbnail: "../../../../src/images/macos.webp"
+thumbnail: "../../../../src/images/iterm.webp"
 ---
 
 mac에서 터미널을 사용할 때, 내장 터미널보다는 iTerm2를 주로 사용한다.<br>
