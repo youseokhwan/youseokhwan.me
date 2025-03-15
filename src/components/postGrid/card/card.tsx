@@ -8,7 +8,7 @@ import type Post from "~/src/types/Post"
 
 import CenteredImg from "./centeredImg"
 
-type CardProperties = Pick<Post, "thumbnail" | "category" | "title" | "desc" | "date"> & { timeToRead: number }
+type CardProperties = Pick<Post, "thumbnail" | "category" | "title" | "desc" | "date">
 
 const Card: React.FC<CardProperties> = ({
   thumbnail,
@@ -16,7 +16,6 @@ const Card: React.FC<CardProperties> = ({
   title,
   desc,
   date,
-  timeToRead
 }) => {
   return (
     <Wrapper>
@@ -27,7 +26,7 @@ const Card: React.FC<CardProperties> = ({
           <Title>{title}</Title>
           <Desc>{desc}</Desc>
         </div>
-        <DateTime dateTime={date!}>{timeToRead} min read • {date}</DateTime>
+        <DateTime dateTime={date!}>{date}</DateTime>
       </Text>
     </Wrapper>
   )
