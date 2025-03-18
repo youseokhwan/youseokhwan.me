@@ -3,7 +3,7 @@ title: "mac 키 매핑하기"
 category: "macOS"
 date: "2025-02-16 12:00:00 +09:00"
 desc: "Karabiner를 활용한 macOS 키 매핑 및 한영 전환 개선"
-thumbnail: "../../../../src/images/macos.webp"
+thumbnail: "../../../../src/images/karabiner.webp"
 ---
 
 mac은 보조키(`cmd`, `opt` 등)에 대한 키 매핑을 기본적으로 지원한다.<br>

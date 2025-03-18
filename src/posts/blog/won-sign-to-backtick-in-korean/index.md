@@ -3,7 +3,7 @@ title: "한글 입력시 ₩ 대신 ` 입력되도록 설정하기"
 category: "macOS"
 date: "2025-03-18 17:30:00 +09:00"
 desc: "Karabiner를 이용해 한글 입력에서도 ₩(won sign) 대신 `(backtick) 입력되도록 설정하기"
-thumbnail: "../../../../src/images/macos.webp"
+thumbnail: "../../../../src/images/karabiner.webp"
 ---
 
 한국어 키보드에서는 `1` 왼쪽에 있는 `` ` ``키[^1]로 `` ` ``, `₩`, `~`를 입력할 수 있다.
