@@ -1,7 +1,7 @@
 ---
 title: "CLI에서 EOF 이후에도 표준 입력 받기"
 category: "Swift"
-date: "2025-03-13 23:00:00 +09:00"
+date: "2025-03-13 23:00:00"
 desc: "CLI 환경에서 표준 입력을 FileHandle.standardInput으로 처리하여 EOF에 유연하게 대응하기"
 thumbnail: "../../../../src/images/swift.webp"
 ---

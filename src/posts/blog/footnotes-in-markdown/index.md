@@ -1,7 +1,7 @@
 ---
 title: "Markdown에서 각주 사용하기"
 category: "Markdown"
-date: "2025-02-28 09:00:00 +09:00"
+date: "2025-02-28 09:00:00"
 desc: "Markdown에서 각주 사용하기"
 thumbnail: "../../../../src/images/markdown.webp"
 ---

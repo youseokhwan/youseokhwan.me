@@ -1,7 +1,7 @@
 ---
 title: "mac 터미널 커스터마이징"
 category: "macOS"
-date: "2025-02-14 15:00:00 +09:00"
+date: "2025-02-14 15:00:00"
 desc: "iTerm2와 oh-my-zsh를 활용한 개인 터미널 셋업"
 thumbnail: "../../../../src/images/iterm.webp"
 ---

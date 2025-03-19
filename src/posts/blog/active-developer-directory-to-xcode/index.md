@@ -1,7 +1,7 @@
 ---
 title: "no such module 'XCTest' 오류 해결 과정 정리"
 category: "Xcode"
-date: "2025-03-14 14:00:00 +09:00"
+date: "2025-03-14 14:00:00"
 desc: "Active Developer Directory를 Command Line Tools에서 Xcode로 변경하기"
 thumbnail: "../../../../src/images/xcode.webp"
 ---

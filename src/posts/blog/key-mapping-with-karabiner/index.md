@@ -1,7 +1,7 @@
 ---
 title: "mac 키 매핑하기"
 category: "macOS"
-date: "2025-02-16 12:00:00 +09:00"
+date: "2025-02-16 12:00:00"
 desc: "Karabiner를 활용한 macOS 키 매핑 및 한영 전환 개선"
 thumbnail: "../../../../src/images/karabiner.webp"
 ---

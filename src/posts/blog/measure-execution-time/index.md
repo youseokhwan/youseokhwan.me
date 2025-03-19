@@ -1,7 +1,7 @@
 ---
 title: "Swift 코드 실행시간 측정하기"
 category: "Algorithm"
-date: "2025-02-15 23:00:00 +09:00"
+date: "2025-02-15 23:00:00"
 desc: "CFAbsoluteTimeGetCurrent()로 코드 실행시간 측정하기"
 thumbnail: "../../../../src/images/algorithm.webp"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "한글 입력시 ₩ 대신 ` 입력되도록 설정하기"
 category: "macOS"
-date: "2025-03-18 17:30:00 +09:00"
+date: "2025-03-18 17:30:00"
 desc: "Karabiner를 이용해 한글 입력에서도 ₩(won sign) 대신 `(backtick) 입력되도록 설정하기"
 thumbnail: "../../../../src/images/karabiner.webp"
 ---

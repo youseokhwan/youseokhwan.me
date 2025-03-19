@@ -1,7 +1,7 @@
 ---
 title: "UserDefaults"
 category: "Swift"
-date: "2025-02-27 09:00:00 +09:00"
+date: "2025-02-27 09:00:00"
 desc: "UserDefaults 사용법 및 주의사항 정리"
 thumbnail: "../../../../src/images/swift.webp"
 ---

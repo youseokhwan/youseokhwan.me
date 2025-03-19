@@ -1,7 +1,7 @@
 ---
 title: "GitHub 블로그 구축하기"
 category: "Blog"
-date: "2025-02-11 17:00:00 +09:00"
+date: "2025-02-11 17:00:00"
 desc: "Gatsby와 Netlify로 블로그 구축하기"
 thumbnail: "../../../../src/images/gatsby.webp"
 ---
