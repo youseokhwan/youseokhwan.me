@@ -166,7 +166,7 @@ export const query = graphql`
             gatsbyImageData(placeholder: BLURRED, layout: FIXED)
           }
         }
-        date(formatString: "YYYY-MM-DD")
+        date(formatString: "YYYY-MM-DD HH:mm")
         category
       }
       timeToRead
