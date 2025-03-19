@@ -1,7 +1,7 @@
 ---
 title: "print()도 테스트할 수 있을까?"
 category: "Swift"
-date: "2025-03-17 17:30:00 +09:00"
+date: "2025-03-17 17:30:00"
 desc: "pipe로 표준 출력(stdout)을 가로채서 print() 테스트하기"
 thumbnail: "../../../../src/images/swift.webp"
 ---

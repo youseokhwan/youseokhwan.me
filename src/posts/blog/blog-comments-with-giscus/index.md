@@ -1,7 +1,7 @@
 ---
 title: "블로그 댓글 기능 구현하기"
 category: "Blog"
-date: "2025-02-19 11:00:00 +09:00"
+date: "2025-02-19 11:00:00"
 desc: "giscus를 이용하여 블로그 댓글 기능 구현하기"
 thumbnail: "../../../../src/images/giscus.webp"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "iTerm2 텍스트 편집 단축키 변경하기"
 category: "macOS"
-date: "2025-03-15 19:00:00 +09:00"
+date: "2025-03-15 19:00:00"
 desc: "iTerm2 텍스트 편집 단축키를 일반 텍스트 에디터와 통일하여 생산성 높이기"
 thumbnail: "../../../../src/images/iterm.webp"
 ---

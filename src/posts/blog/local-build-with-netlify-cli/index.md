@@ -1,7 +1,7 @@
 ---
 title: "Netlify 로컬에서 빌드하기"
 category: "Blog"
-date: "2025-02-24 17:00:00 +09:00"
+date: "2025-02-24 17:00:00"
 desc: "netlify-cli로 로컬에서 빌드하여 블로그 배포 시간 단축하기"
 thumbnail: "../../../../src/images/netlify.webp"
 ---

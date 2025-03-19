@@ -1,7 +1,7 @@
 ---
 title: "enum으로 Singleton 구현하기"
 category: "Swift"
-date: "2025-02-21 15:00:00 +09:00"
+date: "2025-02-21 15:00:00"
 desc: "class Singleton과 enum Singleton의 장단점 비교"
 thumbnail: "../../../../src/images/swift.webp"
 ---

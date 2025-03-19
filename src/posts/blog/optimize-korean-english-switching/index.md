@@ -1,7 +1,7 @@
 ---
 title: "macOS 한영 전환 최적화하기"
 category: "macOS"
-date: "2025-03-19 02:00:00 +09:00"
+date: "2025-03-19 02:00:00"
 desc: "Karabiner를 사용하여 한영 전환을 키 다운 시점으로 변경해 사용감 개선하기"
 thumbnail: "../../../../src/images/karabiner.webp"
 ---

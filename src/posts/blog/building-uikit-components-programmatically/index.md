@@ -1,7 +1,7 @@
 ---
 title: "UIKit의 UI 컴포넌트를 코드 베이스로 구현하기"
 category: "iOS"
-date: "2025-02-17 17:00:00 +09:00"
+date: "2025-02-17 17:00:00"
 desc: "lazy var를 이용하여 UI 컴포넌트 구현하기"
 thumbnail: "../../../../src/images/ios.webp"
 ---

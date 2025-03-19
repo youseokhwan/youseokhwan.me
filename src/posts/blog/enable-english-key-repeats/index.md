@@ -1,7 +1,7 @@
 ---
 title: "mac 영어 연속입력 활성화하기"
 category: "macOS"
-date: "2025-02-12 23:00:00 +09:00"
+date: "2025-02-12 23:00:00"
 desc: "Diacritics 팝업 비활성화하여 영어 연속입력 활성화하기"
 thumbnail: "../../../../src/images/macos.webp"
 ---
