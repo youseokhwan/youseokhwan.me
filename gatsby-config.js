@@ -96,6 +96,7 @@ const markdownPlugins = [
             linkImagesToOriginal: false,
           },
         },
+        "gatsby-remark-images-medium-zoom",
         {
           resolve: "gatsby-remark-footnotes",
           options: {
