@@ -84,6 +84,9 @@ const markdownPlugins = [
                 "body[data-theme=dark]": "Dark Github",
               },
             },
+            languageAliases: {
+              applescript: "shellscript"
+            },
             extensions: ["vscode-theme-github-light", "dark-github-theme"],
           },
         },
