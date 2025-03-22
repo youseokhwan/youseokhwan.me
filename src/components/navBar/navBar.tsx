@@ -60,7 +60,7 @@ type Toggleable = Pick<UseMenuReturnType, "toggle">
 
 const Nav = styled.nav`
   min-width: var(--min-width);
-  position: sticky;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
