@@ -6,7 +6,7 @@ desc: "Gatsby와 Netlify로 블로그 구축하기"
 thumbnail: "../../../../src/images/gatsby.webp"
 ---
 
-Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스텀해보고싶은 부분들이 있어서 GitHub Blog를 구축해보기로 했다.
+Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스텀 해보고 싶은 부분들이 있어서 GitHub Blog를 구축해 보기로 했다.
 
 ## Gatsby
 
@@ -14,9 +14,9 @@ Tistory, 벨로그 등의 블로그 플랫폼을 이용하다가, 직접 커스�
 GitHub 블로그를 구축할 때 Ruby 기반의 `Jekyll`과 React 기반의 `Gatsby`가 주로 언급되는데,
 ~~그나마~~ React가 좀 더 친숙했기에 `Gatsby`를 선택했다.
 
-`Gatsby`의 [Quick Start](https://www.gatsbyjs.com/docs/quick-start/)를 따라하면 기초적인 블로그를 쉽게 만들 수 있다.<br>
+`Gatsby`의 [Quick Start](https://www.gatsbyjs.com/docs/quick-start/)를 따라 하면 기초적인 블로그를 쉽게 만들 수 있다.<br>
 이 상태에서 UI/UX를 직접 설계하며 블로그를 개발하면 많은 것을 배울 수 있겠지만,<br>
-빠르게 블로그를 구축하고 싶고, 개발 및 학습 시간을 많이 투자하기 부담스럽다면 템플릿을 기반으로 구축하는 것도 좋다.<br>
+빠르게 블로그를 구축하고 싶고, 개발 및 학습 시간을 많이 투자하기에 부담스럽다면 템플릿을 기반으로 구축하는 것도 좋다.<br>
 템플릿은 구글링하거나 GitHub에 검색하여 찾아볼 수 있다.
 
 필자는 디자인이 가장 마음에 드는 [gatsby-starter-apple](https://github.com/sungik-choi/gatsby-starter-apple)로 결정했다.<br>
@@ -35,7 +35,7 @@ gatsby new youseokhwan.me https://github.com/sungik-choi/gatsby-starter-apple
 `youseokhwan.me`는 로컬 디렉터리 이름, Github 주소는 `clone`할 Repository의 주소이다.<br>
 로컬 디렉터리 이름은 자유롭게 지어도 된다.<br>
 
-필요한 모듈을 설치하면, 로컬에서 실행해볼 수 있다.
+필요한 모듈을 설치하면, 로컬에서 실행해 볼 수 있다.
 
 ```bash
 cd youseokhwan.me
@@ -69,9 +69,9 @@ git push -u origin main
 ## Netlify로 블로그 배포하기
 
 현재는 로컬에서만 접속할 수 있고, 외부에서는 접속할 수 없는 상태이다.<br>
-외부에서 접속하려면 이 블로그를 배포(deploy)해야한다.
+외부에서 접속하려면 이 블로그를 배포(deploy)해야 한다.
 
-정적 사이트를 쉽고 빠르게 배포해주는 [Netlify](https://www.netlify.com/)를 통해 블로그를 배포할 것이다.<br>
+정적 사이트를 쉽고 빠르게 배포해 주는 [Netlify](https://www.netlify.com/)를 통해 블로그를 배포할 것이다.<br>
 회원 가입을 하고 `youseokhwan.me` Repository를 등록한다.
 
 ![netlify_01.png](netlify_01.png)
@@ -85,7 +85,7 @@ Build settings은 다음과 같이 입력했다.
 ![netlify_02.png](netlify_02.png)
 
 브랜치는 우선 `main`으로 설정했다.<br>
-`main`을 배포 브랜치로 바로 사용하는 것에 대한 거부감이 있지만, CI/CD 개선은 추후에 하기로 하고 우선 진행했다.
+`main`을 배포 브랜치로 바로 사용하는 것에 대한 거부감이 있지만, CI/CD 개선은 다음에 하기로 하고 우선 진행했다.
 
 ![netlify_03.png](netlify_03.png)
 
@@ -110,12 +110,12 @@ Build settings은 다음과 같이 입력했다.
 `104.198.14.52`는 Netlify에서 제공하는 A 레코드 IP주소이다.<br>
 CNAME 설정은 `www.youseokhwan.me`를 `youseokhwan.netlify.app`으로 리다이렉트하는 역할을 한다.
 
-이후, Netlify 설정의 Domain management 탭에서 구매한 도메인을 추가해준다.
+이후, Netlify 설정의 Domain management 탭에서 구매한 도메인을 추가해 준다.
 
 ![custom_domain_02.png](custom_domain_02.png)
 
 바로 밑 HTTPS 항목의 `Verify DNS Configuration`을 클릭하면 Netlify가 설정된 DNS 레코드를 검사한다.<br>
-DNS가 올바르게 설정되었다면 자동으로 `Let's Encrypt SSL` 인증서를 발급하여 HTTPS를 활성화 시켜준다.
+DNS가 올바르게 설정되었다면 자동으로 `Let's Encrypt SSL` 인증서를 발급하여 HTTPS를 활성화해 준다.
 
 ![custom_domain_03.png](custom_domain_03.png)
 

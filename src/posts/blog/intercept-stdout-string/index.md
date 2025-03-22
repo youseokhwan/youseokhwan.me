@@ -9,7 +9,7 @@ thumbnail: "../../../../src/images/swift.webp"
 ## 개요
 
 클로저를 학습하던 중, 아래와 같은 2가지 형태의 구문을 작성하게 되었다.<br>
-`Int` 2개를 파라미터로 받아, 연산 결과를 출력하는 간단한 클로저이다.
+`Int` 2개를 파라미터로 받아, 연산 결과를 출력하는 간단한 클로저다.
 
 **값을 반환하고, 외부에서 print하는 클로저**
 
@@ -31,7 +31,7 @@ mul(3, 5) // 두 수의 곱은 15입니다
 
 ## 트러블 발생
 
-그리고 이 둘에 대한 테스트 케이스를 작성하려했다.<br>
+그리고 이 둘에 대한 테스트 케이스를 작성하려 했다.<br>
 전자의 경우는 무난하게 작성할 수 있었다.
 
 ```swift
@@ -41,7 +41,7 @@ func testSum() throws {
 ```
 
 문제는 후자의 경우, 어떻게 테스트해야 할지 직관적으로 떠오르지 않았다.<br>
-제공되는 `XCTAssert` 메서드 중에서도 적절해보이는 메서드가 없었다.
+제공되는 `XCTAssert` 메서드 중에서도 적절해 보이는 메서드가 없었다.
 
 ## 해결 시나리오
 
@@ -80,13 +80,13 @@ private func interceptedStringFromStdout(_ closure: () -> Void) -> String? {
 }
 ```
 
-`dup`, `dup2`, `fileno` 등은 C에서 관습적으로 쓰던 네이밍을 그대로 채택한 듯 하다.<br>
-코드를 한 줄씩 분석해보자.
+`dup`, `dup2`, `fileno` 등은 C에서 관습적으로 쓰던 네이밍을 그대로 채택한 듯하다.<br>
+코드를 한 줄씩 분석해 보자.
 
 **line 9**: `let pipe = Pipe()`
 
-`pipe`는 한 프로세스의 출력을 다른 프로세스의 입력으로 연결하는 단방향 통신 매커니즘이다.<br>
-`stdout`으로 전달되는 출력을 `pipe`를 이용해 `data` 상수로 가로챌 것이다.
+`pipe`는 한 프로세스의 출력을 다른 프로세스의 입력으로 연결하는 단방향 통신 메커니즘이다.<br>
+`stdout`으로 전달되는 출력을, `pipe`를 이용해 `data` 상수로 가로챌 것이다.
 
 **line 10**: `let originalStdout = dup(fileno(stdout))`
 
@@ -96,7 +96,7 @@ private func interceptedStringFromStdout(_ closure: () -> Void) -> String? {
 **line 11**: `dup2(pipe.fileHandleForWriting.fileDescriptor, fileno(stdout))`
 
 `dup2` 역시 복사인데, `dup2(a, b)`는 `b`를 `a`로 덮어쓰는 것이다.<br>
-`stdout`을 `pipe`의 쓰기 디스크립터로 덮어써서, 이제 `pipe`가 데이터를 받게된다.
+`stdout`을 `pipe`의 쓰기 디스크립터로 덮어써서, 이제 `pipe`가 데이터를 받게 된다.
 
 **line 13**: `closure()`
 
@@ -110,13 +110,13 @@ private func interceptedStringFromStdout(_ closure: () -> Void) -> String? {
 
 **line 16**: `try? pipe.fileHandleForWriting.close()`
 
-`pipe`의 쓰기 디스크립터를 닫고, `EOF`를 입력해준다.<br>
+`pipe`의 쓰기 디스크립터를 닫고, `EOF`를 입력해 준다.<br>
 닫지 않으면 `EOF`를 무한히 기다리는 blocking 상태가 되어 테스트가 끝나지 않는다.
 
 **line 17**: `dup2(originalStdout, fileno(stdout))`
 
-백업해놨던 `originalStdout`을 다시 `stdout`에 연결해준다.<br>
-이 작업을 하지 않으면, 이후에 콘솔에 출력되야할 내용들을 계속해서 `pipe`가 가로채어 화면에 아무것도 출력되지 않게된다.
+백업해 놓았던 `originalStdout`을 다시 `stdout`에 연결해 준다.<br>
+이 작업을 하지 않으면, 이후에 콘솔에 출력되어야 할 내용들을 계속해서 `pipe`가 가로채어 화면에 아무것도 출력되지 않게 된다.
 
 **line 19**: `let data = pipe.fileHandleForReading.readDataToEndOfFile()`
 
@@ -125,7 +125,7 @@ private func interceptedStringFromStdout(_ closure: () -> Void) -> String? {
 **line 20**: `let result = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines)`
 
 `Data`를 `String`으로 인코딩한다.<br>
-이때, 마지막에 개행 문자(`\n`)가 붙게되므로 trimming 해준다.
+이때, 마지막에 개행 문자(`\n`)가 붙게 되므로 trimming 해준다.
 
 ### 테스트 결과
 
@@ -137,7 +137,7 @@ private func interceptedStringFromStdout(_ closure: () -> Void) -> String? {
 `LLDB`를 사용하거나 `os_log()` 등 `print()`보다 더 좋은 방법이 많기 때문이다.<br>
 또한, `print()`가 호출된 후의 '상태'를 테스트하는 것보다, `print()`의 대상이 될 '값'을 테스트하는 것이 더 바람직하다.
 
-호기심만 해결하려고 가볍게 찾아보기 시작했는데, 예상치 못한 방법이여서 학습하다보니 정리까지 하게되었다.<br>
+호기심만 해결하려고 가볍게 찾아보기 시작했는데, 예상치 못한 방법이어서 학습하다 보니 정리까지 하게 되었다.<br>
 이 내용들은 테스트의 관점보다는 표준 입출력과 `pipe`에 대해 학습한 것에 의의를 두자.
 
 ---

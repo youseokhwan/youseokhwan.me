@@ -17,7 +17,7 @@ GitHub 계정 기반 서비스는 [utterances](https://utteranc.es/)가 대표�
 - 상대적으로 theme가 다양하고, 원할 경우 직접 CSS를 작성해서 적용할 수 있다.
 - 상대적으로 최근까지 활발하게 기능 개발과 유지보수를 진행하고 있다.
 
-이제 giscus를 적용해보자. [이 글](https://jojoldu.tistory.com/704)에서 정보를 얻어 진행했다. 🙏
+이제 giscus를 적용해 보자. [이 글](https://jojoldu.tistory.com/704)에서 정보를 얻어 진행했다. 🙏
 
 ## 블로그에 giscus 적용하기
 
@@ -60,7 +60,7 @@ repository에 giscus 앱을 설치한다.<br>
 
 ### script 태그 작성
 
-html에 넣을 `script` 태그를 직접 작성해도 되지만, 공식 가이드의 도움을 받았다.
+html에 넣을 `script` 태그를 직접 작성해도 되지만, 공식 가이드의 도움을 받았다.<br>
 [https://giscus.app/ko](https://giscus.app/ko)로 접속해 스크롤을 조금 내려서 `설정` 섹션으로 이동한다.
 
 ![script_01.png](script_01.png)
@@ -71,15 +71,15 @@ html에 넣을 `script` 태그를 직접 작성해도 되지만, 공식 가이�
 
 ![script_03.png](script_03.png)
 
-하단에 설정 값에 따른 `script` 태그가 자동으로 생성된다.
+하단에 설정값에 따른 `script` 태그가 자동으로 생성된다.
 
 ![script_04.png](script_04.png)
 
 ### script 태그 넣기
 
-자동 생성된 `script` 태그를 원하는 곳에 붙여넣기하면 된다.<br>
+자동 생성된 `script` 태그를 원하는 곳에 붙여 넣으면 된다.<br>
 다만, 프로젝트 구성에 따라 방법이 다를 수 있다.<br>
-필자는 React 기반 템플릿을 사용중이기 때문에, utterances가 있었던 코드를 걷어내고 그 자리에 giscus를 적용했다.<br>
+필자는 React 기반 템플릿을 사용 중이기 때문에, utterances가 있었던 코드를 걷어내고 그 자리에 giscus를 적용했다.<br>
 다음은 `comment.tsx` 파일의 일부분이다.
 
 ```ts

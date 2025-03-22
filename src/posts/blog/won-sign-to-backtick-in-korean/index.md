@@ -1,5 +1,5 @@
 ---
-title: "한글 입력시 ₩ 대신 ` 입력되도록 설정하기"
+title: "한글 입력 시 ₩ 대신 ` 입력되도록 설정하기"
 category: "macOS"
 date: "2025-03-18 17:30:00"
 desc: "Karabiner를 이용해 한글 입력에서도 ₩(won sign) 대신 `(backtick) 입력되도록 설정하기"
@@ -11,13 +11,13 @@ thumbnail: "../../../../src/images/karabiner.webp"
 ![alt text](image-1.png)
 
 한글 입력 상태일 때는 `₩`, 영어 입력 상태일 때는 `` ` ``, `⇧`와 함께 입력하면 `~`가 입력된다.<br>
-추가적으로, 한글 입력 상태에서 `` ⌥ + ` ``를 입력하면 `` ` ``가 입력된다.
+추가로, 한글 입력 상태에서 `` ⌥ + ` ``를 입력하면 `` ` ``가 입력된다.
 
 화폐 단위를 편하게 입력할 수 있지만, `₩`을 쓸 일이 별로 없거나, `` ` ``대신 `₩`가 입력되는 것을 원치 않는다면 Karabiner를 통해 입력 설정을 변경할 수 있다.
 
 ## Karabiner 설치
 
-Karabiner-Elements는 macOS에서 키보드 입력을 커스터마이징해주는 앱이다.<br>
+Karabiner-Elements는 macOS에서 키보드 입력을 커스터마이징해 주는 앱이다.<br>
 [공식 홈페이지](https://karabiner-elements.pqrs.org/)에서 다운받을 수 있다.
 
 ![alt text](image.png)

@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 ```
 
 storyboard(xml)에 있는 속성들을 코드로 옮겨와서 불가피하게 코드가 길어졌다.<br>
-코드 자체를 줄이진 못하더라도 최대한 우아하게 개선해보자.
+코드 자체를 줄이진 못하더라도 최대한 우아하게 개선해 보자.
 
 ## 클로저를 이용한 초기화
 
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
 ```
 
 클로저가 실행되는 순간에 `self`의 초기화가 완료됐는지를 보장할 수 없기 때문에 컴파일 에러가 발생한다.<br>
-`self`가 포함된 코드는 다시 `viewDidLoad()`로 내려야될까?
+`self`가 포함된 코드는 다시 `viewDidLoad()`로 내려야 할까?
 
 ## lazy var를 이용한 지연 초기화
 
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
 }
 ```
 
-`lazy var`를 사용하여 지연 초기화를 하게되면, `ViewController` 인스턴스가 먼저 생성되고, `dummyButton`에 접근할 때 클로저가 실행되기 때문에 `self`를 참조할 수 있다.<br>
+`lazy var`를 사용하여 지연 초기화를 하게 되면, `ViewController` 인스턴스가 먼저 생성되고, `dummyButton`에 접근할 때 클로저가 실행되기 때문에 `self`를 참조할 수 있다.<br>
 즉시 실행되어 결과를 반환하고 끝내기 때문에 순환 참조도 발생시키지 않는다.
 
 또한 컴포넌트가 사용되는 시점에 초기화되기 때문에 메모리를 효율적으로 사용할 수 있다.
@@ -130,8 +130,8 @@ class ViewController: UIViewController {
 - 지연 초기화의 특성상 `let`이나 `computed property`와 함께 사용할 수 없다.
 - thread-safe하지 않아서 race condition 우려가 있다.
 
-UIKit에서는 UI 업데이트를 반드시 메인 스레드에서 해야하기에 큰 문제는 없다.<br>
-(메인 스레드가 아닌 곳에서 UI 업데이트를 하면 런타임 에러가 발생하는데, 이건 `lazy`나 클로저 여부에 관계없이 발생한다.)
+UIKit에서는 UI 업데이트를 반드시 메인 스레드에서 해야 하기에 큰 문제는 없다.<br>
+(메인 스레드가 아닌 곳에서 UI 업데이트를 하면 런타임 에러가 발생하는데, 이건 `lazy`나 클로저 여부와 관계없이 발생한다.)
 
 ## 라이브러리 사용
 

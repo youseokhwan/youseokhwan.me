@@ -38,7 +38,7 @@ Contrary to popular belief, Lorem Ipsum is not simply random text.[^2]
 
 ## HTML 태그가 지원되는 경우
 
-HTMl 태그 사용이 가능한 경우, `<sup>`와 `<a>` 태그를 이용해 각주를 표현할 수 있다.
+HTML 태그 사용이 가능한 경우, `<sup>`와 `<a>` 태그를 이용해 각주를 표현할 수 있다.
 
 ```markdown
 # Header

@@ -18,16 +18,16 @@ iOS의 대표적인 예시로는 `URLSession`, `UIApplication` 등이 있다.
 
 ### 단점
 
-* 테스트 어려움: 데이터 공유가 편한 대신, 컴포넌트간 결합도가 높아져 테스트가 어려워진다.
+* 테스트 어려움: 데이터 공유가 편한 대신, 컴포넌트 간 결합도가 높아져 테스트가 어려워진다.
 * 멀티 스레드 문제: 전역으로 사용되는 만큼, race condition 우려가 있다.
-* SOLID 위반하기 쉬움: 접근성이 좋아서 여러 역할을 추가하다보면 SRP, DIP, OCP 등 객체지향 설계 원칙(SOLID)을 위반하기 쉽다.
+* SOLID 위반하기 쉬움: 접근성이 좋아서 여러 역할을 추가하다 보면 SRP, DIP, OCP 등 객체지향 설계 원칙(SOLID)을 위반하기 쉽다.
 
 Concurrency, 의존성 주입 등 개선 방법은 있지만, 단점이 뚜렷하여 Singleton을 안티 패턴으로 취급하기도 한다.
 
 ## class로 Singleton 구현
 
-class로 Singleton을 구현해보자.<br>
-GET 요청으로 JSON 데이터(`Post`)를 가져오는 `NetworkManager`이다.
+class로 Singleton을 구현해 보자.<br>
+GET 요청으로 JSON 데이터(`Post`)를 가져오는 `NetworkManager`다.
 
 ```swift
 struct Post: Codable {
@@ -65,7 +65,7 @@ Task {
 
 ## enum으로 Singleton 구현
 
-enum은 enumerations이라는 이름 그대로 열거형 타입을 정의할 때 사용하지만,<br>
+enum은 enumerations라는 이름 그대로 열거형 타입을 정의할 때 사용하지만,<br>
 Swift에서는 약간의 트릭?으로 namespace의 역할을 하기도 한다.
 
 `NetworkManager`를 enum으로 migration 해보자.
@@ -98,17 +98,17 @@ enum Singleton은 class Singleton과 비교해 다음과 같은 장점이 있다
 
 * enum은 인스턴스 생성을 원천적으로 차단하므로 더 안전하다.
 * `private init()`을 작성하지 않아도 되고, 접근할 때도 타입 프로퍼티로 바로 접근하기에 구문이 더 간결해진다.
-* heap에 할당되지 않기에, 상태 값이 필요없는 경우(stateless)에 적합하다.
+* heap에 할당되지 않기에, 상태 값이 필요 없는 경우(stateless)에 적합하다.
 
-그렇다면 항상 enum을 쓰는게 좋은가? 그렇지는 않다.
+그렇다면 항상 enum을 쓰는 게 좋은가? 그렇지는 않다.
 
-* state 저장이 필요한 경우 class Singleton을 써야한다.
+* state 저장이 필요한 경우 class Singleton을 써야 한다.
 * 테스트할 때 mocking이 어렵다.
 * 프로토콜을 채택할 때 제약이 있을 수 있다.
 
 ## 결론
 
-단순 Utility나 Helper의 목적으로 state 없이 class Singleton을 사용하고 있다면, enum Singleton으로 migration을 고려해볼 수 있다.<br>
+단순 Utility나 Helper의 목적으로 state 없이 class Singleton을 사용하고 있다면, enum Singleton으로 migration을 고려해 볼 수 있다.<br>
 enum을 채택하지 않더라도, namespace로 사용하는 방식은 종종 볼 수 있기에 인지하고 있으면 좋을 것 같다.
 
 ---

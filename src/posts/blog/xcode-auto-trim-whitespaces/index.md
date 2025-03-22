@@ -14,7 +14,7 @@ thumbnail: "../../../../src/images/xcode.webp"
 ## Xcode의 auto trimming
 
 Xcode는 코드를 작성할 때, 문자열 뒤에 붙는 whitespaces를 자동으로 trim한다.<br>
-`⌘ + ,` > `Text Editing` > `Editing` > `While Editing`에서 `Automatically trim trailing whitespace`가 기본값으로 체크돼있는 것을 확인할 수 있다.
+`⌘ + ,` > `Text Editing` > `Editing` > `While Editing`에서 `Automatically trim trailing whitespace`가 기본값으로 체크돼 있는 것을 확인할 수 있다.
 
 ![option_01.png](option_01.png)
 
@@ -24,7 +24,7 @@ Xcode는 코드를 작성할 때, 문자열 뒤에 붙는 whitespaces를 자동�
 ![result_01.png](result_01.png)
 
 line 5와 9의 경우, 공백(` `) 4개 혹은 `\t`가 남아있는 것을 확인할 수 있다.<br>
-이 경우, 아래에 있는 `Including whitespace-only lines` 옵션에도 체크를 해주면 자동으로 trim되도록 설정할 수 있다.
+이 경우, 아래에 있는 `Including whitespace-only lines` 옵션에도 체크해주면 자동으로 trim되도록 설정할 수 있다.
 
 ![option_02.png](option_02.png)
 

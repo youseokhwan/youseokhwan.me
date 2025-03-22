@@ -7,7 +7,7 @@ thumbnail: "../../../../src/images/iterm.webp"
 ---
 
 mac에서 터미널을 사용할 때, 내장 터미널보다는 iTerm2를 주로 사용한다.<br>
-이 iTerm2 세팅 과정을 기록해보았다.
+이 iTerm2 세팅 과정을 기록해 보았다.
 
 ## iTerm2
 
@@ -20,7 +20,7 @@ iTerm2는 macOS의 무료 오픈소스 터미널 앱이다.<br>
 
 ## oh-my-zsh
 
-oh-my-zsh는 zsh의 설정을 도와주는 오픈소스 프레임워크다.
+oh-my-zsh는 zsh의 설정을 도와주는 오픈소스 프레임워크다.<br>
 테마를 변경하거나 확장 기능을 쉽게 적용할 수 있다.
 
 [공식 홈페이지](https://ohmyz.sh/)에 적혀있는 대로 curl로 설치했다.
@@ -46,11 +46,11 @@ oh-my-zsh Repository의 [wiki 문서](https://github.com/ohmyzsh/ohmyzsh/wiki/Th
 
 ![theme_01.png](theme_01.png)
 
-테마를 바꾸고싶다면 `.zshrc`의 `ZSH_THEME` 항목을 원하는 테마 이름으로 변경해준다.<br>
-vi나 nano로 바꿔도되고, vscode같은 텍스트 에디터로 변경해도 된다.<br>
+테마를 바꾸고 싶다면 `.zshrc`의 `ZSH_THEME` 항목을 원하는 테마 이름으로 변경해 준다.<br>
+vi나 nano로 바꿔도 되고, vscode같은 텍스트 에디터로 변경해도 된다.<br>
 변경한 후에 iTerm2를 재실행하거나, `.zshrc`를 직접 실행하면 적용된다.
 
-현재 브랜치를 강조해주는 [agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster) 테마로 설정했다.
+현재 브랜치를 강조해 주는 [agnoster](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster) 테마로 설정했다.
 
 ```
 ZSH_THEME="agnoster"
@@ -62,7 +62,7 @@ ZSH_THEME="agnoster"
 
 ### 폰트 변경
 
-기본 폰트로는 깨져 보이기 때문에 [JetBrains Mono](https://www.jetbrains.com/lp/mono/) 폰트로 변경해주었다.<br>
+기본 폰트로는 깨져 보이기 때문에 [JetBrains Mono](https://www.jetbrains.com/lp/mono/) 폰트로 변경해 주었다.<br>
 폰트는 `cmd + ,` > `Profiles` > `Text` > `Font`에서 변경할 수 있다.
 
 ![font_01.png](font_01.png)
@@ -105,7 +105,7 @@ Blinking cursor 옵션도 체크했다.
 
 ### zsh-syntax-highlighting
 
-zsh-syntax-highlighting을 적용하면 실행 가능한 명령어는 초록색, 불가능한 명령어는 빨간색으로 표시해준다.<br>
+zsh-syntax-highlighting을 적용하면 실행 가능한 명령어는 초록색, 불가능한 명령어는 빨간색으로 표시해 준다.<br>
 homebrew를 통해 간편하게 설치할 수 있다.
 
 ```bash
@@ -126,7 +126,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ### zsh-autosuggestions
 
-zsh-autosuggestions을 적용하면 입력했던 명령어을 기반으로 자동 완성을 제안해준다.<br>
+zsh-autosuggestions을 적용하면 입력했던 명령어를 기반으로 자동 완성을 제안해 준다.<br>
 역시 homebrew를 통해 간편하게 설치할 수 있다.
 
 ```bash
