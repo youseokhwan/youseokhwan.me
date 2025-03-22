@@ -96,7 +96,12 @@ const markdownPlugins = [
             linkImagesToOriginal: false,
           },
         },
-        "gatsby-remark-images-medium-zoom",
+        {
+          resolve: "gatsby-remark-images-medium-zoom",
+          options: {
+            background: "#1C1C1C"
+          },
+        },
         {
           resolve: "gatsby-remark-footnotes",
           options: {
