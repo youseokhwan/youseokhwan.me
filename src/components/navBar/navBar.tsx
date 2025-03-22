@@ -6,11 +6,7 @@ import styled, { ThemeContext } from "styled-components"
 import useSiteMetadata from "~/src/hooks/useSiteMetadata"
 import type { UseThemeReturnType } from "~/src/hooks/useTheme"
 import Background from "~/src/styles/background"
-import {
-  curtainAnimationCSS,
-  listAnimationCSS,
-  navBackgroundAnimationCSS,
-} from "~/src/styles/navBarAnimation"
+import { curtainAnimationCSS, listAnimationCSS, navBackgroundAnimationCSS } from "~/src/styles/navBarAnimation"
 
 import LinkList from "./linkList"
 import MenuIcon from "./menuIcon"
