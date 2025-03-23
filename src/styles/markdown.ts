@@ -228,6 +228,11 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
     font-size: 0.9rem;
     scroll-margin-top: calc(var(--nav-height) + 5px);
   }
+
+  /* Video CSS */
+  video {
+    width: 100%;
+  }
 `
 
 export default Markdown
