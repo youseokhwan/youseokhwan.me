@@ -134,6 +134,12 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  @media (max-width: 788px) {
+    :root {
+      --post-width: 728px;
+    }
+  }
+
   html, body, #___gatsby, #gatsby-focus-wrapper {
     min-height: 100%;
   }
