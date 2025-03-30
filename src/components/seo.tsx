@@ -1,9 +1,5 @@
 import React from "react"
-
-import { Helmet } from "react-helmet"
-
 import useSiteMetadata from "~/src/hooks/useSiteMetadata"
-
 import defaultOpenGraphImage from "../images/og-default.png"
 
 const DEFAULT_LANG = "en"
@@ -20,67 +16,31 @@ interface SEOProperties
   meta?: Meta
 }
 
-const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
+export function Head({ title, desc = "", image }: SEOProperties) {
   const site = useSiteMetadata()
-  const description = desc || site.description
+  const description = desc || site.description || ""
   const ogImageUrl =
-    site.siteUrl ?? "" + (image || (defaultOpenGraphImage as string))
+    (site.siteUrl || "") + (image || (defaultOpenGraphImage as string))
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: site.lang ?? DEFAULT_LANG }}
-      title={title ?? ""}
-      titleTemplate={`%s | ${site.title}`}
-      meta={
-        [
-          {
-            name: "description",
-            content: description,
-          },
-          {
-            property: "og:title",
-            content: title,
-          },
-          {
-            property: "og:description",
-            content: description,
-          },
-          {
-            property: "og:type",
-            content: "website",
-          },
-          {
-            name: "twitter:card",
-            content: "summary",
-          },
-          {
-            name: "twitter:creator",
-            content: site.author,
-          },
-          {
-            name: "twitter:title",
-            content: title,
-          },
-          {
-            name: "twitter:description",
-            content: description,
-          },
-          {
-            property: "image",
-            content: ogImageUrl,
-          },
-          {
-            property: "og:image",
-            content: ogImageUrl,
-          },
-          {
-            property: "twitter:image",
-            content: ogImageUrl,
-          },
-        ] as Meta
-      }
-    />
+    <>
+      <html lang={site.lang || DEFAULT_LANG} />
+      <title>{title ? `${title} | ${site.title}` : site.title}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={title || ""} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={site.author || ""} />
+      <meta name="twitter:title" content={title || ""} />
+      <meta name="twitter:description" content={description} />
+      <meta property="image" content={ogImageUrl} />
+      <meta property="og:image" content={ogImageUrl} />
+      <meta property="twitter:image" content={ogImageUrl} />
+    </>
   )
 }
 
-export default SEO
+export default function SEO({ title, desc = "", image }: SEOProperties) {
+  return null
+}
