@@ -13,6 +13,7 @@ import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
 import useCodeBlockHeader from "~/src/hooks/useCodeBlockHeader"
 import useFootnote from "~/src/hooks/useFootnote"
+import FootnoteModal from "~/src/components/footnoteModal"
 
 const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
   const { markdownRemark } = data
@@ -25,7 +26,7 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
     thumbnail?.childImageSharp?.gatsbyImageData!.images!.fallback!.src
 
   useCodeBlockHeader()
-  useFootnote()
+  const { isModalOpen, setIsModalOpen, modalContent } = useFootnote()
 
   return (
     <Layout>
@@ -62,6 +63,11 @@ const BlogPost: React.FC<PageProps<Queries.Query>> = ({ data }) => {
                     zIndex: 400,
                     position: "absolute"
                   }}
+                />
+                <FootnoteModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  content={modalContent}
                 />
               </div>
             </InnerWrapper>
