@@ -201,6 +201,7 @@ const Markdown = styled.article<{ rhythm: (typeof typography)["rhythm"] }>`
     position: relative;
     padding-top: 1rem;
     padding-left: 0.7rem;
+    font-size: 0.8rem;
   }
 
   pre code > * {
