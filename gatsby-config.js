@@ -94,6 +94,10 @@ const markdownPlugins = [
           resolve: "gatsby-remark-images",
           options: {
             linkImagesToOriginal: false,
+            maxWidth: 768,
+            quality: 100,
+            withWebp: true,
+            wrapperStyle: "max-width: 768px !important;"
           },
         },
         {
