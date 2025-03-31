@@ -14,6 +14,7 @@ interface SEOProperties
   desc?: Queries.Maybe<string>
   image?: Queries.Maybe<string>
   meta?: Meta
+  titleTemplate?: string
 }
 
 export function Head({ title, desc = "", image }: SEOProperties) {
@@ -42,5 +43,5 @@ export function Head({ title, desc = "", image }: SEOProperties) {
 }
 
 export default function SEO({ title, desc = "", image }: SEOProperties) {
-  return null
+  return <Head title={title} desc={desc} image={image} />
 }
