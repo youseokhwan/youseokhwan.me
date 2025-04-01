@@ -9920,7 +9920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-react-helmet@npm:^6.12.0":
+"gatsby-plugin-react-helmet@npm:^6.14.0":
   version: 6.14.0
   resolution: "gatsby-plugin-react-helmet@npm:6.14.0"
   dependencies:
@@ -10123,6 +10123,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-remark-reading-time@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "gatsby-remark-reading-time@npm:1.1.0"
+  dependencies:
+    reading-time: "npm:^1.1.3"
+  peerDependencies:
+    gatsby: ^2.0.0
+  checksum: 77fb15a3734eb4838803f1b4c8cabbceed5929bc3afcbe57c0cf0db181365aee688e1eee84066439491a08a90daa5f4f1c86d9657763c5efd2ff8a8d9c39875b
+  languageName: node
+  linkType: hard
+
 "gatsby-remark-vscode@npm:^3.3.1":
   version: 3.3.1
   resolution: "gatsby-remark-vscode@npm:3.3.1"
@@ -10210,7 +10221,7 @@ __metadata:
     gatsby-plugin-image: "npm:^3.12.3"
     gatsby-plugin-manifest: "npm:^5.12.3"
     gatsby-plugin-offline: "npm:^6.12.3"
-    gatsby-plugin-react-helmet: "npm:^6.12.0"
+    gatsby-plugin-react-helmet: "npm:^6.14.0"
     gatsby-plugin-robots-txt: "npm:^1.8.0"
     gatsby-plugin-sharp: "npm:^5.12.3"
     gatsby-plugin-sitemap: "npm:^6.12.3"
@@ -10221,6 +10232,7 @@ __metadata:
     gatsby-remark-footnotes: "npm:^0.0.8"
     gatsby-remark-images: "npm:^7.12.3"
     gatsby-remark-images-medium-zoom: "npm:^1.7.0"
+    gatsby-remark-reading-time: "npm:^1.1.0"
     gatsby-remark-vscode: "npm:^3.3.1"
     gatsby-source-filesystem: "npm:^5.12.1"
     gatsby-transformer-remark: "npm:^6.12.3"
@@ -16862,6 +16874,13 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 196b30ef6ccf9b6e18c4e1724b7334f72a093d011a99f3b5920470f0b3406a51770867b3e1ae9711f227ef7a7065982f6ee2ce316746b2cb42c88efe44297fe7
+  languageName: node
+  linkType: hard
+
+"reading-time@npm:^1.1.3":
+  version: 1.5.0
+  resolution: "reading-time@npm:1.5.0"
+  checksum: d52921d2563693f34e71ecc6ec97bd48ec960c44dff04384e56c47ee68cfa36749acbcaeec4d0cd1d18113e53ae67825bb067ea63ba1f86107e289573e5f584f
   languageName: node
   linkType: hard
 
