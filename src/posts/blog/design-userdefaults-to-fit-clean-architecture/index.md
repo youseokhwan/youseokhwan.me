@@ -188,7 +188,7 @@ final class FitUserDefaultsTests: XCTestCase {
 
 ## 4️⃣ Suite 구분
 
-이는 `UserDefaults`의 Suite[^1]를 구분하여 해결할 수 있다.<br>
+이는 `UserDefaults`의 Suite를 구분하여 해결할 수 있다.<br>
 Suite는 프로그래밍에서 공통된 목적이나 기능을 가진 모음을 의미하는데, `UserDefaults`에선 `suiteName`을 지정하여 데이터 영역을 구분할 수 있다.
 
 ![alt text](image-8.png)
@@ -238,5 +238,3 @@ class UserDefaultsStorage {
 ### 참고
 
 - https://developer.apple.com/documentation/foundation/userdefaults
-
-[^1]: 호텔 스위트룸의 스위트와 같은 단어이다.
