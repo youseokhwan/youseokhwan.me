@@ -18,7 +18,7 @@ const siteMetadata = {
   postTitle: "All",
   menuLinks: [
     {
-      link: "/terms/",
+      link: "/clear-terms/",
       name: "Clear Terms 🚀",
     },
     {

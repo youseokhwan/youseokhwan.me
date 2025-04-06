@@ -8,9 +8,9 @@ import Layout from "~/src/layouts/layout"
 import Markdown from "~/src/styles/markdown"
 import { rhythm } from "~/src/styles/typography"
 
-const Terms = () => {
+const ClearTerms = () => {
   const data = useStaticQuery<Queries.Query>(graphql`
-    query Terms {
+    query ClearTerms {
       allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/.*/terms.md$/" } }
       ) {
@@ -72,4 +72,4 @@ const Container = styled(Markdown).attrs({
   }
 `
 
-export default Terms
+export default ClearTerms
