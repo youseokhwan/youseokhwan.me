@@ -18,16 +18,12 @@ const siteMetadata = {
   postTitle: "All",
   menuLinks: [
     {
-      link: "/",
-      name: "Posts",
-    },
-    {
       link: "/terms/",
-      name: "ClearTerms",
+      name: "Clear Terms 🚀",
     },
     {
       link: meta.links.github,
-      name: "Github",
+      name: "Github 🔗",
     },
   ],
 }
