@@ -22,7 +22,7 @@ const metaConfig = {
   siteUrl: "https://youseokhwan.me",
   lang: "ko",
   links: {
-    github: "https://github.com/youseokhwan",
+    github: "https://github.com/youseokhwan/youseokhwan.me",
   },
   favicon: "src/images/icon.png",
 }
