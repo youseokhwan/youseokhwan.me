@@ -1,10 +1,15 @@
 # 용어 올바르게 쓰기
 
-<small>마지막 업데이트: 2025.04.16</small>
+<small>마지막 업데이트: 2025.04.25</small>
 
 iOS를 학습하면서 잘못 알았던 발음이나, 헷갈리는 표기법들을 정리했다.
 
 ## 1️⃣ 올바른 발음
+
+### async
+
+[Meet async/await in Swift](https://developer.apple.com/videos/play/wwdc2021/10132/), [https://youtu.be/a1u407aFu9g](https://youtu.be/a1u407aFu9g)<br>
+[에이싱크] ✅ / [어싱크] ❌
 
 ### Capacity
 
@@ -19,6 +24,10 @@ iOS를 학습하면서 잘못 알았던 발음이나, 헷갈리는 표기법들�
 
 [Designated Initializer](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/initialization#Designated-Initializers-and-Convenience-Initializers)<br>
 [데지그네이티드] ✅ / [디자이네이티드] ❌
+
+### Disable
+
+[디스에이블] ✅ / [디저블] ❌
 
 ### Fatal
 
