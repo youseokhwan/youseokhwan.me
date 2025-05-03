@@ -1,6 +1,6 @@
 import React from "react"
-
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 
 import useSiteMetadata from "~/src/hooks/useSiteMetadata"
 
@@ -20,11 +20,13 @@ interface SEOProperties
   meta?: Meta
 }
 
-const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
+const SEO: React.FC<SEOProperties> = ({ title, desc = "", image, meta }) => {
   const site = useSiteMetadata()
+  const location = useLocation()
+
   const description = desc || site.description
-  const ogImageUrl =
-    site.siteUrl ?? "" + (image || (defaultOpenGraphImage as string))
+  const ogImageUrl = (site.siteUrl ?? "") + (image || (defaultOpenGraphImage as string))
+  const canonicalUrl = `${site.siteUrl}${location.pathname}`
 
   return (
     <Helmet
@@ -50,8 +52,12 @@ const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
             content: "website",
           },
           {
+            property: "og:url",
+            content: canonicalUrl,
+          },
+          {
             name: "twitter:card",
-            content: "summary",
+            content: "summary_large_image",
           },
           {
             name: "twitter:creator",
@@ -66,10 +72,6 @@ const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
             content: description,
           },
           {
-            property: "image",
-            content: ogImageUrl,
-          },
-          {
             property: "og:image",
             content: ogImageUrl,
           },
@@ -79,7 +81,9 @@ const SEO: React.FC<SEOProperties> = ({ title, desc = "", image }) => {
           },
         ] as Meta
       }
-    />
+    >
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
   )
 }
 
