@@ -49,6 +49,11 @@ const Home = ({
 
   const site = useSiteMetadata()
   const postTitle = currentCategory || site.postTitle
+  const postCount = currentCategory
+    ? data.allMarkdownRemark.group.find(
+        group => group.fieldValue === currentCategory,
+      )?.totalCount
+    : data.allMarkdownRemark.totalCount
 
   return (
     <Layout>
@@ -56,7 +61,10 @@ const Home = ({
       <Main>
         <Content>
           <CategoryFilter categoryList={data.allMarkdownRemark.group} />
-          <PostTitle>{postTitle}</PostTitle>
+          <PostTitle>
+            {postTitle}
+            <span className="count">{postCount}</span>
+          </PostTitle>
           <PostGrid posts={posts} />
         </Content>
       </Main>
@@ -92,6 +100,17 @@ const PostTitle = styled.h2`
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.75rem;
+  }
+
+  .count {
+    font-size: 1.25rem;
+    color: var(--color-text-3);
+    margin-left: 0.5rem;
+    font-weight: var(--font-weight-normal);
+
+    @media (max-width: ${({ theme }) => theme.device.sm}) {
+      font-size: 1.125rem;
+    }
   }
 `
 
