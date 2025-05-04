@@ -29,16 +29,22 @@ const CategoryFilter: React.FC<CategoryFilterProperties> = ({
     [categoryList],
   )
 
+  const totalCount = useMemo(
+    () => categoryList.reduce((acc, curr) => acc + curr.totalCount, 0),
+    [categoryList],
+  )
+
   return (
     <Nav aria-label="Category Filter">
       <CategoryTitle>Category</CategoryTitle>
       <CategoryButton getProps={isActive} to="/">
         {ALL_CATEGORY_NAME}
+        <CategoryCount>{totalCount}</CategoryCount>
       </CategoryButton>
       <Divider />
       <CategoryUl ref={categoryReference} className="invisible-scrollbar">
         {sortedCategoryList.map(category => {
-          const { fieldValue } = category
+          const { fieldValue, totalCount } = category
           return (
             <li key={fieldValue}>
               <CategoryButton
@@ -46,6 +52,7 @@ const CategoryFilter: React.FC<CategoryFilterProperties> = ({
                 to={`/category/${kebabCase(fieldValue!)}/`}
               >
                 {fieldValue}
+                <CategoryCount>{totalCount}</CategoryCount>
               </CategoryButton>
             </li>
           )
@@ -96,6 +103,13 @@ const CategoryTitle = styled.em`
   }
 `
 
+const CategoryCount = styled.span`
+  margin-left: 4px;
+  color: var(--color-text-3);
+  font-size: 0.7rem;
+  transition: color 0.3s ease;
+`
+
 const CategoryButton = styled(Link)`
   cursor: pointer;
   display: block;
@@ -112,11 +126,25 @@ const CategoryButton = styled(Link)`
   &:hover {
     color: var(--color-white);
     background-color: var(--color-green);
+
+    ${CategoryCount} {
+      color: var(--color-white);
+    }
   }
 
   &:focus-visible {
     color: var(--color-white);
     background-color: var(--color-green);
+
+    ${CategoryCount} {
+      color: var(--color-white);
+    }
+  }
+
+  &#active {
+    ${CategoryCount} {
+      color: var(--color-white);
+    }
   }
 `
 
