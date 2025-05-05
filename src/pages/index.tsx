@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useState } from "react"
-
-import { type PageProps, graphql } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 import styled from "styled-components"
+
+import { useFlexSearch } from "react-use-flexsearch"
 
 import CategoryFilter from "~/src/components/catetgoryFilter"
 import PostGrid from "~/src/components/postGrid"
@@ -15,8 +16,17 @@ const Home = ({
   data,
 }: PageProps<Queries.Query, Queries.MarkdownRemarkFrontmatter>) => {
   const [posts, setPosts] = useState<Post[]>([])
+  const [searchTerm, setSearchTerm] = useState("")
+
   const currentCategory = pageContext.category
   const postData = data.allMarkdownRemark.edges
+
+  // FlexSearch 관련 데이터
+  const searchResults = useFlexSearch<Post>(
+    searchTerm,
+    data.localSearchPosts?.index || "",
+    data.localSearchPosts?.store || {}
+  )
 
   useLayoutEffect(() => {
     const filteredPostData = currentCategory
@@ -25,26 +35,25 @@ const Home = ({
         )
       : postData
 
-    for (const { node } of filteredPostData) {
+    const postList: Post[] = filteredPostData.map(({ node }) => {
       const { id, fields, frontmatter, timeToRead } = node
       const { slug } = fields!
       const { title, desc, date, category, thumbnail } = frontmatter!
       const { childImageSharp } = thumbnail!
 
-      setPosts(previousPost => [
-        ...previousPost,
-        {
-          id,
-          slug,
-          title,
-          desc,
-          date,
-          category,
-          thumbnail: childImageSharp?.id,
-          timeToRead: timeToRead ?? 0
-        },
-      ])
-    }
+      return {
+        id,
+        slug,
+        title,
+        desc,
+        date,
+        category,
+        thumbnail: childImageSharp?.id,
+        timeToRead: timeToRead ?? 0,
+      }
+    })
+
+    setPosts(postList)
   }, [currentCategory, postData])
 
   const site = useSiteMetadata()
@@ -54,6 +63,10 @@ const Home = ({
         group => group.fieldValue === currentCategory,
       )?.totalCount
     : data.allMarkdownRemark.totalCount
+
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value)
+  }
 
   return (
     <Layout>
@@ -66,9 +79,14 @@ const Home = ({
               {postTitle}
               <span className="count">{postCount}</span>
             </div>
-            <SearchInput type="text" placeholder="🔍 Search..." />
+            <SearchInput
+              type="text"
+              placeholder="🔍 Search..."
+              value={searchTerm}
+              onChange={handleSearchInputChange}
+            />
           </PostTitle>
-          <PostGrid posts={posts} />
+          <PostGrid posts={searchTerm ? searchResults : posts} />
         </Content>
       </Main>
     </Layout>
@@ -182,6 +200,11 @@ export const query = graphql`
           timeToRead
         }
       }
+    }
+
+    localSearchPosts {
+      index
+      store
     }
   }
 `
