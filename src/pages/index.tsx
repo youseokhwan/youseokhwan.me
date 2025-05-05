@@ -90,7 +90,11 @@ const Home = ({
               onChange={handleSearchInputChange}
             />
           </PostTitle>
-          <PostGrid posts={searchTerm ? searchResults : posts} />
+          {searchTerm && searchResults.length === 0 ? (
+            <NoResults>No Results</NoResults>
+          ) : (
+            <PostGrid posts={searchTerm ? searchResults : posts} />
+          )}
         </Content>
       </Main>
     </Layout>
@@ -169,6 +173,14 @@ const SearchInput = styled.input`
     padding: 0.5rem 0;
     text-indent: 1rem;
   }
+`
+
+const NoResults = styled.div`
+  text-align: center;
+  padding: var(--sizing-xl);
+  color: var(--color-text-3);
+  font-size: var(--text-md);
+  margin-top: var(--sizing-xl);
 `
 
 export const query = graphql`
