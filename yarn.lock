@@ -9414,7 +9414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flexsearch@npm:^0.6.32":
+"flexsearch@npm:^0.6.22, flexsearch@npm:^0.6.32":
   version: 0.6.32
   resolution: "flexsearch@npm:0.6.32"
   checksum: aa260b2eb530be070018a02e31f19343e69ebbd5006e534d1a6162ba150f4f580be9bd5fc2453d0441c32b7edef0b972eff3f1890146f55d47246a3d1d604e0b
@@ -10269,6 +10269,7 @@ __metadata:
     react-helmet: "npm:^6.1.0"
     react-tooltip: "npm:^5.28.0"
     react-typography: "npm:^0.16.23"
+    react-use-flexsearch: "npm:^0.1.1"
     semantic-release: "npm:^22.0.10"
     styled-components: "npm:^6.1.1"
     styled-reset: "npm:^4.5.1"
@@ -16755,6 +16756,17 @@ __metadata:
   peerDependencies:
     react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: f60480565a9ce3077744da0e5c017a44e68f978d86f0d9fa7e38f25905444bc74429a0bfe6302b2ca90d4e40b75d23fda389665a7c6635abe6e3f1bc63f43a97
+  languageName: node
+  linkType: hard
+
+"react-use-flexsearch@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "react-use-flexsearch@npm:0.1.1"
+  dependencies:
+    flexsearch: "npm:^0.6.22"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 72284420584e13227007b09dfc2ca86d6e609b6bf86c17fef8a53516e4416335c18cf0f28ec49690fe2af6c3814dcec47bba39c2b05395284fdd11f923141035
   languageName: node
   linkType: hard
 

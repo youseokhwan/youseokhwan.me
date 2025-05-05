@@ -75,19 +75,26 @@ const devPlugins = [
           allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/(posts/blog)/" } }
             limit: 2000
+            sort: { frontmatter: { date: DESC } }
           ) {
             edges {
               node {
                 id
                 frontmatter {
                   title
-                  category
-                  date(formatString: "YYYY-MM-DD")
                   desc
+                  date(formatString: "YYYY-MM-DD")
+                  category
+                  thumbnail {
+                    childImageSharp {
+                      id
+                    }
+                  }
                 }
                 fields {
                   slug
                 }
+                timeToRead
               }
             }
           }
@@ -95,7 +102,7 @@ const devPlugins = [
       `,
       ref: "id",
       index: ["title", "desc", "slug"],
-      store: ["title", "category", "date", "desc", "slug"],
+      store: ["id", "title", "category", "date", "desc", "slug", "thumbnail", "timeToRead"],
       normalizer: ({ data }) =>
         data.allMarkdownRemark.edges.map(({ node }) => ({
           id: node.id,
@@ -104,6 +111,8 @@ const devPlugins = [
           date: node.frontmatter.date,
           desc: node.frontmatter.desc,
           slug: node.fields.slug,
+          thumbnail: node.frontmatter.thumbnail?.childImageSharp?.id ?? null,
+          timeToRead: node.timeToRead ?? 0,
         })),
     },
   },
