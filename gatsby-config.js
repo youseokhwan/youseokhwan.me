@@ -65,6 +65,57 @@ const devPlugins = [
   "gatsby-plugin-react-helmet",
   "gatsby-plugin-typescript",
   "gatsby-plugin-styled-components",
+  {
+    resolve: "gatsby-plugin-local-search",
+    options: {
+      name: "posts",
+      engine: "flexsearch",
+      query: `
+        {
+          allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/(posts/blog)/" } }
+            limit: 2000
+            sort: { frontmatter: { date: DESC } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                  desc
+                  date(formatString: "YYYY-MM-DD")
+                  category
+                  thumbnail {
+                    childImageSharp {
+                      id
+                    }
+                  }
+                }
+                fields {
+                  slug
+                }
+                timeToRead
+              }
+            }
+          }
+        }
+      `,
+      ref: "id",
+      index: ["title", "desc", "slug"],
+      store: ["id", "title", "category", "date", "desc", "slug", "thumbnail", "timeToRead"],
+      normalizer: ({ data }) =>
+        data.allMarkdownRemark.edges.map(({ node }) => ({
+          id: node.id,
+          title: node.frontmatter.title,
+          category: node.frontmatter.category,
+          date: node.frontmatter.date,
+          desc: node.frontmatter.desc,
+          slug: node.fields.slug,
+          thumbnail: node.frontmatter.thumbnail?.childImageSharp?.id ?? null,
+          timeToRead: node.timeToRead ?? 0,
+        })),
+    },
+  },
 ]
 
 const imagePlugins = [

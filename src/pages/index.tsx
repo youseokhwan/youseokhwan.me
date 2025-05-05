@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useState } from "react"
-
-import { type PageProps, graphql } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 import styled from "styled-components"
+
+import { useFlexSearch } from "react-use-flexsearch"
 
 import CategoryFilter from "~/src/components/catetgoryFilter"
 import PostGrid from "~/src/components/postGrid"
@@ -15,25 +16,35 @@ const Home = ({
   data,
 }: PageProps<Queries.Query, Queries.MarkdownRemarkFrontmatter>) => {
   const [posts, setPosts] = useState<Post[]>([])
+  const [searchTerm, setSearchTerm] = useState("")
+
   const currentCategory = pageContext.category
   const postData = data.allMarkdownRemark.edges
 
+  // FlexSearch 관련 데이터
+  const searchResults = useFlexSearch<Post>(
+    searchTerm,
+    data.localSearchPosts?.index || "",
+    data.localSearchPosts?.store || {}
+  )
+
   useLayoutEffect(() => {
-    const filteredPostData = currentCategory
-      ? postData.filter(
-          ({ node }) => node?.frontmatter?.category === currentCategory,
-        )
-      : postData
+    if (searchTerm) {
+      setPosts(searchResults)
+    } else {
+      const filteredPostData = currentCategory
+        ? postData.filter(
+            ({ node }) => node?.frontmatter?.category === currentCategory,
+          )
+        : postData
 
-    for (const { node } of filteredPostData) {
-      const { id, fields, frontmatter, timeToRead } = node
-      const { slug } = fields!
-      const { title, desc, date, category, thumbnail } = frontmatter!
-      const { childImageSharp } = thumbnail!
+      const postList: Post[] = filteredPostData.map(({ node }) => {
+        const { id, fields, frontmatter, timeToRead } = node
+        const { slug } = fields!
+        const { title, desc, date, category, thumbnail } = frontmatter!
+        const { childImageSharp } = thumbnail!
 
-      setPosts(previousPost => [
-        ...previousPost,
-        {
+        return {
           id,
           slug,
           title,
@@ -41,11 +52,13 @@ const Home = ({
           date,
           category,
           thumbnail: childImageSharp?.id,
-          timeToRead: timeToRead ?? 0
-        },
-      ])
+          timeToRead: timeToRead ?? 0,
+        }
+      })
+
+      setPosts(postList)
     }
-  }, [currentCategory, postData])
+  }, [currentCategory, postData, searchTerm, searchResults])
 
   const site = useSiteMetadata()
   const postTitle = currentCategory || site.postTitle
@@ -55,6 +68,10 @@ const Home = ({
       )?.totalCount
     : data.allMarkdownRemark.totalCount
 
+  const handleSearchInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value)
+  }
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -62,10 +79,22 @@ const Home = ({
         <Content>
           <CategoryFilter categoryList={data.allMarkdownRemark.group} />
           <PostTitle>
-            {postTitle}
-            <span className="count">{postCount}</span>
+            <div>
+              {postTitle}
+              <span className="count">{postCount}</span>
+            </div>
+            <SearchInput
+              type="text"
+              placeholder="🔍 Search..."
+              value={searchTerm}
+              onChange={handleSearchInputChange}
+            />
           </PostTitle>
-          <PostGrid posts={posts} />
+          {searchTerm && searchResults.length === 0 ? (
+            <NoResults>No Results</NoResults>
+          ) : (
+            <PostGrid posts={searchTerm ? searchResults : posts} />
+          )}
         </Content>
       </Main>
     </Layout>
@@ -93,6 +122,9 @@ const Content = styled.div`
 `
 
 const PostTitle = styled.h2`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   font-size: 2rem;
   font-weight: var(--font-weight-extra-bold);
   margin-bottom: var(--sizing-md);
@@ -100,6 +132,10 @@ const PostTitle = styled.h2`
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: var(--sizing-sm);
   }
 
   .count {
@@ -112,6 +148,39 @@ const PostTitle = styled.h2`
       font-size: 1.125rem;
     }
   }
+`
+
+const SearchInput = styled.input`
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-3);
+  border-radius: var(--border-radius-base);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-regular);
+  width: 200px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  height: 1rem;
+  line-height: 1;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  @media (max-width: ${({ theme }) => theme.device.sm}) {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    text-indent: 1rem;
+  }
+`
+
+const NoResults = styled.div`
+  text-align: center;
+  padding: var(--sizing-xl);
+  color: var(--color-text-3);
+  font-size: var(--text-md);
+  margin-top: var(--sizing-xl);
 `
 
 export const query = graphql`
@@ -147,6 +216,11 @@ export const query = graphql`
           timeToRead
         }
       }
+    }
+
+    localSearchPosts {
+      index
+      store
     }
   }
 `
