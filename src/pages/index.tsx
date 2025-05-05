@@ -29,32 +29,36 @@ const Home = ({
   )
 
   useLayoutEffect(() => {
-    const filteredPostData = currentCategory
-      ? postData.filter(
-          ({ node }) => node?.frontmatter?.category === currentCategory,
-        )
-      : postData
+    if (searchTerm) {
+      setPosts(searchResults)
+    } else {
+      const filteredPostData = currentCategory
+        ? postData.filter(
+            ({ node }) => node?.frontmatter?.category === currentCategory,
+          )
+        : postData
 
-    const postList: Post[] = filteredPostData.map(({ node }) => {
-      const { id, fields, frontmatter, timeToRead } = node
-      const { slug } = fields!
-      const { title, desc, date, category, thumbnail } = frontmatter!
-      const { childImageSharp } = thumbnail!
+      const postList: Post[] = filteredPostData.map(({ node }) => {
+        const { id, fields, frontmatter, timeToRead } = node
+        const { slug } = fields!
+        const { title, desc, date, category, thumbnail } = frontmatter!
+        const { childImageSharp } = thumbnail!
 
-      return {
-        id,
-        slug,
-        title,
-        desc,
-        date,
-        category,
-        thumbnail: childImageSharp?.id,
-        timeToRead: timeToRead ?? 0,
-      }
-    })
+        return {
+          id,
+          slug,
+          title,
+          desc,
+          date,
+          category,
+          thumbnail: childImageSharp?.id,
+          timeToRead: timeToRead ?? 0,
+        }
+      })
 
-    setPosts(postList)
-  }, [currentCategory, postData])
+      setPosts(postList)
+    }
+  }, [currentCategory, postData, searchTerm, searchResults])
 
   const site = useSiteMetadata()
   const postTitle = currentCategory || site.postTitle

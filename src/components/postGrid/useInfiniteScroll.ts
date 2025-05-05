@@ -23,11 +23,11 @@ const useInfiniteScroll = ({
   const observer = useRef<IntersectionObserver>(null)
 
   useLayoutEffect(() => {
-    if (posts.length === 0 || isLoading) return
+    if (posts.length === 0) return
     setHasMore(posts.length > maxPostNumber)
     setCurrentList(posts.slice(0, maxPostNumber))
     setIsLoading(true)
-  }, [isLoading, posts, maxPostNumber])
+  }, [posts, maxPostNumber])
 
   useEffect(() => {
     const loadEdges = () => {
