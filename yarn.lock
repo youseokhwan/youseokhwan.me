@@ -9414,6 +9414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flexsearch@npm:^0.6.32":
+  version: 0.6.32
+  resolution: "flexsearch@npm:0.6.32"
+  checksum: aa260b2eb530be070018a02e31f19343e69ebbd5006e534d1a6162ba150f4f580be9bd5fc2453d0441c32b7edef0b972eff3f1890146f55d47246a3d1d604e0b
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.15.6":
   version: 1.15.9
   resolution: "follow-redirects@npm:1.15.9"
@@ -9865,6 +9872,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-local-search@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "gatsby-plugin-local-search@npm:2.0.1"
+  dependencies:
+    flexsearch: "npm:^0.6.32"
+    lodash: "npm:^4.17.19"
+    lunr: "npm:^2.3.8"
+    pascal-case: "npm:^3.1.1"
+  peerDependencies:
+    gatsby: ">= 2.20.0"
+  checksum: 13b2c6e19b30392b3b35f65eb3d6a005ed08236ab5ee4cf321ce06ee21b06fb4966cd8ec55708b9dcd39030550a9bf0f6b6ac13ae2b34adc41dc0d480e7a151d
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-manifest@npm:^5.12.3":
   version: 5.14.0
   resolution: "gatsby-plugin-manifest@npm:5.14.0"
@@ -10219,6 +10240,7 @@ __metadata:
     gatsby-plugin-alias-imports: "npm:^1.0.5"
     gatsby-plugin-feed: "npm:^5.12.3"
     gatsby-plugin-image: "npm:^3.12.3"
+    gatsby-plugin-local-search: "npm:^2.0.1"
     gatsby-plugin-manifest: "npm:^5.12.3"
     gatsby-plugin-offline: "npm:^6.12.3"
     gatsby-plugin-react-helmet: "npm:^6.14.0"
@@ -13460,6 +13482,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lunr@npm:^2.3.8":
+  version: 2.3.9
+  resolution: "lunr@npm:2.3.9"
+  checksum: f2f6db34c046f5a767782fe2454e6dd69c75ba3c5cf5c1cb9cacca2313a99c2ba78ff8fa67dac866fb7c4ffd5f22e06684793f5f15ba14bddb598b94513d54bf
+  languageName: node
+  linkType: hard
+
 "make-dir@npm:^1.0.0":
   version: 1.3.0
   resolution: "make-dir@npm:1.3.0"
@@ -15550,7 +15579,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pascal-case@npm:^3.1.2":
+"pascal-case@npm:^3.1.1, pascal-case@npm:^3.1.2":
   version: 3.1.2
   resolution: "pascal-case@npm:3.1.2"
   dependencies:
