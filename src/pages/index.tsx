@@ -62,8 +62,11 @@ const Home = ({
         <Content>
           <CategoryFilter categoryList={data.allMarkdownRemark.group} />
           <PostTitle>
-            {postTitle}
-            <span className="count">{postCount}</span>
+            <div>
+              {postTitle}
+              <span className="count">{postCount}</span>
+            </div>
+            <SearchInput type="text" placeholder="🔍 Search..." />
           </PostTitle>
           <PostGrid posts={posts} />
         </Content>
@@ -93,6 +96,9 @@ const Content = styled.div`
 `
 
 const PostTitle = styled.h2`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   font-size: 2rem;
   font-weight: var(--font-weight-extra-bold);
   margin-bottom: var(--sizing-md);
@@ -100,6 +106,10 @@ const PostTitle = styled.h2`
 
   @media (max-width: ${({ theme }) => theme.device.sm}) {
     font-size: 1.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: var(--sizing-sm);
   }
 
   .count {
@@ -111,6 +121,31 @@ const PostTitle = styled.h2`
     @media (max-width: ${({ theme }) => theme.device.sm}) {
       font-size: 1.125rem;
     }
+  }
+`
+
+const SearchInput = styled.input`
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-3);
+  border-radius: var(--border-radius-base);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-regular);
+  width: 200px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  height: 1rem;
+  line-height: 1;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
+
+  @media (max-width: ${({ theme }) => theme.device.sm}) {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    text-indent: 1rem;
   }
 `
 
