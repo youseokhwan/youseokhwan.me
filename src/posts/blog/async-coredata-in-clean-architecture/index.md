@@ -7,8 +7,8 @@ thumbnail: "../../../../src/images/ios.webp"
 ---
 
 `CoreData`를 비동기 방식으로, 최대한 클린 아키텍처 원칙에 위배되지 않도록 구현해 보자.<br>
-처음엔 간단하게 구현하고, 점진적으로 개선하는 방향으로 진행하며, `fetch`와 `insert`만 구현했다.<br>
-트러블슈팅 과정도 포함했다.
+처음엔 간단하게 구현한 뒤, 점진적으로 개선하는 방향으로 진행하며, 트러블슈팅 과정도 포함했다.<br>
+`fetch`와 `insert`만 구현했으며, 에러 처리는 포함하지 않았다.
 
 ## 스키마 정의
 
@@ -167,9 +167,9 @@ final class UserStorage {
 
 ## 3️⃣ CoreData를 비동기로 동작하도록 하기
 
-위 코드에서, `viewContext`를 통해 데이터를 접근하고 있다.<br>
-`viewContext`는 메인 스레드의 큐에 직접 바인딩된 컨텍스트이기 때문에, 동기적으로 동작한다.<br>
-따라서 대량의 데이터를 CRUD할 경우, UI 업데이트가 지연되어 UX가 저하될 수 있다.
+위 코드에서, `viewContext`를 통해 데이터에 접근하고 있다.<br>
+`viewContext`는 메인 스레드의 큐에 직접 바인딩 된 컨텍스트이기 때문에, 동기적으로 동작한다.<br>
+따라서 대량의 데이터를 CRUD 할 경우, UI 업데이트가 지연되어 UX가 저하될 수 있다.
 
 비동기로 동작하도록 변경해 보자.
 
@@ -196,11 +196,11 @@ func fetchUsers() async -> [UserEntity] { // 1
 3. `perform` 클로저 내부의 작업은 백그라운드 스레드에서 실행된다.
 
 이 방식은 여러 작업을 하나의 트랜잭션으로 묶는 복잡한 시나리오에서 사용하거나, 컨텍스트를 공유하는 등 높은 유연성이 장점이다.<br>
-다만, 편의성이 낮고 스레드 관리를 개발자가 직접 해야하는 리스크가 있다.
+다만, 편의성이 낮고 스레드 관리를 개발자가 직접 해야 하는 리스크가 있다.
 
 ### 3-2. performBackgroundTask {} 방식
 
-다음은 컨텍스트와 스레드를 자동으로 관리해주는 `performBackgroundTask` 방식이다.
+다음은 컨텍스트와 스레드를 자동으로 관리해 주는 `performBackgroundTask` 방식이다.
 
 ```swift
 func fetchUsers() async -> [UserEntity] { // 1
@@ -218,10 +218,10 @@ func fetchUsers() async -> [UserEntity] { // 1
 
 1. 마찬가지로 `async`, `await` 키워드를 통해 작업이 끝날 때까지 기다린다.
 2. 아래에 사용되는 `performBackgroundTask`는 `async` 함수가 아닌, 콜백 기반의 비동기 코드다.<br>`withCheckedContinuation`[^1]는 이러한 콜백을 `async`/`await` 스타일로 래핑해주는 함수이다.
-3. `performBackgroundTask`는 `CoreData`에서 제공하는 콜백 기반의 비동기 API다.<br>백그라운드 스레드에서의 동작을 보장하며, 백그라운드 컨텍스트를 자동으로 생성하고 관리해 준다.
+3. `performBackgroundTask`는 `CoreData`에서 제공하는 콜백 기반의 비동기 API다.<br>백그라운드 스레드에서 동작을 보장하며, 백그라운드 컨텍스트를 자동으로 생성하고 관리해 준다.
 
 이 방식은 편의성이 높아, 대부분의 일반적이고 독립적인 백그라운드 CRUD 작업을 구현하기에 적합하다.<br>
-다만, 단일 작업에 최적화 돼있기 때문에, 유연성이 낮다.
+다만, 단일 작업에 최적화돼 있기 때문에, 유연성이 낮다.
 
 이 포스트에선 `performBackgroundTask` 방식으로 개선할 예정이다.
 
@@ -239,9 +239,9 @@ func insertUser(_ user: User) {
 이렇게 구현하면, `Repository`가 `CoreData`의 로직에 깊게 관여하게 되어, 결합도가 높아지고 관심사 분리 위반이 발생한다.<br>
 이는 유연성과 테스트 용이성을 해치므로, 이 문제를 개선해야 한다.
 
-### 4-1. 🚨 비어있는 Entity를 만들어서 넘기기?
+### 4-1. 🚨 비어 있는 Entity를 만들어서 넘기기?
 
-필자가 원했던 가장 깔끔한 형태는 `Repository`가 비어있는 `UserEntity`를 만들고 `Storage`에 전달한 뒤, `Storage`에서 `context`를 주입하는 방식이였다.
+필자가 원했던 가장 깔끔한 형태는 `Repository`가 비어 있는 `UserEntity`를 만들고 `Storage`에 전달한 뒤, `Storage`에서 `context`를 주입하는 방식이었다.
 
 ```swift
 // repository
@@ -376,7 +376,7 @@ final class UserRepository {
 
 이것에 대한 이유는 `context`의 생명 주기를 원인으로 보고 있다.<br>
 `viewContext`의 경우, 일반적으로 `Storage`와 비슷한 생명 주기를 가지기 때문에, 매핑하는 시점에 메모리가 해제되지 않는다.<br>
-그러나 지금은 `backgroundContext`이기 때문에, `fetch` 시점과 매핑 시점 사이에 `context`가 메모리에서 해제되어, Fault 상태가 Realized 상태가 되기 전에 데이터가 소실되는 것으로 유추해볼 수 있다.
+그러나 지금은 `backgroundContext`이기 때문에, `fetch` 시점과 매핑 시점 사이에 `context`가 메모리에서 해제되어, Fault 상태가 Realized 상태가 되기 전에 데이터가 소실되는 것으로 유추해 볼 수 있다.
 
 ### ⚠️ 명시적으로 폴트 상태 해제
 
@@ -471,15 +471,15 @@ final class UserRepository {
 }
 ```
 
-`context`가 메모리에서 해제되기 전에, `performBackgroundTask` 클로저에서 매핑을 완료한다.<br>
-이 과정에서 `Storage`가 매핑에 직접 관여하면 관심사 분리가 안되기 때문에, `block` 클로저를 통해 간접적으로 매핑하도록 했다.
+`context`가 메모리에서 해제되기 전에 `performBackgroundTask` 클로저에서 매핑을 완료한다.<br>
+이 과정에서 `Storage`가 매핑에 직접 관여하면 관심사 분리가 안 되기 때문에, `block` 클로저를 통해 간접적으로 매핑하도록 했다.
 
 ![alt text](image-15.png)
 
 ## 마무리
 
 이번 포스트에서는 `CoreData`를 비동기로 개선하고, 최대한 클린 아키텍처 원칙에 맞춰 구현하였다.<br>
-`CoreData` 특성상 Network Layer를 구성하는 것만큼 깔끔하게 관심사를 분리하지 못하여 아쉽지만, 클로저를 활용하여 트러블슈팅하는 과정에서 Deep Dive 할 수 있어 의미있는 학습이였다.
+`CoreData` 특성상 Network Layer를 구성하는 것만큼 깔끔하게 관심사를 분리하지 못하여 아쉽지만, 클로저를 활용하여 트러블슈팅하는 과정에서 Deep Dive 할 수 있어 의미 있는 학습이었다.
 
 ---
 
